@@ -25,17 +25,17 @@ var cssFilesToInject = [
 var jsFilesToInject = [
 
   // Load sails.io before everything else
-  'js/dependencies/sails.io.js',
+  'image-upload/dependencies/sails.io.js',
 
   // Dependencies like jQuery, or Angular are brought in here
-  'js/dependencies/**/*.js',
+  'image-upload/dependencies/**/*.js',
 
-  // All of the rest of your client-side js files
+  // All of the rest of your client-side image-upload files
   // will be injected here in no particular order.
-  'js/**/*.js',
+  'image-upload/**/*.js',
 
   // Use the "exclude" operator to ignore files
-  // '!js/ignore/these/files/*.js'
+  // '!image-upload/ignore/these/files/*.image-upload'
 ];
 
 
