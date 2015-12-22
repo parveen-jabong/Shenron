@@ -1,4 +1,3 @@
-# Shenron
-CMS tool to update Images
+# shenron
 
-
+a [Sails](http://sailsjs.org) application
