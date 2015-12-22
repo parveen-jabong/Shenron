@@ -11,58 +11,6 @@
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
         <meta name="format-detection" content="telephone=no">
         <meta name="keywords" content="{req.seo.keywords}">
-        {?req.social}
-            {>"layout/social-sharing" /}
-        {/req.social}
-        {@eq key=req.reqPage value="newdesign_jabong-referral-program"}
-            {>"layout/referral-meta" /}
-        {/eq}
-        {?nr_env}
-            {@getBrowserTimingHeader /}
-        {/nr_env}
-        {?req.seo.canonicalUrl}
-            <link rel="canonical"  href="{req.baseUrl}/{req.seo.canonicalUrl}">
-        {/req.seo.canonicalUrl}
-        {?req.seo.noIndex}
-            <meta name="robots" content="noindex, follow" />
-        {/req.seo.noIndex}
-        {?botMeta}
-            <meta name="fragment" content="!" />
-        {/botMeta}
-        {?req.seo.androidAlternateUrl}
-            <link rel="alternate" href="{req.seo.androidAlternateUrl}" />
-        {/req.seo.androidAlternateUrl}
-        <link rel="shortcut icon" href="{staticBaseUrl}/live/images/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="57x57" href="{staticBaseUrl}/live/images/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="{staticBaseUrl}/live/images/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="{staticBaseUrl}/live/images/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="{staticBaseUrl}/live/images/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="{staticBaseUrl}/live/images/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="{staticBaseUrl}/live/images/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="{staticBaseUrl}/live/images/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="{staticBaseUrl}/live/images/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="{staticBaseUrl}/live/images/apple-icon-180x180.png">
-        <link rel="stylesheet" href="{staticBaseUrl}/live/css/bootstrap.css">
-
-        {?flow}
-            {@select key=flow}
-                {@eq value="noview" /}
-                {@any}{/any}
-                {@none}<link rel="stylesheet" href="{staticBaseUrl}/live/css/{flow}.css">{/none}
-            {/select}
-        {:else}
-            <link rel="stylesheet" href="{staticBaseUrl}/live/css/home.css">
-        {/flow}
-        <!--[if lte IE 9]>
-        <link rel="stylesheet" href="{staticBaseUrl}/live/css/ie.css">
-        <![endif]-->
-        {! Javascript Global settings !}
-        {>"inc/_js-global-settings" /}
-        <script src="{staticBaseUrl}/live/js/require-main.js" async></script>
-        <!--[if lte IE 9]>
-        <script src="{staticBaseUrl}/live/js/vendor/crossbrowser/html5shiv.min.js"></script>
-        <script src="{staticBaseUrl}/live/js/vendor/crossbrowser/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body class="{flow} {customClass} {device}" data-device-type="{req.session.userDevice}" data-res-ts="">
       {! isWeb has been used to identify whether user is coming from App or Web !}
@@ -79,9 +27,5 @@
               {>"layout/footer" pagetype=flow /}
             {/isWeb}
         {/eq}
-
-        {>"components/server-config"/}
-
-        <a class="link" href="https://ad.doubleclick.net/ddm/jump/N7304.889084.JABONG.COM/B8796043.121840956;sz=800x470;ord=[timestamp]?"><span>&nbsp;</span></a>
     </body>
 </html>

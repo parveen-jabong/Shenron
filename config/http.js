@@ -35,10 +35,7 @@ module.exports.http = {
         'bodyParser',
         'resolveStaticUrl',
         'myRequestLogger',
-        '$custom',
         'router',
-        'www',
-        'favicon',
         '404',
         'defaultErrorHandler'
     ],

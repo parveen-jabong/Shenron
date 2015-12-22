@@ -13,6 +13,10 @@ module.exports = {
         password : {
             type: 'string'
         },
+        username : {
+            type: 'string',
+            unique: true
+        },
         verifyPassword: function (password) {
             return bcrypt.compareSync(password, this.password);
         },

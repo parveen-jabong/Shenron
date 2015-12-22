@@ -1,23 +1,28 @@
 module.exports = {
     attributes : {
-        username : {
-            type: 'string',
-            required: true,
-            unique: true
-        },
         name : {
-            type : 'string'
-        },
-        email : {
             type: 'string',
             required: true
         },
-        password : {
-            type: 'string',
+        size : {
+            type : 'string',
             required: true
         },
-        encryptPassword: function () {
-
+        width : {
+            type: 'integer',
+            required: true
+        },
+        height : {
+            type: 'integer',
+            required: true
+        },
+        owner :{
+            model : 'Image-Config',
+            required: true
+        },
+        type : {
+            type : 'string',
+            required: true
         }
     }
 };

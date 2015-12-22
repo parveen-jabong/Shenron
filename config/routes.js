@@ -35,14 +35,12 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-
-/*
-  'POST /user' : '',
-  'POST /user/login'  : '',
-
-  'POST /image' : '',
-  'GET /image/:id' : ''
-*/
+  '/static/page/' : 'IndexController.index',
+  'POST /user' : 'AuthController.add',
+  'POST /user/login'  : 'AuthController.login',
+  'POST /image' : 'ImageConfigurationController.index',
+  'GET /image' : 'ImageConfigurationController.index',
+  'DELETE /image' : 'ImageConfigurationController.index'
 
   /***************************************************************************
   *                                                                          *
