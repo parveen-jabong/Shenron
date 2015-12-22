@@ -20,5 +20,16 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
-
+  memcache: {
+    enabled: true,
+    host: '43.252.89.194',
+    port: 11290
+  },
+  caching: {
+    adaptor: 'MEMCACHE',
+    host: '43.252.89.194',
+    port: 11290
+  },
+  memcacheKeyPrefix: 'jabong',
+  pdpregex: /.html$/i
 };

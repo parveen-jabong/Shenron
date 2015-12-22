@@ -34,5 +34,15 @@ module.exports = {
   // log: {
   //   level: "silent"
   // }
-
+  memcache: {
+    enabled: true,
+    host: 'memcache',
+    port: process.env.MEMCACHE_PORT || 11290
+  },
+  caching: {
+    host: '43.252.89.194',
+    port: 11290
+  },
+  memcacheKeyPrefix: 'jabong',
+  pdpregex: /.html$/i
 };
