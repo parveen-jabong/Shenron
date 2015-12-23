@@ -3,25 +3,23 @@
 var BaseController = require('./BaseController');
 
 var ImageConfigurationController = BaseController.extend({
+
     index : function (req, res) {
-        console.log("index controller");
-        ImageUploadService.serve(req, res, function () {
-            if (redirect) {
-                res.writeHead(302, {
-                    'Location': redirect.replace(
-                        /%s/,
-                        encodeURIComponent(JSON.stringify(result))
-                    )
-                });
-                res.end();
-            } else {
-                res.writeHead(200, {
-                    'Content-Type': req.headers.accept
-                        .indexOf('application/json') !== -1 ?
-                        'application/json' : 'text/plain'
-                });
-                res.end(JSON.stringify(result));
-            }
+        req.file('files[]').upload({dirname: require('path').resolve(__dirname, '../../.tmp/public/images')},function (err, uploadedFiles) {
+            if (err) return res.negotiate(err);
+            var metadata = uploadedFiles[0];
+            var url = req.baseUrl + '/images' + (metadata.fd).substr((metadata.fd).lastIndexOf('/'));
+            return res.json({
+                "files": [
+                    {
+                        "name": metadata.filename,
+                        "size": metadata.size,
+                        "url": url,
+                        "thumbnailUrl": url,
+                        "deleteUrl": url,
+                        "deleteType": "DELETE"
+                    }]
+            })
         });
     }
 });

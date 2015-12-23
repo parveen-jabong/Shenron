@@ -12,7 +12,7 @@ var AuthController = BaseController.extend({
             };
 
             if (err){
-                responseObject.message = err.message;
+                responseObject.message = err ? err.message : "User Not Added";
             } else {
                 responseObject.message = 'OK';
                 responseObject.status = true;
@@ -21,15 +21,20 @@ var AuthController = BaseController.extend({
         });
     },
     'login' : function(req, res){
+        console.log("ssss");
         var responseObject = {
             status : 'false',
             message : ''
         };
-        AuthService.findByUsername(username, function(err, user){
-            if (err) {
-                responseObject.message = err.message;
+        var requestBody = req.body;
+        console.log(requestBody);
+        AuthService.findByEmail(requestBody.email, function(err, user){
+            console.log(err, user);
+            if (err || !user) {
+                responseObject.message = err ? err.message : "User Doesn't Exist";
             } else {
-                AuthService.verifyPassword(user, password, function(err, user){
+                AuthService.verifyPassword(user, requestBody.password, function(err, user){
+                    console.log('verifyPassword', err, user)
                     if (err) {
                         responseObject.message = err.message;
                     } else {
@@ -38,8 +43,8 @@ var AuthController = BaseController.extend({
                     }
                 });
             }
-        })
-        res.json(responseObject);
+            res.json(responseObject);
+        });
     },
     getLoginPage : function(req, res){
         res.render('login');
