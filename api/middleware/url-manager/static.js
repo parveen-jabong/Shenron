@@ -7,7 +7,7 @@ function getUrl(key){
 
 function _execute(req, output, requestPage){
     req.routeResolved = true;
-    req.url = '/cms/index';
+    req.url = '/static/page/';
     req.staticPage = output;
     // setting variable required for GA
     req.PageTypePV = 'Campaign|' + requestPage;

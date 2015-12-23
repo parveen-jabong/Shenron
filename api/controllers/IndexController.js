@@ -4,6 +4,7 @@ var BaseController = require('./BaseController');
 
 var IndexController = BaseController.extend({
     index: function (req, res) {
+        console.log("sssss");
         var data = {};
         if (!isEmpty(req.staticPage)) {
             data.pageHtml = req.staticPage.text;
@@ -17,6 +18,7 @@ var IndexController = BaseController.extend({
                 sendHTML: true
             });
         } else {
+             data = {'eeee' :"ssss"};
             res.ok(data, 'cms/index');
         }
     }

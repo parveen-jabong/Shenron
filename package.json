@@ -33,7 +33,10 @@
     "sails": "~0.11.3",
     "sails-disk": "~0.10.0",
     "sails-mongo": "^0.11.5",
-    "winston": "^0.9.0"
+    "winston": "^0.9.0",
+    "formidable": ">=1.0.11",
+    "node-static": ">=0.6.5",
+    "imagemagick": ">=0.1.3"
   },
   "scripts": {
     "debug": "node debug app.js",

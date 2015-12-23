@@ -67,7 +67,7 @@
             // Function returning the current number of files,
             // has to be overriden for maxNumberOfFiles validation:
             getNumberOfFiles: $.noop,
-
+            maxFileSize: 1000000, // 1 MB
             // Error and info messages:
             messages: {
                 maxNumberOfFiles: 'Maximum number of files exceeded',

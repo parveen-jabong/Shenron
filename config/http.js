@@ -35,10 +35,8 @@ module.exports.http = {
         'bodyParser',
         'resolveStaticUrl',
         'myRequestLogger',
-        '$custom',
         'router',
         'www',
-        'favicon',
         '404',
         'defaultErrorHandler'
     ],
@@ -87,4 +85,5 @@ module.exports.http = {
   ***************************************************************************/
 
   // cache: 31557600000
+
 };
