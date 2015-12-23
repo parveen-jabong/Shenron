@@ -62,7 +62,12 @@ module.exports = {
      * @param cb - CallBack function
      */
     add : function (name, email, password, username, cb) {
-        User.create().exec(function(err, user){
+        User.create({
+            name : name,
+            email: email,
+            password: password,
+            username: username
+        }).exec(function(err, user){
             cb(err, user);
         });
     }

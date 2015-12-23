@@ -44,5 +44,6 @@ module.exports = {
     port: 11290
   },
   memcacheKeyPrefix: 'jabong',
-  pdpregex: /.html$/i
+  pdpregex: /.html$/i,
+  staticBaseUrl: process.env.STATIC_BASE_URL
 };
