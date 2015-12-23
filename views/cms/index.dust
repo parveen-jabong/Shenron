@@ -13,9 +13,9 @@
         <meta name="keywords" content="{req.seo.keywords}">
     </head>
     <body class="{flow} {customClass} {device}" data-device-type="{req.session.userDevice}" data-res-ts="">
-        <section class="main-content">
-            {pageHtml|s}
-            {endBlock|s}
-        </section>
+		<section class="main-content">
+			{pageHtml}
+			{endBlock}
+		</section>
     </body>
 </html>
