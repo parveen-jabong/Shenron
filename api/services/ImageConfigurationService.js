@@ -19,9 +19,17 @@ function ImageConfigurationService(){
  * @param imgList
  */
 ImageConfigurationService.prototype.add = function (url, ici, icn, imgList) {
-    ImageConfig.create(url, ici, icn);
-    _.each(imgList, function(image){
-        Image.create(image.name, image.size, image.width, image.height, image,type);
+    ImageConfig.create(url, ici, icn).exec(function (err, config) {
+        _.each(imgList, function(image){
+            Image.create({
+                name : image.name,
+                size: image.size,
+                width : image.width,
+                height: image.height,
+                owner : config,
+                type : image.type
+            }).exec();
+        });
     });
 }
 

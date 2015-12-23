@@ -40,6 +40,9 @@ var AuthController = BaseController.extend({
             }
         })
         res.json(responseObject);
+    },
+    getLoginPage : function(req, res){
+        res.render('login');
     }
 });
 

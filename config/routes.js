@@ -36,6 +36,7 @@ module.exports.routes = {
     view: 'layout'
   },
   '/static/page/' : 'IndexController.index',
+  '/login' : 'AuthController.getLoginPage',
   'POST /user' : 'AuthController.add',
   'POST /user/login'  : 'AuthController.login',
   'POST /image' : 'ImageConfigurationController.index',

@@ -38,5 +38,8 @@ module.exports = {
   },
   memcacheKeyPrefix: 'jabong',
   pdpregex: /.html$/i,
-  staticBaseUrl: 'dev.jabong.com'
+  staticBaseUrl: 'static1.jabong.com',
+  css : [
+
+  ]
 };
