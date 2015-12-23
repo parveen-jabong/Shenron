@@ -1,0 +1,7 @@
+{>"layout/master" /}
+{< body}
+	<section class="main-content" id="main" data-view="cms" {?lazyloadcss}data-deffered-rs-load='["segment", "home", "catalog", "pdp"]'{/lazyloadcss}>
+		{pageHtml|s}
+		{endBlock|s}
+	</section>
+{/body}

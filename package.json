@@ -5,6 +5,10 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "dust-intl": "~1.1.0",
+    "dustjs-helpers": "^1.6.0",
+    "dustjs-linkedin": "^2.6.0",
     "ejs": "~0.8.4",
     "grunt": "0.4.2",
     "grunt-contrib-clean": "~0.5.0",
@@ -19,7 +23,12 @@
     "grunt-sails-linker": "~0.9.5",
     "grunt-sync": "~0.0.4",
     "include-all": "~0.1.3",
+    "memcached-encoding-fork": "^2.1.2",
     "moment": "^2.10.6",
+    "node-uuid": "^1.4.2",
+    "passport": "~0.2.0",
+    "passport-local": "~1.0.0",
+    "php-unserialize": "0.0.1",
     "rc": "~0.5.0",
     "sails": "~0.11.3",
     "sails-disk": "~0.10.0",
@@ -33,8 +42,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/bll/shenron.git"
+    "url": "git://github.com/parveen-jabong/Shenron.git"
   },
-  "author": "bll",
+  "author": "Parveen Arora <parveen.arora@jabong.com> & Rajesh Bhatt <rajesh.bhatt@jabong.com>",
   "license": ""
 }

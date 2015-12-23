@@ -34,7 +34,15 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
+
+/*
+  'POST /user' : '',
+  'POST /user/login'  : '',
+
+  'POST /image' : '',
+  'GET /image/:id' : ''
+*/
 
   /***************************************************************************
   *                                                                          *

@@ -74,7 +74,7 @@ var customLogger = new winston.Logger({
       level: 'info',
       json: false,
       dirname: logFileLocation,
-      filename: 'reincarnation.log',
+      filename: 'shenron.log',
       formatter: formatter
     })
   ]

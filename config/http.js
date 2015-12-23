@@ -21,32 +21,35 @@ module.exports.http = {
   *                                                                           *
   ****************************************************************************/
 
-  // middleware: {
+   middleware: {
 
-  /***************************************************************************
-  *                                                                          *
-  * The order in which middleware should be run for HTTP request. (the Sails *
-  * router is invoked by the "router" middleware below.)                     *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+     *                                                                          *
+     * The order in which middleware should be run for HTTP request. (the Sails *
+     * router is invoked by the "router" middleware below.)                     *
+     *                                                                          *
+     ***************************************************************************/
 
-    // order: [
-    //   'startRequestTimer',
-    //   'cookieParser',
-    //   'session',
-    //   'myRequestLogger',
-    //   'bodyParser',
-    //   'handleBodyParserError',
-    //   'compress',
-    //   'methodOverride',
-    //   'poweredBy',
-    //   '$custom',
-    //   'router',
-    //   'www',
-    //   'favicon',
-    //   '404',
-    //   '500'
-    // ],
+    order: [
+        'cookieParser',
+        'bodyParser',
+        'resolveStaticUrl',
+        'myRequestLogger',
+        '$custom',
+        'router',
+        'www',
+        'favicon',
+        '404',
+        'defaultErrorHandler'
+    ],
+    myRequestLogger: function(req, res, next) {
+      sails.log.silly(req.method, req.url, new Date);
+      return next();
+    },
+
+    resolveStaticUrl: require('../api/middleware/url-manager/static'),
+    defaultErrorHandler: require('../api/middleware/default-error-handler')
+  }
 
   /****************************************************************************
   *                                                                           *

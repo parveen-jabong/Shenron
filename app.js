@@ -56,4 +56,8 @@ process.chdir(__dirname);
 
   // Start server
   sails.lift(rc('sails'));
+  sails.on('lifted', function(){
+    sails.log.info('--------------------------------------------------------');
+    sails.log.info('Since You have collected all the Dragon Balls. Now, Shenron will grant your wishes.')
+  })
 })();
