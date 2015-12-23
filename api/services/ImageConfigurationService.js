@@ -1,6 +1,13 @@
 var ImageConfig = require('../models/Image-Config'),
     Image = require('../models/Image');
 
+var mysqlAdapter = require('../../lib/mysql-adapter');
+
+var mysqlConnection;
+mysqlAdapter.connect(sails.config.host, sails.config.user, sails.config.password, sails.config.database, function(err, connection){
+    mysqlConnection = connection;
+});
+
 function ImageConfigurationService(){
 
 }

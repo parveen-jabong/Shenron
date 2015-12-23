@@ -30,6 +30,12 @@ module.exports = {
     host: '43.252.89.194',
     port: 11290
   },
+  mysql : {
+    host     : 'localhost',
+    user     : 'user',
+    password : 'password',
+    database : 'database'
+  },
   memcacheKeyPrefix: 'jabong',
   pdpregex: /.html$/i,
   staticBaseUrl: 'dev.jabong.com'
