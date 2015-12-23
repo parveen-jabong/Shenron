@@ -1,23 +1,11 @@
 module.exports = function(grunt) {
 
     grunt.config.set('dust', {
-        compile: {
-            files: [{
-                expand: true,
-                cwd: "assets/templates",
-                src: ["**/*.dust"],
-                dest: ".tmp/public/live/templates",
-                ext: ".js"
-            }],
-            options: {
-                relative: true,
-                wrapper: 'amd', //default
-                wrapperOptions: {
-                    packageName: null,
-                    deps: {
-                        dust: 'dust'
-                    }
-                }
+        dev : {
+            files: {
+                // e.g.
+                // 'relative/path/from/gruntfile/to/compiled/template/destination'  : ['relative/path/to/sourcefiles/**/*.html']
+                '.tmp/public/templates.js': require('../pipeline').templateFilesToInject
             }
         }
     });
