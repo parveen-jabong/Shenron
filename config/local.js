@@ -56,7 +56,7 @@ module.exports = {
    * By default, if it's set, Sails uses the `PORT` environment variable.    *
    * Otherwise it falls back to port 1337.                                   *
    *                                                                         *
-   * In env/production.js, you'll probably want to change this setting       *
+   * In env/production.image-upload, you'll probably want to change this setting       *
    * to 80 (http://) or 443 (https://) if you have an SSL certificate        *
    ***************************************************************************/
 

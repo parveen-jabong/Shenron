@@ -19,7 +19,7 @@ module.exports.views = {
   * views                                                                     *
   *                                                                           *
   * Sails+Express supports all view engines which implement TJ Holowaychuk's  *
-  * `consolidate.js`, including, but not limited to:                          *
+  * `consolidate.image-upload`, including, but not limited to:                          *
   *                                                                           *
   * ejs, jade, handlebars, mustache underscore, hogan, haml, haml-coffee,     *
   * dust atpl, eco, ect, jazz, jqtpl, JUST, liquor, QEJS, swig, templayed,    *

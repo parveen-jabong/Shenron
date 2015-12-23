@@ -33,7 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'homepage'
+    view: 'layout'
   },
   '/static/page/' : 'IndexController.index',
   'POST /user' : 'AuthController.add',
@@ -47,7 +47,7 @@ module.exports.routes = {
   * Custom routes here...                                                    *
   *                                                                          *
   * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
+  * is matched against Sails route blueprints. See `config/blueprints.image-upload`    *
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/

@@ -4,6 +4,7 @@ var BaseController = require('./BaseController');
 
 var ImageConfigurationController = BaseController.extend({
     index : function (req, res) {
+        console.log("index controller");
         ImageUploadService.serve(req, res, function () {
             if (redirect) {
                 res.writeHead(302, {

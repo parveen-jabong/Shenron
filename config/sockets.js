@@ -15,9 +15,9 @@ module.exports.sockets = {
 
   /***************************************************************************
   *                                                                          *
-  * Node.js (and consequently Sails.js) apps scale horizontally. It's a      *
+  * Node.image-upload (and consequently Sails.image-upload) apps scale horizontally. It's a      *
   * powerful, efficient approach, but it involves a tiny bit of planning. At *
-  * scale, you'll want to be able to copy your app onto multiple Sails.js    *
+  * scale, you'll want to be able to copy your app onto multiple Sails.image-upload    *
   * servers and throw them behind a load balancer.                           *
   *                                                                          *
   * One of the big challenges of scaling an application is that these sorts  *
@@ -29,7 +29,7 @@ module.exports.sockets = {
   * all room/pubsub/socket processing and shared memory has to be offloaded  *
   * to a shared, remote messaging queue (usually Redis)                      *
   *                                                                          *
-  * Luckily, Socket.io (and consequently Sails.js) apps support Redis for    *
+  * Luckily, Socket.io (and consequently Sails.image-upload) apps support Redis for    *
   * sockets by default. To enable a remote redis pubsub server, uncomment    *
   * the config below.                                                        *
   *                                                                          *
@@ -55,12 +55,12 @@ module.exports.sockets = {
  /***************************************************************************
   *                                                                          *
   * Whether to expose a 'get /__getcookie' route with CORS support that sets *
-  * a cookie (this is used by the sails.io.js socket client to get access to *
+  * a cookie (this is used by the sails.io.image-upload socket client to get access to *
   * a 3rd party cookie and to enable sessions).                              *
   *                                                                          *
   * Warning: Currently in this scenario, CORS settings apply to interpreted  *
   * requests sent via a socket.io connection that used this cookie to        *
-  * connect, even for non-browser clients! (e.g. iOS apps, toasters, node.js *
+  * connect, even for non-browser clients! (e.g. iOS apps, toasters, node.image-upload *
   * unit tests)                                                              *
   *                                                                          *
   ***************************************************************************/
@@ -92,7 +92,7 @@ module.exports.sockets = {
   * a connection upgrade request WITHOUT A COOKIE (for certain transports)   *
   * In this case, there is no way to keep track of the requesting user       *
   * between requests, since there is no identifying information to link      *
-  * him/her with a session. The sails.io.js client solves this by connecting *
+  * him/her with a session. The sails.io.image-upload client solves this by connecting *
   * to a CORS/jsonp endpoint first to get a 3rd party cookie(fortunately this*
   * works, even in Safari), then opening the connection.                     *
   *                                                                          *

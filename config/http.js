@@ -36,6 +36,7 @@ module.exports.http = {
         'resolveStaticUrl',
         'myRequestLogger',
         'router',
+        'www',
         '404',
         'defaultErrorHandler'
     ],
@@ -84,4 +85,5 @@ module.exports.http = {
   ***************************************************************************/
 
   // cache: 31557600000
+
 };

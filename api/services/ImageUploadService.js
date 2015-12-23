@@ -60,6 +60,7 @@ var path = require('path'),
         this.callback = callback;
     },
     serve = function (req, res, callback) {
+        console.log("current dir",__dirname, options);
         res.setHeader(
             'Access-Control-Allow-Origin',
             options.accessControl.allowOrigin
@@ -78,6 +79,7 @@ var path = require('path'),
                 res.setHeader('Content-Disposition', 'inline; filename="files.json"');
             },
             handler = new UploadHandler(req, res, callback);
+        console.log("methi",req.method);
         switch (req.method) {
             case 'OPTIONS':
                 res.end();
@@ -108,6 +110,7 @@ var path = require('path'),
         }
     };
 fileServer.respond = function (pathname, status, _headers, files, stat, req, res, finish) {
+    console.log("respond");
     // Prevent browsers from MIME-sniffing the content-type:
     _headers['X-Content-Type-Options'] = 'nosniff';
     if (!options.inlineFileTypes.test(files[0])) {
@@ -120,6 +123,7 @@ fileServer.respond = function (pathname, status, _headers, files, stat, req, res
         .call(this, pathname, status, _headers, files, stat, req, res, finish);
 };
 FileInfo.prototype.validate = function () {
+    console.log("inside validate");
     if (options.minFileSize && options.minFileSize > this.size) {
         this.error = 'File is too small';
     } else if (options.maxFileSize && options.maxFileSize < this.size) {
@@ -130,6 +134,7 @@ FileInfo.prototype.validate = function () {
     return !this.error;
 };
 FileInfo.prototype.safeName = function () {
+    console.log("safe name");
     // Prevent directory traversal and creating hidden system files:
     this.name = path.basename(this.name).replace(/^\.+/, '');
     // Prevent overwriting existing files:
@@ -138,6 +143,7 @@ FileInfo.prototype.safeName = function () {
     }
 };
 FileInfo.prototype.initUrls = function (req) {
+    console.log("init urls");
     if (!this.error) {
         var that = this,
             baseUrl = (options.ssl ? 'https:' : 'http:') +
@@ -174,6 +180,7 @@ UploadHandler.prototype.get = function () {
     });
 };
 UploadHandler.prototype.post = function () {
+    console.log("in post");
     var handler = this,
         form = new formidable.IncomingForm(),
         tmpFiles = [],
@@ -182,6 +189,7 @@ UploadHandler.prototype.post = function () {
         counter = 1,
         redirect,
         finish = function () {
+            console.log("finish ");
             counter -= 1;
             if (!counter) {
                 files.forEach(function (fileInfo) {
@@ -190,8 +198,10 @@ UploadHandler.prototype.post = function () {
                 handler.callback({files: files}, redirect);
             }
         };
+    console.log("form",form);
     form.uploadDir = options.tmpDir;
     form.on('fileBegin', function (name, file) {
+        console.log("file begin");
         tmpFiles.push(file.path);
         var fileInfo = new FileInfo(file, handler.req, true);
         fileInfo.safeName();
@@ -202,6 +212,7 @@ UploadHandler.prototype.post = function () {
             redirect = value;
         }
     }).on('file', function (name, file) {
+        console.log("file",file);
         var fileInfo = map[path.basename(file.path)];
         fileInfo.size = file.size;
         if (!fileInfo.validate()) {
@@ -223,12 +234,15 @@ UploadHandler.prototype.post = function () {
             });
         }
     }).on('aborted', function () {
+        console.log("aborted");
         tmpFiles.forEach(function (file) {
             fs.unlink(file);
         });
     }).on('error', function (e) {
+        console.log("errrr");
         console.log(e);
     }).on('progress', function (bytesReceived, bytesExpected) {
+        console.log("progress");
         if (bytesReceived > options.maxPostSize) {
             handler.req.connection.destroy();
         }
@@ -251,7 +265,7 @@ UploadHandler.prototype.destroy = function () {
     }
     handler.callback({success: false});
 };
-
+console.log("current dir",__dirname);
 module.exports = {
     serve : serve
 }

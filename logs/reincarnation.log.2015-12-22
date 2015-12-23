@@ -1,0 +1,6 @@
+{"timestamp" : "2015-12-22T17:45:15.277+05:30" ,"level" : "info","content" :"To skip this prompt in the future, set `sails.config.models.migrate`."}
+{"timestamp" : "2015-12-22T17:45:15.279+05:30" ,"level" : "info","content" :"(conventionally, this is done in `config/models.js`)"}
+{"timestamp" : "2015-12-22T17:45:15.279+05:30" ,"level" : "warn","content" :"** DO NOT CHOOSE \"2\" or \"3\" IF YOU ARE WORKING WITH PRODUCTION DATA **"}
+{"timestamp" : "2015-12-22T17:45:25.499+05:30" ,"level" : "info","content" :"To skip this prompt in the future, set `sails.config.models.migrate`."}
+{"timestamp" : "2015-12-22T17:45:25.500+05:30" ,"level" : "info","content" :"(conventionally, this is done in `config/models.js`)"}
+{"timestamp" : "2015-12-22T17:45:25.501+05:30" ,"level" : "warn","content" :"** DO NOT CHOOSE \"2\" or \"3\" IF YOU ARE WORKING WITH PRODUCTION DATA **"}

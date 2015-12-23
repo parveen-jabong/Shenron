@@ -38,7 +38,7 @@ module.exports.session = {
   /***************************************************************************
   *                                                                          *
   * In production, uncomment the following lines to set up a shared redis    *
-  * session store that can be shared across multiple Sails.js servers        *
+  * session store that can be shared across multiple Sails.image-upload servers        *
   ***************************************************************************/
 
   // adapter: 'redis',
