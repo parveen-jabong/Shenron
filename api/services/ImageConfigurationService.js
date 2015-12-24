@@ -100,7 +100,6 @@ ImageConfigurationService.prototype.get = function (id, cb) {
         } else {
             console.log(err, imageConfig);
             Image.find().where({ owner: imageConfig.id }).exec(function(err, images){
-                console.log(err, images);
                 if (err){
                     cb(err, imageConfig);
                 } else {
@@ -109,5 +108,29 @@ ImageConfigurationService.prototype.get = function (id, cb) {
             });
         }
     });
+}
+ImageConfigurationService.prototype.updateMySqlDatabase = function(){
+    if(mysqlConnection) {
+        mysqlConnection.beginTransaction(function(err) {
+            if (err) {
+                throw err;
+            } else {
+                mysqlConnection.query("SELECT `cms_folder`.`revision` FROM `cms_folder` WHERE (cms_folder.key = '?') AND (is_active = 1)", key, function(err, result) {
+                    if (err) {
+                        return mysqlConnection.rollback(function() {
+                            throw err;
+                        });
+                    }
+                    mysqlConnection.commit(function(err) {
+                        if (err) {
+                            return mysqlConnection.rollback(function() {
+                                throw err;
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    }
 }
 module.exports = exports = new ImageConfigurationService();

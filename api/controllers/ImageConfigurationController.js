@@ -43,7 +43,6 @@ var ImageConfigurationController = BaseController.extend({
         });
     },
     create : function(req, res){
-        console.log('In Create');
         ImageConfigurationService.add('', '', '', null, function(err, config){
             if (err) {
 
