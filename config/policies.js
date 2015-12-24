@@ -48,4 +48,12 @@ module.exports.policies = {
 		// before letting any users feed our rabbits
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
+    AuthController : {
+        logout : 'sessionAuth',
+    },
+    ImageConfigurationController : {
+    },
+    IndexController : {
+        index : 'sessionAuth'
+    }
 };

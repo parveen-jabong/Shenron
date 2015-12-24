@@ -21,36 +21,14 @@
  */
 
 module.exports.routes = {
-
-  /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
-
-  '/': {
-    view: 'layout'
-  },
-  '/static/page/' : 'IndexController.index',
-  '/login' : 'AuthController.getLoginPage',
-  'POST /user' : 'AuthController.add',
-  'POST /user/login'  : 'AuthController.login',
-  'POST /image' : 'ImageConfigurationController.index',
-  'GET /image' : 'ImageConfigurationController.index',
-  'DELETE /image' : 'ImageConfigurationController.index'
-
-  /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.image-upload`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
-
+     '/' : 'AuthController.getLoginPage',
+      '/upload': {
+        view: 'upload'
+      },
+      '/static/page/' : 'IndexController.index',
+      'POST /user' : 'AuthController.add',
+      'POST /user/login'  : 'AuthController.login',
+      'POST /image' : 'ImageConfigurationController.index',
+      'GET /image/:id' : 'ImageConfigurationController.get',
+      'DELETE /image' : 'ImageConfigurationController.delete'
 };

@@ -20,7 +20,6 @@ module.exports = {
      * @return Error and/or User itself
      */
     findByUsername :  function(u, cb) {
-        console.log('Username', u);
         User.findOne({username: u}).exec(function (err, user) {
             return cb(err, user);
         });

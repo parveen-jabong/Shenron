@@ -5,10 +5,30 @@ var BaseController = require('./BaseController');
 var ImageConfigurationController = BaseController.extend({
 
     index : function (req, res) {
-        req.file('files[]').upload({dirname: require('path').resolve(__dirname, '../../.tmp/public/images')},function (err, uploadedFiles) {
+        var requestBody = req.body;
+        req.file('files[]').upload({
+                dirname: require('path').resolve(__dirname, '../../.tmp/public/images'),
+                saveAs : function (newFileStream, cb) {
+                    var fileNameWithExtArray = newFileStream.filename.split('.');
+                    cb(null, fileNameWithExtArray[0] + "_" + (requestBody.type || 'desktop') + "." + fileNameWithExtArray[1]);
+                }
+            },function (err, uploadedFiles) {
             if (err) return res.negotiate(err);
-            var metadata = uploadedFiles[0];
-            var url = req.baseUrl + '/images' + (metadata.fd).substr((metadata.fd).lastIndexOf('/'));
+            var metadata = uploadedFiles[0],
+                url = req.baseUrl + '/images' + (metadata.fd).substr((metadata.fd).lastIndexOf('/'));
+            metadata.imageType = requestBody.type || 'desktop';
+            metadata.imageUrl = url;
+            if (!requestBody.id) {
+                ImageConfigurationService.add(requestBody.url || 'asd', requestBody.ici || 'asd', requestBody.icn || 'asd', metadata, function(err, config){
+                    if (err) {
+                        //sails.log
+                    } else {
+
+                    }
+                });
+            } else {
+                ImageConfigurationService.update(id, requestBody.url, requestBody.ici, requestBody.icn, metadata);
+            }
             return res.json({
                 "files": [
                     {
@@ -20,6 +40,41 @@ var ImageConfigurationController = BaseController.extend({
                         "deleteType": "DELETE"
                     }]
             })
+        });
+    },
+    get : function(req, res){
+        console.log('In Get');
+        var imageConfigId = req.params.id;
+        ImageConfigurationService.get(imageConfigId, function(err, imageConfig, imageList){
+            console.log(err, imageConfig, imageList);
+            if (err) {
+
+            } else {
+                var files = [];
+                _.each(imageList, function(image){
+                    files.push({
+                        "name": image.name,
+                        "size": image.size,
+                        "url": image.imageUrl,
+                        "thumbnailUrl": image.imageUrl,
+                        "deleteUrl": image.imageUrl,
+                        "deleteType": "DELETE"
+                    })
+                });
+                return res.json({
+                    "files": files
+                });
+            }
+        });
+    },
+    delete : function(req, res){
+        var imageConfigId = req.params.id;
+        ImageConfigurationService.get(imageConfigId, function(err, imageConfig, imageList){
+            if (err) {
+
+            } else {
+
+            }
         });
     }
 });

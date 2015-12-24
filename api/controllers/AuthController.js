@@ -1,45 +1,40 @@
 'use strict';
 
 var BaseController = require('./BaseController');
+function Response() {
+    this.success = 'false';
+    this.message = [];
+};
 
 var AuthController = BaseController.extend({
-    'add': function (req, res) {
+    add: function (req, res) {
         var requestBody = req.body;
         AuthService.add(requestBody.name, requestBody.email, requestBody.password, requestBody.username, function(err, user){
-            var responseObject = {
-                status : 'false',
-                message : ''
-            };
-
+            var responseObject = new Response();
             if (err){
-                responseObject.message = err ? err.message : "User Not Added";
+                var msg = err ? err.message : "User Not Added";
+                responseObject.message.push(msg);
             } else {
-                responseObject.message = 'OK';
-                responseObject.status = true;
+                responseObject.message.push('OK');
+                responseObject.success = true;
             }
             res.json(responseObject);
         });
     },
-    'login' : function(req, res){
-        console.log("ssss");
-        var responseObject = {
-            status : 'false',
-            message : ''
-        };
+    login : function(req, res) {
         var requestBody = req.body;
-        console.log(requestBody);
         AuthService.findByEmail(requestBody.email, function(err, user){
-            console.log(err, user);
+            var responseObject = new Response();
             if (err || !user) {
                 responseObject.message = err ? err.message : "User Doesn't Exist";
             } else {
                 AuthService.verifyPassword(user, requestBody.password, function(err, user){
-                    console.log('verifyPassword', err, user)
                     if (err) {
-                        responseObject.message = err.message;
+                        responseObject.message.push(err.message);
                     } else {
-                        responseObject.message = 'OK';
-                        responseObject.status = true;
+                        responseObject.message.push('OK');
+                        responseObject.success = true;
+                        req.session.authenticated = true;
                     }
                 });
             }
@@ -48,6 +43,10 @@ var AuthController = BaseController.extend({
     },
     getLoginPage : function(req, res){
         res.render('login');
+    },
+    logout : function(req, res){
+        req.session = null;
+        delete req.session;
     }
 });
 

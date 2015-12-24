@@ -9,19 +9,28 @@ module.exports = {
             required: true
         },
         width : {
-            type: 'integer',
-            required: true
+            type: 'integer'
         },
         height : {
-            type: 'integer',
-            required: true
+            type: 'integer'
+        },
+        active : {
+            type: 'boolean',
+            defaultsTo: true
+        },
+        path : {
+            type : 'string'
+        },
+        imageUrl : {
+            type : 'string'
         },
         owner :{
-            model : 'Image-Config',
+            model : 'ImageConfig',
             required: true
         },
         type : {
             type : 'string',
+            enum: ['desktop', 'mweb', 'tab', 'app'],
             required: true
         }
     }

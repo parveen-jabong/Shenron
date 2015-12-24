@@ -31,12 +31,20 @@ module.exports.http = {
      ***************************************************************************/
 
     order: [
+        'startRequestTimer',
         'cookieParser',
+        'session',
         'bodyParser',
+        'handleBodyParserError',
+        'compress',
         'resolveStaticUrl',
         'myRequestLogger',
+        'methodOverride',
+        'poweredBy',
+        '$custom',
         'router',
         'www',
+        'favicon',
         '404',
         'defaultErrorHandler'
     ],
