@@ -17,8 +17,6 @@ var IndexController = BaseController.extend({
                 res.notFound();
             }
             data.pageHtml = $('body').html();
-            console.log(pageHtml);
-            console.log(data.pageHtml);
             data.endBlock = req.staticPage.body_end_block;
         } else {
             return res.notFound();

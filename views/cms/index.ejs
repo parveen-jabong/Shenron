@@ -23,24 +23,30 @@
         <link rel="stylesheet" href="http://static1.jabong.com/live/css/home1450455324316.css">
         <link rel="stylesheet" href="/styles/importer.css">
         <script src="http://static1.jabong.com/live/js/require-main1450455324316.js" async=""></script>
+        <script src="/js/vendor/jquery.js"></script>
         <!--[if lte IE 9]>
             <link rel="stylesheet" href="http:/static1.jabong.com/live/css/ie1450455324316.css">
             <script src="http://static1.jabong.com/live/js/vendor/crossbrowser/html5shiv.min.js"></script>
             <script src="http://static1.jabong.com/live/js/vendor/crossbrowser/respond.min.js"></script>
         <![endif]-->
-    <script>
-        var JABONG = window.JABONG || {};
-        JABONG.app = JABONG.app || {};
-        JABONG.app.baseUrlJS = "<%= baseUrlJS %>";
-        JABONG.app.baseUrlCSS = "<%= baseUrlCSS %>";
-        JABONG.ResponsiveImgActivated = true;
-        JABONG.adblocker = true;
-
-    </script>
     </head>
     <body>
         <section class="main-content">
             <%- pageHtml %>
         </section>
     </body>
+<script>
+    var JABONG = window.JABONG || {};
+    JABONG.app = JABONG.app || {};
+    JABONG.app.baseUrlJS = "<%= baseUrlJS %>";
+    JABONG.app.baseUrlCSS = "<%= baseUrlCSS %>";
+    JABONG.ResponsiveImgActivated = true;
+    JABONG.adblocker = true;
+    $(document).ready(function(){
+        $(document).on('.editableCMSButton', 'click', function(){
+            alert("Hello");
+        });
+    });
+</script>
+
 </html>

@@ -19,7 +19,7 @@ var ImageConfigurationController = BaseController.extend({
             metadata.imageType = requestBody.type || 'desktop';
             metadata.imageUrl = url;
             if (!requestBody.id) {
-                ImageConfigurationService.add(requestBody.url || 'asd', requestBody.ici || 'asd', requestBody.icn || 'asd', metadata, function(err, config){
+                ImageConfigurationService.add(requestBody.url || 'asd', requestBody.ici || 'asd', requestBody.icn || 'asd', metadata, function(err, config, image){
                     if (err) {
                         //sails.log
                     } else {
@@ -42,10 +42,23 @@ var ImageConfigurationController = BaseController.extend({
             })
         });
     },
+    create : function(req, res){
+        console.log('In Create');
+        ImageConfigurationService.add('', '', '', null, function(err, config){
+            if (err) {
+
+            } else {
+                console.log(config.id);
+                var data = {
+                    configId : config.id
+                }
+                res.render('upload', data);
+            }
+        });
+    },
     get : function(req, res){
         var imageConfigId = req.params.id;
         ImageConfigurationService.get(imageConfigId, function(err, imageConfig, imageList){
-            console.log(err, imageConfig, imageList);
             if (err) {
 
             } else {

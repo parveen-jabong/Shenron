@@ -22,10 +22,10 @@
 
 module.exports.routes = {
     '/' : 'AuthController.getLoginPage',
-    '/upload': 'ImageConfigurationController.get',
     '/cms/key' : {
         view : 'input-staticpage-key'
     },
+    '/upload': 'ImageConfigurationController.create',
     'GET /upload/:id' : 'ImageConfigurationController.get',
     '/static/page/' : 'IndexController.index',
     'POST /user' : 'AuthController.add',

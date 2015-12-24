@@ -2,15 +2,15 @@ module.exports = {
     attributes : {
         url : {
             type: 'string',
-            required: true
+            defaultsTo: ''
         },
         ici : {
             type : 'string',
-            required: true
+            defaultsTo: ''
         },
         icn : {
             type: 'string',
-            required: true
+            defaultsTo: ''
         }
     },
     afterDestroy: function(destroyedRecords, cb) {

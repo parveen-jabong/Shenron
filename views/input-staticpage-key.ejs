@@ -9,7 +9,8 @@
     $(".login-form").submit(function(e){
         e.preventDefault();
         console.log($(".login-form #lg_cmskey").val());
-        window.open('/', '_blank');
+        var url = $(".login-form #lg_cmskey").val();
+        window.location.href = "/" + url;
     });
     //$(".login-form").validate()
 </script>
