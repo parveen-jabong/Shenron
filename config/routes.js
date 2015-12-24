@@ -21,14 +21,15 @@
  */
 
 module.exports.routes = {
-     '/' : 'AuthController.getLoginPage',
-      '/upload': {
-        view: 'upload'
-      },
-      '/static/page/' : 'IndexController.index',
-      'POST /user' : 'AuthController.add',
-      'POST /user/login'  : 'AuthController.login',
-      'POST /image' : 'ImageConfigurationController.index',
-      'GET /image/:id' : 'ImageConfigurationController.get',
-      'DELETE /image' : 'ImageConfigurationController.delete'
+    '/' : 'AuthController.getLoginPage',
+    '/upload': 'ImageConfigurationController.get',
+    '/cms/key' : {
+        view : 'input-staticpage-key'
+    },
+    'GET /upload/:id' : 'ImageConfigurationController.get',
+    '/static/page/' : 'IndexController.index',
+    'POST /user' : 'AuthController.add',
+    'POST /user/login'  : 'AuthController.login',
+    'POST /image' : 'ImageConfigurationController.index',
+    'DELETE /image' : 'ImageConfigurationController.delete'
 };

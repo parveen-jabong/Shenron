@@ -14,8 +14,27 @@
  * or any other Grunt tasks you like.)
  */
 
+.editableCMSDiv {
+    position: relative;
+    display: inline-block;
+}
 
+.editableCMSButton{
+    display: none;
+    padding: 8px 16px;
+    background-color: orange;
+    color: white;
+    position: absolute;
+    margin: 0 auto;
+    left: 50%;
+    top: 40%;
+    border: none;
+    font-size: 15px;
+}
 
+.editableCMSDiv:hover .editableCMSButton{
+    display : inline-block;
+}
 // For example:
 //
 // @import 'variables/colors.less';

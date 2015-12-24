@@ -1,7 +1,6 @@
 'use strict';
 
 var BaseController = require('./BaseController');
-
 var IndexController = BaseController.extend({
     index: function (req, res) {
         var data = {
@@ -9,7 +8,17 @@ var IndexController = BaseController.extend({
             baseUrlCSS : '//' + sails.config.staticBaseUrl + '/live/css'
         };
         if (!isEmpty(req.staticPage)) {
-            data.pageHtml = req.staticPage.text;
+            var pageHtml = req.staticPage.text,
+            html = $.parseHTML("<div class='staticPageEditableCMS'>" + pageHtml + "</div>");
+            $('body').empty().append(html);
+            if (html){
+                $("[data-cms-editable=true]").wrap("<div class='editableCMSDiv'><button class='editableCMSButton'>Edit</button></div>");
+            } else {
+                res.notFound();
+            }
+            data.pageHtml = $('body').html();
+            console.log(pageHtml);
+            console.log(data.pageHtml);
             data.endBlock = req.staticPage.body_end_block;
         } else {
             return res.notFound();

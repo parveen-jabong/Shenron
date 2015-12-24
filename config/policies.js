@@ -54,6 +54,5 @@ module.exports.policies = {
     ImageConfigurationController : {
     },
     IndexController : {
-        index : 'sessionAuth'
     }
 };

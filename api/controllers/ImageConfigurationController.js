@@ -43,7 +43,6 @@ var ImageConfigurationController = BaseController.extend({
         });
     },
     get : function(req, res){
-        console.log('In Get');
         var imageConfigId = req.params.id;
         ImageConfigurationService.get(imageConfigId, function(err, imageConfig, imageList){
             console.log(err, imageConfig, imageList);
