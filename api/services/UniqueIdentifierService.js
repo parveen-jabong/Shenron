@@ -4,7 +4,7 @@
 
 module.exports = {
     getByCmsKey: function(key, cb){
-        CMS.findOne({cms_key : key}).exec(function(err, cms){
+        CMSService.get(key, function(err, cms){
             if(err || !cms){
                 cb(err, cms);
             } else {
