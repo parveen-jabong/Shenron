@@ -21,7 +21,7 @@
  */
 
 module.exports.routes = {
-    '/' : 'AuthController.getLoginPage',
+    '/' : 'AuthController.getLoginView',
     '/cms/key' : {
         view : 'input-staticpage-key'
     },

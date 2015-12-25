@@ -1,0 +1,108 @@
+#results {
+	position: absolute;
+	left: 0;
+	top: 48px;
+	border: 1px solid #111;
+	background-color: @body-bg;
+	width: 100%;
+	z-index: 10000;
+	.top-arrow{
+
+	}
+	ul{
+		padding: 0;
+		margin: 0;
+	}
+	li > a {
+		text-transform: capitalize !important;
+	}
+	.search-tag{
+		line-height: 39px;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 0 3%;
+	}
+	#other-search, #recent-search, #popular-search {
+		overflow: hidden;
+
+		li{
+			display: block;
+			a{
+				color: @navbar-inverse-bg;
+				text-transform: none;
+				display: block;
+				line-height: 39px;
+				padding: 0 3%;
+				span{
+					color: #4787ae;
+					&:first-child{
+						font-weight: bold;
+						color: #434343!important;
+					}
+				}
+				&:hover {
+					background-color: @table-bg-hover;
+				}
+			}
+			
+		}
+	}
+	#recent-search{
+		border-bottom: 1px solid @input-border-j;
+	}
+}
+.popular-list{
+	overflow: hidden;
+	margin-top: 10px;
+	padding: 0 3%;
+	.img-thumb{
+		width: 45px;
+		height: 61px;
+		float:left;
+		margin-right: 15px;
+	}
+	.prd-name{
+		font-size: 10px;
+		text-transform: uppercase;
+		margin-bottom: 5px;
+	}
+	.price {
+		font-size: @font-size-small;
+		font-weight: bold;
+	}
+}
+
+
+.traingle-up-white, .traingle-up-grey{
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+
+.traingle-up-white {
+	border-bottom: 8px solid @body-bg;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    left: 39px;
+    top: -8px;
+    z-index: 1;
+}
+.traingle-up-grey {
+	border-bottom: 8px solid #111;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    left: 39px;
+    top: -9px;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+	#results{
+		border: 1px solid #e5e5e5;
+		border-width: 1px 0;
+		top: 60px;
+	}
+	.traingle-up-white, .traingle-up-grey{
+		display: none
+	}
+}

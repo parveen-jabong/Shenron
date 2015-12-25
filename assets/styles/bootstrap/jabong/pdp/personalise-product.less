@@ -1,0 +1,460 @@
+.personalise-popup {
+	position: absolute;
+	z-index: 5;
+	background: #f7f7f9;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	.personalise-content {
+		margin-top: 25px;
+	}
+	.initial-stage {
+		
+	}
+	.process-stage {
+		.personalise-part {
+			display: none;
+		}
+		.personalise-option {
+			display: block;
+		}
+	}
+	.done-stage {
+		.personalise-option {
+			display: none;
+		}
+		.personalised .personalise-part {
+			display: block;
+		}
+		.initial-selected {
+			display: none !important;
+		}
+
+	}
+	.initial-stage {
+		.personalise-initial {
+			display: table-cell !important;
+		}
+		.personalise-done {
+			display: none !important;
+		}
+		h2 {
+			border-color: #fff !important;
+		}
+	}
+	.close-personalise-product {
+		position: absolute;
+		top: 25px;
+		left: 20px;
+		font-size: 22px;
+		font-weight: bold;
+		color: #6e6e6e;
+		text-transform: uppercase;
+		z-index: 1;
+		span {
+			.common-sprite(-10px -9px);
+			width: 9px;
+			height: 13px;
+			display: inline-block;
+			cursor: pointer;
+		}
+		p {
+			font-size: 12px;
+			color: #666;
+			font-weight: normal;
+			padding-left: 16px;
+		}
+	}
+	.head-row {
+		margin-top: 25px;
+	}
+	h2 {
+		line-height: 48px;
+		font-weight: bold;
+		font-size: 14px;
+		height: 50px;
+		background-color: #fff;
+		border-top: 2px solid #fff;
+		margin-bottom: 20px;
+		margin-top: 0;
+		color: #303030;
+		text-align: center;
+	}
+	ul.personalised {
+		padding: 0;
+		margin: 0;
+	
+		li {
+			width: 50%;
+			float: left;
+			list-style-type: none;
+			text-align: center;
+			text-transform: uppercase;
+
+			p {
+				margin-bottom: 2px;
+			}		
+			>div {
+				margin-right: 20px;
+			}
+			div.personalise-action {
+				background-color: #fff;
+				padding: 20px 17px 15px;
+				height: 275px;
+				display: table;
+				margin-bottom: 22px;
+
+				.personalise-initial {
+					cursor: pointer;
+					display: table-cell;
+					vertical-align: middle;
+				}
+				.personalise-done {
+					display: none;
+				}
+				h3 {
+					font-size: 14px;
+					margin-bottom: 27px;
+					font-weight: bold;
+					margin-top: 0;
+					color: #303030;
+				}
+				div.personlise-flag {
+					padding-bottom: 12px;
+					min-height: 94px;
+
+					p {
+						display: none;
+					}
+					span {
+						height: 32px;
+						/*background: url('../images/flag-sprite.png') -999px -999px no-repeat;*/
+						display: inline-block;
+					}
+				}	
+				div.personlise-charges {				
+
+					.remove-btn {
+						padding-top:18px;
+						color: #4a87ae;
+					}
+				}	
+				.light-clr {
+					color: #999;
+				}	
+			}
+			.select-box{
+				background-color: #fff;
+				height: 52px;
+				line-height: 52px;
+
+				.down-arrow {
+					.common-sprite(-75px 0);
+				}
+				select {
+					font-size: 14px;
+					border: 0;
+					height: 50px;
+					line-height: 50px;
+					padding: 0 12px;
+					color: #4d4d4d;
+				}
+			} 
+			.personalise-total {
+
+				p {
+					font-weight: bold;
+					text-align: left;
+					color: #000;
+					font-size: 14px;
+					margin-bottom: 10px;
+				}
+			}
+			.btn {
+				padding: 0;
+				line-height: 52px;
+				height: 52px;
+				width: 100%;
+				margin-top: 30px;
+				text-transform: uppercase;
+			}
+		}
+	}
+	.input-error {
+		background-color: #fef2f2;
+	}
+	.personalise-option {
+		background: #fff;
+		padding: 20px 10px;
+		margin-right: 20px;
+		text-transform: uppercase;
+		display: none;
+
+		.personalise-error {
+			color: red;
+			padding-top: 5px;
+		}
+		.error-hide {
+			display: none;
+		}
+		.option {
+			text-align: center;
+			padding-bottom: 14px;
+			color: #303030;
+			font-weight: bold;
+			
+			div {
+				display: inline-block;
+				&:first-child {
+					padding-right: 20px;
+				}
+			}			
+
+			.iradio_minimal {
+				margin-top: -2px;
+			}
+		}
+		ul.flag-options {
+			padding: 0;
+		
+			li {
+				float: left;
+				list-style-type: none;
+				width: 20%;
+				text-align: center;
+				margin-bottom: 10px;
+				border: 1px solid #fff;
+
+				&.flagSelected {
+					border-color: #222;
+				}
+				a {
+					padding:10px;					
+					display: block;	
+					color: #666;				
+				}
+				small {
+					display: block;
+					font-size: 8px;	
+					padding-top: 3px;			
+				}
+				span:first-child {
+					width: 42px;
+					height: 32px;
+					/*background: url('../images/flag-sprite.png') no-repeat;*/
+					display: inline-block;
+				}				
+
+			}
+		}	
+		.text-options {
+			display: none;
+			
+			input, .select-box {
+				height: 40px;
+				line-height: 40px;
+				border: 1px solid #ccc;
+			}
+			input {
+				width: 100%;
+				margin-bottom: 20px;												
+			}
+			.select-box {			
+				padding-left: 6px;
+				cursor: pointer;
+				margin-bottom: 150px;
+				overflow: visible;
+				position: relative;
+
+				> div {
+					width: 20px;
+
+					span {
+						display: block;
+						height: 26px;
+						text-align: center;
+					}
+					span.set-color {
+						width: 15px;
+						margin: auto;
+						height: 3px;										
+					}					
+				}
+				ul.clr-list {
+					position: absolute;
+					width: 100%;
+					display: none;
+					background: #f3f3f3;
+					top: 39px;
+					left: 0;
+					padding: 7px 4px 7px 7px;
+
+					li {
+						width: 12.5%;
+						float: left;
+						list-style-type: none;
+						height: 42px;
+						margin-bottom: 3px;
+						a {						
+							display: block;							
+							height: 42px;
+							margin-right: 3px;
+						}	
+					}
+										
+				}
+				.down-arrow {
+					.common-sprite(-75px 0);
+				}
+			}
+		}
+		.options-btn {
+			button {
+				width: 48%;		
+				padding: 0;
+				font-size: 14px;
+				text-transform: uppercase;
+				height: 51px;
+				line-height: 51px;	
+				&:first-child {
+					margin-right: 10px;
+				}	
+			}
+			.btn-default{
+				margin-right: 2.7%;
+			}
+		}
+
+	}
+	.personlise-img {
+		text-align: center;
+		overflow: hidden;
+		position: relative;
+		height: 470px;
+
+		.product-output {
+			position: absolute;
+			/*background: url('../images/flag-sprite.png') -999px -999px no-repeat;*/
+			transform: rotate(0.231090667195897rad);
+			img {
+				width: 100%;
+			}
+		}
+		> div {
+			padding-top: 125px;
+			-webkit-transition: all 1s ease;
+		    -moz-transition: all 1s ease;
+		    -o-transition: all 1s ease;
+		    -ms-transition: all 1s ease;
+		    transition: all 1s ease;
+		    position: absolute;
+		    width: 100%;
+
+		    div {
+		    	display: inline-block;
+		    	position: relative;
+		    }
+		}
+		.right-shoes {
+			left: 0;
+		}
+		.left-shoes {
+			right: -999px;
+		}
+	}
+	/*.flag-argentina {
+		background-position: 0 0 !important;
+	}
+	.flag-brazil {
+		background-position: -43px 0 !important;
+	}
+	.flag-china {
+		background-position: -85px 0 !important;
+	}
+	.flag-england {
+		background-position: -128px 0 !important;
+	}
+	.flag-france {
+		background-position: -171px 0 !important;
+	}
+	.flag-holland {
+		background-position: 0 -34px !important;
+	}
+	.flag-italy {
+		background-position: -43px -34px !important;
+	}
+	.flag-mexico {
+		background-position: -85px -34px !important;
+	}
+	.flag-peru {
+		background-position: -128px -34px !important;
+	}
+	.flag-portugal {
+		background-position: -171px -34px !important;
+	}*/
+}
+@media only screen and (max-width: 1023px) { 
+	.personalise-content {
+		max-width: 375px;
+		margin: auto;
+
+		.personalise-option {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+		ul.personalised li > div {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+	}
+}
+@media only screen and (max-width: 320px) { 
+	.personalise-content {
+		width: inherit;
+		margin: auto;		
+	}
+	.personalise-info {
+		padding: 0;
+	}
+	.personalise-popup {
+
+		.personalise-option {
+			margin-left: 10px;
+			margin-right: 10px;
+
+			ul.flag-options li a {
+				padding: 9px;
+			}
+		}
+		.personlise-img .product-output {
+			top: 190px;
+			left: 60px;
+		}
+		ul.personalised li div.personalise-action {
+			padding: 20px 0;
+
+			.personalise-initial, h3 {
+				padding: 0 15px;
+			}
+		}
+	} 
+}
+@media only screen and (max-width: 767px) { 
+	.personalise-popup .close-personalise-product {
+		left: 0;
+		right: 0;
+		top: 0;
+		text-align: center;
+		span {
+			background-position: 0 -128px;
+			height: 34px;
+			vertical-align: middle;
+		}
+	}
+	.personalise-crose {
+		background-color: #fff;
+		margin-bottom: 15px;
+		line-height: 45px;
+	}
+}

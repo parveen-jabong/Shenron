@@ -1,29 +1,25 @@
 <!-- All the files that are required -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-<link href='/styles/login.css' rel='stylesheet' type='text/css'>
-<script src="/js/vendor/jquery.js"></script>
+<link rel="stylesheet" href="/styles/login.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<script src="/js/login.js"></script>
-
 <!-- Where all the magic happens -->
 <!-- LOGIN FORM -->
 <div class="text-center" style="padding:50px 0">
     <div class="logo">login</div>
     <!-- Main Form -->
     <div class="login-form-1">
-        <form id="login-form" class="text-left" method="post" action="/user/login">
+        <form id="login-form" class="text-left">
             <div class="login-form-main-message"></div>
             <div class="main-login-form">
                 <div class="login-group">
                     <div class="form-group">
                         <label for="email" class="sr-only">Email</label>
-                        <input type="text" class="form-control" id="lg_username" name="email" placeholder="username">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="email">
                     </div>
                     <div class="form-group">
                         <label for="password" class="sr-only">Password</label>
-                        <input type="password" class="form-control" id="lg_password" name="password" placeholder="password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password">
                     </div>
                     <div class="form-group login-group-checkbox">
                         <input type="checkbox" id="lg_remember" name="lg_remember">
@@ -46,7 +42,7 @@
     <div class="logo">register</div>
     <!-- Main Form -->
     <div class="login-form-1">
-        <form id="register-form" class="text-left" method="post" action="/user">
+        <form id="register-form" class="text-left">
             <div class="login-form-main-message"></div>
             <div class="main-login-form">
                 <div class="login-group">
@@ -59,11 +55,7 @@
                         <input type="password" class="form-control" id="reg_password" name="password" placeholder="password">
                     </div>
                     <div class="form-group">
-                        <label for="reg_password_confirm" class="sr-only">Password Confirm</label>
-                        <input type="password" class="form-control" id="reg_password_confirm" name="reg_password_confirm" placeholder="confirm password">
-                    </div>
-                    <div class="form-group">
-                        <label for="username" class="sr-only">User Name</label>
+                        <label for="username" class="sr-only">user Name</label>
                         <input type="text" class="form-control" id="reg_username" name="username" placeholder="User name">
                     </div>
                     <div class="form-group">
@@ -112,3 +104,5 @@
     </div>
     <!-- end:Main Form -->
 </div>
+
+<script src="/js/login.js"></script>

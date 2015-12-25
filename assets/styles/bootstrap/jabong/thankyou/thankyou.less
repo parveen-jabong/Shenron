@@ -1,0 +1,340 @@
+@import "import.less";
+
+.thankyou-header {
+	background: url('../images/thankyou_banner.jpg') top center no-repeat;
+	padding-bottom: 125px;
+
+	.content {
+		width: 85%;
+		margin: auto;
+	}
+	.thankyou-message {
+		margin-top: 17px;
+		text-align: center;
+		.thankyou-stamp {
+			width: 99px;
+			height: 99px;
+			background-position: -5px -123px;
+			margin: auto;
+		}
+		h2 {
+			font-size: 28px;
+			color: #333;
+		  	font-family: dinnextproregular;
+		  	margin-bottom: 15px;
+
+			>span {
+				color: #f37142;
+			}
+		}
+		p {
+			font-size: 20px;
+		}
+	}
+	.order-detail {
+		margin-top: 5px;
+		> div {
+
+			> div {
+				display: inline-block;
+				vertical-align: top;
+
+				&:first-child {
+					margin-right: 15px;
+				}
+			}
+		}
+		p {
+			font-size: 20px;
+			margin: 0;
+			span {
+				color: #000;
+			}
+		}
+		.stamp {
+			width: 98px;
+			height: 98px;
+			background-position: -5px -123px;
+		}
+		h2 {
+			font-size: 28px;
+			color: @gray-base;
+			margin: 6px 0;
+		}
+		.info {
+			color: #6e6e6e;
+			text-align: center;
+			padding-top: 5px;
+
+			p {
+				a:first-child {
+					margin-right: 25px;
+				}
+				a {
+					font-size: 14px;
+				}
+			}
+			
+		}
+	}
+}
+.thankyou-details {
+	width: 85%;
+	margin: auto;
+	margin-top: -99px;
+
+	.order-summary {
+		margin-bottom: 15px;
+	}
+	.left {
+		padding-right: 30px;
+		margin-bottom: 30px;
+		border-right: 1px solid #e5e5e5;
+	}
+	.right {
+		padding-left: 30px;
+	}
+	.rating-icon {
+		margin-left: 0;
+		margin-right: 9px;
+	}
+	li {
+		position: relative;
+		padding-left: 20px;
+		color: #b2b2b2;
+		font-size: 16px;
+		line-height: 24px;
+		font-family: dinnextprolight;
+	}
+	.content {
+		background-color: #fff;
+		border: 1px solid #e5e5e5;
+		padding: 30px 30px 0;
+		margin-bottom: 70px;
+		p {
+			font-size: 16px;
+			color: #333;
+			margin-bottom: 0;
+			&.line-break{
+				white-space: pre;
+			}
+		}
+		.col-sm-6 div:last-child {
+			padding-bottom: 0 !important;
+			border-bottom: 0;
+		}
+		.box {
+			padding-bottom: 30px;
+			margin-bottom: 30px;
+			&.products {
+				margin-bottom: 0;
+			}
+			li > span {
+				color: #333333;
+				padding-left: 8px;
+			}
+		}
+		.what-new, .shipping-detail, .rate-shipping {
+			border-bottom: 1px solid #e5e5e5;
+		}
+		.what-new ul {
+			margin-bottom: 20px;
+
+			.bullet {
+				width: 8px;
+				position: absolute;
+				height: 8px;
+				background-position: -169px -12px;
+				left: 0;
+				display: inline-block;
+				top: 6px;
+			}
+			.faq {
+				display: block;
+			}
+		}
+		h2 {
+			font-size: 18px;
+			margin-top: 0;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #333;
+			margin-bottom: 20px;
+			font-family: dinnextproregular;
+		}
+		h2.new {
+			color: #f37142;
+		}
+		h3 {
+			font-size: 16px;
+			color: #333;
+			font-weight: bold;
+		}
+		.address {
+			margin-bottom: 30px;
+		}
+	}
+	.order-summary {
+		ul li {
+			padding-left: 0;
+		}
+	}
+	.products ul{
+		list-style-type: decimal;
+		margin-left: 20px;
+		li {
+			padding-left: 0
+		}
+	}
+	.continue-shopping {
+		margin-bottom: 90px;
+		text-align: center;
+
+		button.shopping-btn {
+			background-color: #f47143;
+			color: #fff;
+			font-weight: bold;
+			width: 250px;
+			text-transform: uppercase;
+		}
+	}
+	.rate-box {
+		display: none;
+	}
+	textarea {
+		width: 80%;
+		height: 75px;
+		margin: 22px 0 5px;
+		resize: none;
+	}
+	.rate {
+		margin-left: 10px;
+	}
+	.rate, .cancel {
+		width: 124px;
+		text-transform: uppercase;
+		height: 50px;
+	}
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+@media (max-width: 1024px) {
+	.products span {
+		display: block;
+		padding-left: 0 !important;
+	} 
+}
+@media (max-width: 1023px) { 
+	.thankyou-message, .order-detail {
+		text-align: center;
+		> div {
+			margin: auto;
+			float: none !important;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.thankyou-details .right {
+		border-bottom: 1px solid #e5e5e5;
+	}
+	.thankyou-message{
+		margin-top: 30px !important;
+		h2 {
+			margin-bottom: 30px !important;
+		}
+	} 
+	.order-detail > div {
+		float: inherit !important;
+
+		> div {
+			display: inherit !important;
+			text-align: center !important; 
+			margin: 0 auto 20px !important;
+		}
+	}
+	section.main-content {
+		background: #fff;
+	}
+	.thankyou-header {
+		background: none;
+		padding-bottom: 100px;
+	}
+	.thankyou-details {
+		.left {
+			border-right: 0;
+		}
+		.right {
+			padding-left: 20px;
+		}
+		.content {
+			padding: 30px 0 0;
+			margin-bottom: 40px;
+			border: 0;
+			border-top: 1px solid #e5e5e5;
+			.col-sm-6 div:last-child {
+				margin-bottom: 0;
+				padding-bottom: 10px!important;
+			}
+		}
+		.order-detail h2 {
+			font-size: 24px;
+		}
+	}
+}
+@media print {
+  .box-shadows-cart, .jabong-container.cart-section, .rate-shipping, .shopping-withus, .continue-shopping, #cart-footer, .faq, #pdp-recom-sec{
+  	display: none!important;
+  }
+  .thankyou-header{
+  	padding-bottom: 0;
+
+	.thankyou-message{
+		margin: 0!important;
+		padding: 0!important;
+		height: inherit;
+		h2{
+			margin-top: 0;
+		}
+	}
+	.order-detail{
+		padding: 0;
+		margin: 0;
+
+		.info{
+			padding-top:0;
+			p a{
+				display: none;
+			}
+			p, h2{
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+		.stamp{
+			display: none!important;
+		}
+	}
+
+  }
+  .thankyou-details{
+  	margin-top: 0;
+  	font-weight: normal!important;
+  	.content{
+  		h2, ul{
+	  		margin-bottom: 10px;
+	  	}
+
+	  	.box{
+	  		padding-bottom: 0;
+	  		margin-bottom: 0;
+
+	  		&.what-new{
+	  			border:0;
+	  		}
+	  	}
+  	}
+  }
+}

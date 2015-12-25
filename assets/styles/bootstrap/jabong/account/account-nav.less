@@ -1,0 +1,42 @@
+.account-tabs{
+	.nav-tabs {
+		> li {
+			> a{
+				color: @gray;
+				padding: 18px 0 10px;
+				&:hover{
+					color: @gray-base;
+					border-bottom-color:@gray-base; 
+				}
+				&.dropdown-toggle{
+					padding: 10px 0;
+					color:@gray-base;
+				}
+			}
+			&.active {
+				>a{
+					color:@gray-base;
+				}
+			}
+			.caret{
+				color: @gray-base;
+				margin-top: 23px;
+			}
+			.dropdown-menu{
+				margin-top: 3px;
+				>li{
+					>a{
+						color: @gray-base;
+					}
+				}
+			}
+		}
+	}
+}
+.main-banner{
+	figure{
+		img{
+			width:100%;
+		}
+	}
+}

@@ -1,0 +1,202 @@
+.subscription-head2{
+	margin-top: 40px;
+}
+.profile-info{
+	.subscription{
+		margin-bottom: 30px;
+		padding-bottom: 8px;
+		color:@gray-base;
+		h5{
+			margin: 0 0 30px 0;
+			font-size: @font-size-medium;
+			a{
+				font-size: @font-size-base;
+				font-family: dinnextproregular;
+			}
+		}
+		.form-group{
+			margin-bottom: 15px;
+			label{				
+				margin: 2px 0 5px 15px;
+				text-transform: capitalize;
+			}
+			.icheckbox_minimal,
+			.iradio_minimal{
+				float: left;
+			}
+			&.radio-input{
+				label{
+					text-transform: uppercase;
+				}
+			}
+		}
+		.select-box{			
+			width: 500px;
+			margin-bottom:0;
+			select{
+				width: 500px;
+			}
+		}
+		&.mgzn-subscription{
+			border-bottom: 0;
+			.mgzn-subs-note{
+				font-size: @font-size-medium;
+				color:@gray-base;
+				margin-bottom: -15px;
+			}
+		}
+
+		label {
+			width: 100%;
+			span {
+			  vertical-align: top;
+			  line-height: 24px;
+			}
+		}
+		
+	}
+	.bottom-note{
+		&.with-space{
+			margin: 0;
+			border-top: 0;
+			padding: 0 0 23px;
+		}
+	}
+}
+@media screen and (max-width:767px){
+	.profile-info{
+		.subscription{
+			.select-box{				
+				width: 100%;
+				select{
+					width: 100%;
+				}
+			}
+			&.mgzn-subscription {
+				.mgzn-subs-note{
+					margin:-29px 0;
+				}
+			}
+		}
+		.bottom-note{
+			&.with-space{
+				margin:0 0 -13px;
+			}
+		}
+	}
+}
+
+
+// Rewards referrals
+.refer-heading {
+	color: @gray-base;
+	span {
+		font-size: 16px;
+		padding-left: 10px;
+		display: inline-block;
+		font-family: dinnextproregular;
+	}
+}
+.referral-box {
+	color: @gray-base;
+	padding: 30px;
+	border: 1px solid #e5e5e5;
+	.via-email {
+		margin-bottom: 30px;
+		border-bottom: 1px solid #ebebeb;
+		padding-bottom: 20px;
+	}
+}
+
+.info-section-box {
+	h5 {
+		font-size: 16px;
+		margin:0 0 5px;
+	}
+	p {
+		color: @gray-base;
+		font-size: 14px;
+		&.verifed:after {
+			
+		}
+	}
+	.error-message:after, 
+	.success-message:after {
+		display: none;
+	}
+}
+.social-icons {
+	margin-top: 20px;
+	a {
+		display: inline-block;
+		height: 50px;
+		width: 50px;
+		background: url('../images/common-sprite.png') no-repeat;
+		margin-right: 15px;
+	}
+	.fb {
+		background-position: -259px -158px;
+		margin-right: 0;
+	}
+	.yahoo {
+		background-position: -11px -672px;
+	}
+	.win {
+		background-position: -64px -672px;
+	}
+	.g-plus {
+		background-position: -207px -158px;
+	}
+	.tw  {
+		background-position: -117px -672px;
+		margin-left: 15px;
+	}
+	p {
+		font-size: 14px;
+		color: #000;
+		margin-top: 10px;
+	}
+}
+.referral-section-box {
+	.form-control {
+		height: 56px;
+		margin-bottom: 10px;
+	}
+	.referral-id {
+		padding-right: 0;
+	}
+	p{
+		margin-bottom: 0;
+	}
+}
+.via-social-network {
+	margin-bottom: 30px;
+	border-bottom: 1px solid #ebebeb;
+	padding-bottom: 20px;
+}
+.via-link {
+	.form-group{
+		margin-bottom: 0;
+	}
+	.form-control {
+		height: 56px;
+	}
+}
+
+@media screen and (max-width:670px){ 
+	.refer-heading {
+		span {
+			display: block;
+			border-left: none;
+			padding-left: 0;
+			margin-left: 0;
+		}
+	}
+}
+@media screen and (max-width:480px){ 
+	.referral-section-box {
+		.btn-lg {
+			width: 100%;
+		}
+	}		
+}

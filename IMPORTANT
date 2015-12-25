@@ -1,0 +1,5 @@
+Files inside the main folder will be loaded {pipeline.js}
+While Grunt tasks(less.js) boostrap css is added to main folder
+One can use the same thing.
+
+Files inside the dependencies and vendor folder will be loaded {pipeline.js}

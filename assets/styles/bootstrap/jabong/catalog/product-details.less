@@ -1,0 +1,372 @@
+@import "../../less/variables.less";
+
+.product-tile {
+	margin-bottom: 20px;
+	transition: width 0.5s ease;
+
+	figure {
+		position: relative;
+		background: @navbar-default-bg;
+		overflow: hidden;
+	}
+	.primary-image {
+		min-height: 177px;
+	}
+	.styletip {
+		position: absolute;
+		top: 40px;
+		left: 40px;
+		width: 245px;
+
+		p {
+			font-size: 14px;
+			line-height: 20px;
+			text-transform: none;
+			margin: 11px 0 24px
+		}
+	}
+
+	.align-bottom {
+		position: absolute;
+		bottom: 11px;
+		right: 11px;
+	}
+	a {
+		display: block;
+		color: #303030;
+		&:hover .price {
+			border-bottom: 1px solid @gray-lighter;
+		}
+	}
+}
+
+.product-tile.style-tip {
+	a {
+		&:hover {
+			.quick-options {
+				display: none;
+			}
+		}
+	}
+	&:hover {
+		.quick-options {
+			display: none;
+		}
+	}
+}
+.dual-product {
+	figure {
+		text-align: center;
+
+		img {
+			width: auto !important;
+		}
+	}
+}
+.style-tip {
+	figure {
+		text-align: right;
+		img {
+			height: 453px;
+		}
+	}
+	.product-info, 
+	.wishlist, 
+	.quick-options {
+		display: none;
+	}
+	a {
+	  height: auto !important;
+	}
+}
+.wishlist {
+	width: 30px;
+	height: 20px;
+	position: absolute;
+	top: 15px;
+	right: 0;
+	z-index: 1;
+	.tool-tip {
+		position: absolute;
+		top: -5px;
+		text-align: center;
+		background-color: #434343;
+		color: #fff;
+		left: -93px;
+		padding: 5px;
+		text-transform: none;
+		font-size: 12px;
+		display: none;
+		&:after {
+			display: block;
+			content: " ";
+			position: absolute;
+			width: 5px;
+			height: 9px;
+			top: 8px;
+			left: 80px;
+			background: url(../images/common-sprite.png) no-repeat -49px -12px;
+		}
+	}
+}
+.wishlist-black-icon {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+}
+.quick-options {
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	z-index: 1;
+	background:transparent;
+	background: rgba(255, 255, 255, 0.97);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B3ffffff, endColorstr=#B3ffffff)"; /*http://css-tricks.com/rgba-browser-support/*/
+    zoom: 1;
+	opacity: 0;
+	bottom: 0;
+	overflow: hidden;
+	text-align: center;
+	/*z-index: 2;*/
+
+	.quick-view {
+		width: 100%;
+		height: 100%;
+		color: @gray-base;
+		cursor: pointer;
+		padding-top: 19px;
+		vertical-align: top;
+	}
+	p {
+		font-family: "dinnextprobold";
+		font-size: 14px;
+		text-transform: capitalize;
+	}
+}
+.product-tile .product-info {
+	color: #303030;
+	font-size: 12px;
+	padding: 10px 0 2px; 
+	text-transform: uppercase;
+
+	.h4 {
+		margin: 0;
+		font-family: "dinnextprolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		span {
+			text-transform: capitalize;
+		}
+	}
+
+	>a > p {
+		font-size: 12px;
+		margin-bottom: 4px;
+	}
+
+	.offer {
+		border: @gray-dark 1px solid;
+		color: @gray-dark;
+		display: inline-block;
+		padding: 3px 5px 1px 5px;
+		margin-bottom: 8px;
+		font-size: 10px;
+		font-family: "dinnextprolight";
+	}
+
+	.price {
+		font-size: 14px;
+		margin-bottom: 4px;
+		font-family: "dinnextprolight";
+		.standard-price {
+			font-weight: bold;
+		}
+	}
+	.standard-price,
+	.prev-price,
+	.discount {
+		display: inline-block;
+	}
+	.prev-price {
+		color: #999;
+		padding-right: 15px;
+		text-decoration: line-through;
+		font-weight: bold;
+
+		.standard-price {
+			text-decoration: line-through;
+		}
+	}
+	.product-price {
+		font-family: dinnextprobold;
+	}
+	.discount {
+		color: #e42c42;
+		margin-left: 13px;
+	}
+	.color {
+		margin-bottom: 2px;
+
+		.more {
+			font-size: 12px;
+			color: @input-color-placeholder;
+			font-family: "dinnextprolight";
+		}
+	}
+	.available {
+		color: @gray-dark;
+		display: none;
+		margin-bottom: 3px;
+		font-family: "dinnextprolight";
+
+		span {
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			margin-left: 4%;
+		}
+
+		.palettecolor {
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			margin-left: 2%;
+			background-color: @body-bg;
+			border: 1px solid @body-bg;
+			padding: 2px 2px 0 2px;
+			line-height: 9px;
+			&:hover {
+				border: 1px solid @text-color;
+			}
+			&.active {
+				border: 1px solid @text-color;	
+			}
+		}
+		span, 
+		.palettecolor {
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+			-khtml-border-radius: 10px;
+		}
+
+		span:first-child,
+		div:first-child {
+			margin-left: 0;
+		}
+		div:first-child,
+		div:last-child {
+			text-transform: uppercase;
+			vertical-align: top;
+			margin-top: 1px;
+			font-size: 12px;
+			display: inline-block;
+		}
+		div:last-child {
+			float: right;
+			color: #ccc;
+			margin-right: 0;
+		}
+	}
+
+	.size {
+		display: none;
+		font-size: 12px;
+		line-height: 16px;
+
+		.avail-size, 
+		.color-avail-size {
+			span {
+				color: @input-color-placeholder;
+				display: inline-block;
+				margin-right: 6px;
+				font-family: "dinnextprolight";
+				&.not-aval {
+					color: #ccc;
+					display: inline-block;
+					margin-right: 6px;
+					&:hover {
+						color: #ccc;
+					}
+				}
+				&:first-child {
+					text-transform: uppercase;
+					color: #6e6e6e;
+				}
+				&:hover {
+					color: @gray-dark;
+				}
+			}
+		}
+		.color-avail-size {
+			display: none;
+		}
+	}
+}
+
+.no-touch .product-tile a {
+	&:hover {
+		.more {
+			display: none;
+		}
+		.available,
+		.size {
+			display: block;
+		}
+		.quick-options {
+			opacity: 0.9;
+			transition: opacity .5s ease;
+		    -moz-transition: opacity .5s ease;
+		    -webkit-transition: opacity .5s ease;
+		    -o-transition: opacity .5s ease;
+		}
+	}
+}
+@media (max-width: 1023px) {
+	.product-tile a:hover .price {
+			border-bottom: none;
+		}
+}
+@media (max-width: 767px) {
+	.catalog-product {
+		.product-info {
+			.price {
+				font-size: 14px;
+			}
+
+			.discount {
+				font-size: 12px;
+				margin-left: 9px;
+			}
+
+			.prev-price {
+				padding-right: 8px;
+			}
+		}
+	}
+}
+@media (max-width: 1023px) {
+	.product-tile {
+		.align-bottom {
+			top: 11px;
+			bottom: inherit;
+		}
+	}
+	.product-info {
+		.offer {
+			padding-right: 6px;
+		}
+	}
+	.wishlist {
+		width: 50px;
+  		height: 50px;
+
+  		.wishlist-icon {
+  			position: relative;
+			top: 13px;
+			left: 15px;
+  		}
+  		.tool-tip {
+  			display: none !important;
+  		}
+	}
+}

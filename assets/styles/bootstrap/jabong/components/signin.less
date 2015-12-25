@@ -1,0 +1,676 @@
+@import "../components/cart-header.less";
+@import "../components/cart-footer.less";
+@import "../../less/variables.less";
+
+
+/* signin css starts here */
+.signin-modal .modal-dialog{
+	width: 835px;
+}
+.signup-nltr-modal .modal-dialog{
+	width: 835px;
+	.form-group.radio-input {
+	  float: left;
+	  width: 50%;
+	}
+}
+.signup-nltr-modal {
+	.jabong-scrollbar .viewport {
+		height: 550px;
+		overflow: hidden;
+	}
+}
+.modal-content.row{
+	margin-right: 0;
+	margin-left: 0;
+}
+.server-side-error {
+	border-color: transparent;
+	background-color: transparent;
+	.error-message:after,
+	.success-message:after {
+		background-position: 20px 20px;
+		cursor: auto;
+	}
+}
+.noview {
+	.signin-page {
+		width: 70%;
+		margin: 0 auto;
+		border: 0;
+	}
+	.signup-modal {
+		width: 70%;
+		margin: 0 auto;
+		border: 0;
+	}
+}
+.signup-modal-head {
+	text-align: center;
+	border-bottom: 0;
+	padding-bottom: 5px;
+	h4{
+		text-transform: uppercase;
+		color:@gray-base;
+	}
+	div{
+		.rupee{
+			color:#f37142;
+		}
+	}
+	.resend-email{
+		span{
+			display: inline-block;
+			color:@jabong-blue;
+			padding: 0 48px 15px;
+			margin-bottom: 20px;
+			font-size: @font-size-base;
+			border-bottom: 1px solid @gray-lighter;
+		}
+		p{
+			margin-bottom: 5px;
+		}
+		a{
+			display: block;
+		}
+
+	}
+	a{
+		margin-left: 5px;
+	}
+	div{
+		font-size: 14px;
+	}
+}
+.signup-modal-body{
+	position: relative;
+    padding: 0;
+    iframe {
+    	border: 0;
+    }
+	.signup-other{
+		float: right;
+		&.top-38{
+			margin-top: 28px;
+		}
+		&.top-120{
+			margin-top: 120px;
+		}
+		a{
+			display: block;
+			color:@body-bg;
+			padding: 0 ;
+			font-size: @font-size-medium;
+			font-family: dinnextproregular;
+			margin:0 0 20px 40px;
+			padding: 8px 20px 3px 20px;
+			width: 298px;
+			small{
+				display: inline-block;
+				height: 32px;
+				width: 26px;
+				.common-sprite(0 0);
+			}
+			&.signup-g{
+				background: #dc4b38;
+				height: 50px;
+				padding: 0;
+				small{
+					background-position:-220px -167px;
+				}
+				&:hover{
+					background: #de5e46;
+				}
+			}
+			&.signup-fb{
+				background: #48629b;
+				height: 50px;
+				padding: 0;
+				margin-bottom: 0;
+				small{
+					background-position:-274px -167px;
+				}
+				&:hover{
+					background: #596da2;
+				}
+			}
+			span{
+				vertical-align: top;
+				margin: 5px 0 0 25px;
+				display: inline-block;
+			}
+		}
+	}
+	.signup-seperator{
+		position: absolute;
+		left: 50%;
+		background-color: #fff;
+		top: 50%;
+		z-index: 1;
+		padding: 7px;
+		margin: -28px 0 0 -16px;
+	}
+	.signup-form{
+		text-align: center;
+		border-right: 1px solid @well-border;
+		padding: 0 50px 0px 20px;
+		margin-bottom: 20px;
+		input{
+			font-size: @font-size-base;
+			color:@gray-dark;
+			margin-bottom: 10px;
+		}
+		.forgot-password{
+			font-size: 12px;
+			float: right;
+			margin: -8px 0 20px 0;
+		}
+		h5{
+			color:@gray-base;
+			text-transform: uppercase;
+		}
+		p{
+			padding: 0 20px;
+			line-height: 17px;
+			margin-bottom: 18px;
+		}
+		button{
+			height: 50px;
+			text-transform: uppercase;
+			&>{
+				width: 100%;
+			}
+		}
+		.signup-buttons{
+			.btn-primary{
+				width: 67%;
+				float: left;
+			}
+			.btn-primary.gray-bg-btn{
+				width: 30%;
+				float: right;
+			}
+		}
+		.signup-radio{
+			text-transform: uppercase;
+			text-align: left;
+			.iradio_minimal{
+				margin-top: -3px;
+			}
+			span{
+				margin: 0 30px 0 10px;
+				padding-top: 4px;
+				display: inline-block;
+			}
+			div.custom-checkbox, 
+			div.custom-radio {
+				vertical-align: top;
+				width: 32px; 
+			}
+			label {
+				margin-bottom: 0;
+			}
+		}
+		.success{
+			color:@brand-success;
+		}
+	}
+	.retrieve-password {
+		border-right: 1px solid @well-border;
+		padding: 0 50px 20px 20px;
+		display: none;
+		h4 {
+			text-align: center;
+			font-family: dinnextproregular;
+		}
+		p {
+			margin: 0 auto 10px;
+			display: block;
+			text-align: center;
+		}
+		.password-reset {
+			width: 70%;
+			margin-right: 2%;
+		}
+		.cancel {
+			width: 28%;
+			padding: 0px; 
+		}
+		iframe {
+			border:0;
+		}
+	}
+}
+.email-validation{
+	padding: 15px 30px;
+	border-top:1px solid @gray-lighter;
+	background-color: @gray-lighter2;
+	h5{
+		text-transform: uppercase;
+		color: @gray-base;
+	}
+	ul{
+		padding: 0;
+		margin:0 15px;
+		li{
+			margin-bottom: 10px;
+			line-height: 20px;
+			font-size: @font-size-small;
+		}
+	}
+}
+.track-order-popup {
+	p {
+		font-size: 14px;
+	}
+	p:last-child {
+		text-transform: none;
+		a {
+			text-transform: none;
+		}
+	}
+}
+.with-newsltr{
+	.signup-modal-head{
+		padding-bottom: 10px;
+		&.modal-header{
+			.close{
+				right: -32px;
+			}
+		}
+		h4{
+			margin-bottom: 2px;
+		}
+		p{
+			margin-bottom: 15px;
+		}
+		.activate-acnt{
+			margin-bottom: 0;
+			padding: 20px 15px 0px;
+		}
+	}
+	.signup-modal-body{
+		.signup-form{
+			padding:0 0 20px 5px;
+			border-right:0;
+		}
+		.additional-discount{
+			text-align: left;
+			padding: 0;
+			margin-top: -15px;
+			font-size: 10px;
+			text-transform: uppercase;
+			font-family: Arial;
+		}
+		.voucher-details{
+			font-size: @font-size-small;
+			padding: 20px 0 0;
+		}
+	}
+	.signup-other{
+		float: none;
+		text-align: left;
+		margin-top: 30px;
+		padding-top: 30px;
+		border-top: 1px solid #ebebeb;
+		position: relative;
+		a{
+			margin: 0 32px 0 0;
+			display: inline-block;
+			&.signup-fb{
+				float: right;
+				margin-right: 0;
+			}
+		}
+		.nltr-separator{
+			position: absolute;
+			top: -9px;
+			text-transform: uppercase;
+			left: 50%;
+			background: #fff;
+			padding: 0 12px;
+			margin-left: -70px;
+			color: @gray-base;
+		}
+	}
+}
+@media screen and (max-width: 767px){
+	.signup-other.col-xs-12{
+			float: none;
+
+			a{
+				width: auto;
+			}
+		}
+	.signup-modal-head{
+		.close{
+			display: none;
+		}
+	}
+	.signup-modal-body{
+		.signup-other{
+			&.top-120{
+				margin-top: 0;
+			}
+			&.top-38{
+				margin-top: 0;
+			}
+			a{
+				margin-left: 0;
+			}
+		}
+		.signup-form{
+			border-right:0;
+			padding: 60px 0 20px;
+			border-top:1px solid @well-border;
+			input{
+				width:100%;
+			}
+			button{
+				width:100%;
+			}
+			.signup-radio{
+				text-transform: uppercase;
+			}
+		}
+		.signup-seperator{
+			top:110px;
+			left:50%;
+		}
+	}
+	.modal-content{
+		border:none;
+	}
+}
+.signup-modal-body {
+  overflow: hidden;
+  .signup-other {
+	padding: 0;
+	.signup-g, .signup-fb {
+	  width: 286!important;
+	  padding: 10px!important;
+	}
+  }
+}
+
+
+/* signin css ends here */
+
+
+// Congrats popup css
+.congrats-modal{
+	.congrats-close	{
+		background: url('../images/common-sprite.png') no-repeat;
+		height: 30px;
+		width: 30px;
+		background-position: -50px -203px;
+		display: inline-block;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		z-index: 1;
+	}
+	.modal-dialog {
+		width: 443px;
+	}
+	.modal-header {
+		padding-bottom: 0;
+	}
+	.voucher-text {
+		font-size: 12px;
+		text-align: center;
+		span {
+			color: #f37142;
+		}
+	}
+	.get-add-txt {
+		font-size: 10px;
+	}
+	.activate-acc {
+		text-align: center;
+		margin: 10px 0;
+	}
+	.congrats {
+		width: 100%;
+		margin: 15px 0 20px;
+	}
+	.contact-num {
+		margin-top: 20px;
+		margin-bottom: 5px;
+	}
+}
+.congrats-modal,
+.signup-nltr-modal{
+	top:96px;
+	.modal-backdrop	{
+		top:100px;
+	}
+	&.modal {
+		.modal-header {
+			.close{
+				display: block;
+				&:focus{
+					outline:none;
+				}
+			}
+
+		}
+	}
+	.modal-content	{
+		background-color:rgba(255, 255, 255, 1);
+	}
+	.modal-content .modal-body {
+		padding: 15px 50px;
+		min-height: 275px;
+	}
+	.modal-clse-icon{
+		text-indent: -10000px;
+		display: none;
+	}
+}
+@media (min-width: 760px) and (max-width: 768px){
+	.signup-nltr-modal .modal-dialog {
+	    width: 100%;
+        padding: 0 30px;
+	}
+
+	.congrats-modal .modal-content .modal-body, 
+	.signup-nltr-modal .modal-content .modal-body {
+		padding: 15px;
+	}
+	.signup-modal-body .signup-other a {
+		width: 278px;
+	}
+
+}
+@media (min-width: 420px) and (max-width: 767px){
+	.congrats-modal .modal-dialog,
+	.signup-nltr-modal .modal-dialog {
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 767px){
+	.congrats-modal .modal-dialog,
+	.signup-nltr-modal .modal-dialog{
+		width: 100%;
+		margin: 10px auto;
+	}
+	.modal-backdrop	{
+		background:none;
+		background-size:inherit;
+	}
+	.congrats-modal .modal-content .modal-body,
+	.signup-nltr-modal .modal-content .modal-body {
+		padding: 15px 10px;
+	}
+	.congrats-modal,
+	.signup-nltr-modal {
+		.modal-backdrop	{
+			background: #fff !important;
+			background-size: inherit;
+		}
+	}
+}
+
+.special-modal{
+	.modal-backdrop	{
+		background: url('//static.jabong.com/cms/new-site/pop-bg.jpg') no-repeat !important;
+		background-size:100% !important;
+	}
+	.modal-content{
+		background-color: #fff;
+	}
+}
+
+
+/*==== VERIFY MOBILE START ===== */
+.verify-mobile.modal-content{
+    /*width: 363px;*/
+    padding: 0 70px;
+    font-size: 16px;
+    color: @gray-base;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	left: 0;
+	right: 0;
+	  h4{
+	    font-size: 20px;
+	    margin-bottom: 14px;
+    	font-weight: normal;
+	  }
+	  p{
+	    font-family: dinnextproregular;
+	    color:@gray-dark;
+	  }
+    .modal-body{
+	    padding: 25px 0;
+	  }
+	  .resendCode {
+			display: inline-block;
+			margin: 30px 0 0;
+	  }
+	  h5{
+	    font-size: 18px;
+	    margin-top: 10px;
+	  }
+	  .form-control{
+	    width: 65.02%;
+	    height: 50px;
+	    display: inline-block;
+	    text-transform: uppercase;
+	  }
+	  .btn{
+	    width: 34.98%;
+	    font-size: 13px;
+	    padding: 5px 0 0;
+	  }
+	  .black{
+    	color: @gray-base;
+	  }
+  }
+#signin .signin-page {
+    width: 100%;
+}
+@media (max-width: 1023px) {
+	.congrats-modal,
+	.signup-nltr-modal{
+		top:60px;
+		.modal-backdrop	{
+			top:60px;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.congrats-modal,
+	.signup-nltr-modal{
+		.modal-backdrop	{
+			background: url('//static.jabong.com/cms/new-site/pop-bg.jpg') no-repeat center 100px fixed;
+			background-size:100%;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			opacity: 1 !important;
+		}
+	}
+	.signup-modal-body .signup-other {
+		position: absolute;
+		top: 50%;
+		height: 120px;
+		margin-top: -80px;
+		right: 0;
+	}
+	.line-break{
+		display: block;
+	}
+}
+@media screen and (max-width: 768px) {
+	.noview .signin-page,
+	.noview .signup-modal {
+		width: 65%;
+		margin: 0 auto; 
+	}
+	.noview {
+		.signup-modal-head {
+			margin-top: 20px;
+		}
+		.signup-modal-body {
+			margin-bottom: 20px;
+			.retrieve-password {
+			    border-right: 0;
+			    padding: 50px 0 0;
+			}
+		}
+	}
+	.signup-modal-body .signup-seperator {
+		top: 150px;
+		margin: 0 0 0 -15px;
+	}
+	.signup-modal-body .signup-form {
+		left: 0;
+		margin: 0 auto;
+		right: 0;
+		text-align: center;
+	}
+}
+@media (max-width: 479px) {
+	.noview .signin-page,
+	.noview .signup-modal {
+		width: 85%;
+	}
+	.verify-mobile.modal-content{
+	    width: 100%;
+    	.modal-body{
+    		width: 94%;
+    		margin:0 auto;
+    	}
+	}
+	.signup-modal-body .retrieve-password {
+		.password-reset, .cancel{
+			width: 100%;
+			margin: 0 0 10px;
+		}
+	}
+	.verify-mobile.modal-content{
+		padding: 0;
+	}
+}
+
+#signup{
+  top: 0;
+  z-index: 1040;
+  .modal-backdrop{
+	top: 0;
+	background: none !important;
+	opacity: 0.5  !important;
+	background-color: #000 !important;
+  }
+}
+@media (max-width: 380px) {
+	.noview .signin-page,
+	.noview .signup-modal {
+		width: 100%;
+	}
+}
+/*==== VERIFY MOBILE END ===== */

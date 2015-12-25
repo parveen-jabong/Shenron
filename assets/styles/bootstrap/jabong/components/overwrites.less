@@ -1,0 +1,340 @@
+/**
+ * This less file is intended to overwrite default properties for bootstrap styles
+ */
+
+
+/* Modal overrides */
+
+.modal .modal-header .close{
+	display: block;
+}
+
+.modal-content{
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 0;
+	margin:0 auto;
+	.modal-header,
+	.modal-footer{
+		border: none;
+	}
+	.modal-title{
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	.modal-body{
+		padding: 15px 30px;
+	/*	.form-group {
+			input {
+				height: 50px;
+			}
+			label {
+				line-height: 50px;
+			}
+		} */
+	}
+}
+
+/* Modal overrides */
+
+
+/*forms css*/
+
+.form-control{
+	
+	line-height:1.7;
+	font-size: 16px;
+	color:#434343;
+
+}
+
+.modal-dialog.jabong-scrollbar .overview {
+  position: relative;
+}
+
+
+
+/* Modal overrides */
+
+.modal {
+	.close-modal {
+		background-position: -10px -198px;
+		width: 38px;
+		height: 38px;
+		display: block;
+		opacity: 1 !important;
+	}
+}
+
+/** Revert 100% modal UI
+.modal .close{
+  margin-top: -2px;
+  background: none;
+  background-color: transparent;
+  border: 0;
+  float: right;
+  font-size: 50px;
+  position: absolute;
+  right: 0px;
+  color: #ccc;
+  top: 5px;
+  font-family: initial;
+} **/
+
+.modal .close{
+  background-color: transparent;
+  border: 0;
+  font-size: 0;
+  position: absolute;
+  right: 8px;
+  top: 0;
+  width: 43px;
+  height: 39px;
+  background-position: -10px -198px;
+  outline: none;
+}
+
+.modal-backdrop.in{
+  background-color: #000 !important;
+  opacity: 0.8;
+}
+
+.modal-content{
+  background-color: #fff;
+  border-color: #fff !important;
+}
+
+/** Signup and Signin modal style **/
+
+.signup-nltr-modal{
+  z-index: 1;
+  /*.modal-backdrop{
+    opacity: 1;
+  }*/
+  &.modal .close{
+    top: 8px;
+  }
+  .modal-content{
+    border: 0;
+  }
+}
+.alert {
+  border-radius: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+}
+.success-message:before, 
+.error-message:before, 
+.notification-message:before, 
+.warning-message:before,
+.success-message:after,
+.error-message:after{
+    width: 21px;
+    content: " ";
+    background: url(../images/common-sprite.png) 10px 10px;
+    display: inline-block;
+    height: 20px;
+    margin-bottom: -5px;
+    margin-right: 7px;    
+}
+.success-message:before {
+   background-position: -286px -303px
+}
+.error-message:before {
+   background-position: -356px -303px;
+}
+.notification-message:before {
+   background-position: -335px -303px;
+}
+.warning-message:before {
+   background-position: -310px -303px;
+}
+.success-message:after,
+.error-message:after {
+  float: right;
+  background-position: -288px -88px;
+  cursor: pointer;
+}
+.alert{
+  position: relative;
+}
+
+/** Global loader overwrites */
+
+body.processing .global-ajax-loader{
+  background-position: 15px 15px;
+  height: 70px;
+  width: 70px;
+  border-radius: 5px;
+}
+
+/** Hiding login link from checkout and signin/signup page */
+
+.no-view, .checkout {
+  #headerLogin{
+    display: none;
+  }
+}
+
+.cart .modal-header.signup-modal-head{
+    padding-bottom: 20px !important;
+}
+
+/*Intertitial*/
+.interstitial {
+  text-align: center;
+  position: absolute;
+  background: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  height: 150%;
+}
+.close-interstitial {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+.close-interstitial span {
+  background-position: -10px -198px;
+  width: 38px;
+  height: 38px;
+  display: block;
+  opacity: 1!important;
+}
+.fashion-exp {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-top: 15px;
+}
+.interstitial-inner {
+  max-width: 500px;
+  padding: 30px 0;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow-y: auto;
+}
+.download-our-app {
+  font-size: 20px;
+  font-weight: bold;
+  color: #999;
+}
+.jabong-app-img {
+  margin: 10px auto;
+}
+
+.jabong-app-img img {
+  width: 100%;
+  max-width: 450px;
+}
+.jabong-app-info {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+.jabong-app-info img {
+  margin-left: 15px;
+}
+.open-app {
+  margin-top: 40px;
+  line-height: 52px;
+}
+.interstitial-wrap {
+  overflow: hidden;
+}
+
+.close-interstitial-btn{
+  padding: 10px 0;
+  display: block;
+  color: #000;
+  text-transform: none;
+  font-size: 15px;
+}
+
+
+/*Intertitial*/
+.interstitial {
+  text-align: center;
+  position: absolute;
+  background: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  height: 150%;
+}
+.close-interstitial {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+.close-interstitial span {
+  background-position: -10px -198px;
+  width: 38px;
+  height: 38px;
+  display: block;
+  opacity: 1!important;
+}
+.fashion-exp {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-top: 15px;
+}
+.interstitial-inner {
+  max-width: 500px;
+  padding: 30px 0;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow-y: auto;
+}
+.download-our-app {
+  font-size: 20px;
+  font-weight: bold;
+  color: #999;
+}
+.jabong-app-img {
+  margin: 10px auto;
+}
+
+.jabong-app-img img {
+  width: 100%;
+  max-width: 450px;
+}
+.jabong-app-info {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+.jabong-app-info img {
+  margin-left: 15px;
+}
+.open-app {
+  margin-top: 40px;
+  line-height: 52px;
+}
+.interstitial-wrap {
+  overflow: hidden;
+}
+.close-interstitial-btn{
+  padding: 10px 0;
+  display: block;
+  color: #000;
+  text-transform: none;
+  font-size: 15px;
+}
+
+
+
+

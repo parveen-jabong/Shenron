@@ -1,0 +1,156 @@
+@import "shop-the-look-v2.less";
+@import "shop-the-collection.less";
+@import "personalise-product.less";
+@import "sold-out.less";
+@import "../components/tabs.less";
+@import "../components/carousel.less";
+@import "recommendations.less";
+@import "../../less/variables.less";
+@import "pdp.less";
+@import "../catalog/product-details.less";
+@import "freebie.less";
+
+.pdp2 #main{
+	opacity: 0; 
+}
+
+/*pdp2 changes */
+.similar-products h2 {
+	font-size: 18px;
+	color: @gray-base;
+	margin-bottom: 15px;
+	text-align: center;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #ddd;
+}
+.similar-look {
+	border-left: 1px solid #ddd;
+	padding: 0;
+	padding-bottom: 30px;
+	.slick-slide img {
+	  width: 100%;
+	}
+	.slick-prev, .slick-next {
+		top: inherit;
+		bottom: 5px;
+	}
+	.slick-prev, .slick-next {
+		width: 9px;
+		height: 14px;
+		bottom: 6px;
+	}
+	.slick-prev, .slick-prev:hover {
+		left: 40%;
+		background-position: -139px -79px;		
+	}
+	.slick-next, .slick-next:hover {
+		right: 40%;
+		background-position: -149px -79px;	
+	}
+	ul.slick-dots {
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		color: @gray-base;
+		font-size: 16px;
+	}
+	> div {
+		padding: 0 0 20px 0;
+		margin: 0 2% 15px;
+	}
+	h2 {
+		padding-left: 4%;
+	}
+}
+.content-product {
+	border-bottom: 1px solid @gray-lighter;
+	.content-heading{
+		font-size: 18px;
+		margin-top: 20px;
+		font-family: dinnextprobold;
+		color: @gray-base;
+		margin-bottom: 8px;
+		text-transform: uppercase;
+	}
+	.report-inaccurate {
+		font-family: dinnextproregular;
+		a {
+			text-transform: inherit;
+		}
+	}
+}
+.product-info-care {
+	padding: 0;
+}
+.slide ul {
+	margin: 0;
+	padding: 0;
+
+	li {
+		float: left;
+		width: 50%;
+		margin-bottom: 10px;
+		padding: 2%;
+		position: relative;
+
+		p {
+			padding-top: 10px;
+			overflow: hidden;
+			font-size: 12px;
+			margin: 0;
+			text-transform: uppercase;
+			color: @gray-dark;
+			height: 44px;
+			span {
+				text-transform: none;
+			}
+		}
+		.quick-view {
+			position: absolute;
+			left: 0;
+			display: none;
+			text-align: center;
+			padding: 10px 0;
+			bottom: 70px;
+			right: 0;
+			background-color: rgba(255, 255, 255, 0.9);
+		}
+		.prev-price {
+			color: #999;
+			text-decoration: line-through;
+			font-family: dinnextproregular;
+			padding-right: 6px;
+		}
+		.price {
+			color: @gray-base;
+			font-family: dinnextprobold;
+			.discount {
+				color: #e42c42;
+				padding-left: 4px;
+			}
+		}
+	}
+}
+.slick-prev {
+	left: 8px;
+}
+.slick-next {
+	right: 10px;
+}
+@media only screen and (width: 1024px) {
+	.similar-look {
+		.slick-prev {
+			left: 37%;
+		}
+		.slick-next {
+			right: 37%;
+		}
+		h2 {
+			padding-left: 10px;
+		}
+		> div {
+			padding-top: 15px;
+		}
+	}
+}
+

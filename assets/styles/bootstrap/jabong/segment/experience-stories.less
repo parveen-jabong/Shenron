@@ -1,0 +1,141 @@
+.widget-type-col-5 {
+	margin-top: 35px;
+	margin-bottom: 30px;
+}
+.experience-story{
+	padding: 0;
+}
+.exp-story-left {
+	padding-left: 0;
+	padding-right: 15px;
+	>div{
+		padding: 0;
+	}
+}
+.experience-stories-block {
+	position: relative;
+	img {
+		width: 100%;
+	}
+	.experience-content {
+		padding: 30px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		h3 {
+			font-family: dinnextprobold;
+			font-size: @font-size-h3;
+			text-transform: uppercase;
+			margin-top: 0;
+		}
+		p {
+			padding-top: 20px;
+		}		
+	}
+	.borderline {
+		width: 50px;
+		height: 2px;
+		display: inline-block;
+		border-bottom: 2px @gray-base solid;
+	}
+	figcaption , .story-heading{
+			position: absolute;
+			bottom: 54px;
+			left: 20px;
+			background: @no-gray;
+			color: @gray-base;
+			font-size: @font-size-large;
+			text-transform: uppercase;
+			height: 34px;
+			line-height: 36px;
+			padding: 0 15px;
+		}
+		.story-heading {
+			bottom: 20px;
+		}
+		&:first-child {
+			padding-right: 15px;
+		}
+		&:nth-child(2) {
+			padding-left: 15px;
+			padding-bottom: 15px;
+		}
+		&:nth-child(3) {
+			padding-right: 15px;
+			padding-top: 15px;
+		}
+		&:nth-child(4) {
+			padding-left: 15px;
+			padding-top: 15px;
+		}
+}
+.exp-story-right{
+	padding-right: 0;
+	>div{
+		padding: 0 0 0 15px!important;
+	}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	.widget-type-col-5 {
+			margin: 30px 0 15px;
+			padding: 0;
+		}
+	.experience-stories-block {
+		.experience-content{
+			padding: 20px 36px 20px 20px;
+			h3 {
+				margin: 0;
+				font-size: 22px;
+			}
+			p {
+				padding-top: 5px;
+			  	overflow: hidden;
+			  	display: -webkit-box;
+			  	line-clamp: 3;
+			  	box-orient: vertical;
+			  -webkit-line-clamp: 3;
+			  -webkit-box-orient: vertical;
+			  -moz-line-clamp: 3;
+			  -moz-box-orient: vertical;
+			  height: 65px;
+			}
+		}
+		figcaption , .story-heading {
+			font-size: @font-size-large;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.widget-type-col-5 {
+		margin: 30px 0 15px;
+	}
+	.exp-story-left {
+		padding-right: 0;
+	}
+	.exp-story-right > div {
+		padding: 0!important;
+	}
+	.experience-stories-block {
+		.experience-content{
+			padding: 15px 30px 15px 15px;
+			h3 {
+				margin: 0;
+			}
+			p {
+				padding-top: 10px;
+			}
+		}
+		figcaption , .story-heading {
+			font-size: @font-size-large;
+		}
+	}
+	.experience-stories-block {
+	&:first-child {
+		margin-bottom:15px;
+	}
+		&:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+			padding: 0 0 15px;		
+		}
+	}
+}

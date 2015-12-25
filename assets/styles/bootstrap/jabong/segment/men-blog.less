@@ -1,0 +1,57 @@
+.men-blog{
+	padding:50px 0;
+	position: relative;
+	overflow: hidden;
+	.men-blog-img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 25%;
+		img {
+			width: 100%;
+		}
+	}	
+	.clearfix{
+		h2{
+			text-transform: uppercase;
+			margin-bottom: 30px;
+			margin-top: 0;
+			width: auto;
+			float: left;
+			font-size: @font-size-h3;
+		}
+		button{
+			float: right;
+			margin-right: 15px;
+		}
+	}
+	figure{
+		background: @body-bg;
+		font-size: @font-size-base;
+		border: 1px solid @gray-lighter;
+		img{
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		date{
+			margin: 20px;
+		}
+		figcaption{
+			text-transform: uppercase;
+  			color: #434343;
+  			padding: 10px 20px 3px 20px;
+  			font-family: dinnextprobold;
+  			line-height: 15px;
+		}
+		p{
+			padding: 0 20px 20px 20px;
+  			line-height: 15px;
+  			margin-bottom: 0;
+		}
+	}
+}
+@media (min-width:768px) and (max-width: 1023px){ 
+	.fashion-news-block {
+		padding: 0;
+	}
+}

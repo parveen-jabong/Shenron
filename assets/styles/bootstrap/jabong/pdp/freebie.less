@@ -1,0 +1,87 @@
+.freebie-popup {
+	position: relative;
+	z-index: 5;
+
+	.slick-dots {
+		bottom: -143px;
+	}
+	.freebie-carousel {
+		padding-top: 120px;
+	}
+	.freebie-content {
+		text-transform: uppercase;
+		.actual-price {
+			margin-left: 0;
+		}
+		p {
+			margin-bottom: 0;
+		}
+		.detail {
+			margin-bottom: 10px;
+		}
+		.freebie-title {
+			font-size: 14px;
+		}
+		.freebie-price {
+			font-size: 20px;
+			color: #000;
+			margin-bottom: 21px;
+			font-weight: bold;
+
+			&:before {
+				content: " R ";
+				padding: 0;
+				font-family: 'rupee';
+			}
+		}
+		.pincode{
+			margin-bottom: 10px;
+			
+			span {
+				color: #4a87ae;
+				font-size: 10px;
+			}
+		} 
+
+		.freebie-product {
+			border-top: 1px solid #ddd;
+			padding: 45px 0;
+			font-size: 14px;
+			color: #ccc;
+			a {
+				color: #6e6e6e;
+			}
+			span.title:before {
+				content: " + ";
+				font-family: sans-serif;
+				font-size: 14px;
+			}
+		}
+		.freebie-delivery {
+			font-size: 12px;
+		}
+	}
+}
+@media only screen and (max-width: 768px) { 
+	.freebie-content {
+		width: 300px;
+		margin: auto;
+		padding-top: 0 !important;
+		padding-bottom: 20px;
+	}
+	.freebie-popup  {
+		.slick-dots {
+			bottom: -10px;
+		}
+		.freebie-carousel {
+			padding-top: 71px;
+		}
+	}
+}
+.popover-title {
+	background: none;
+	font-size: 18px;
+	border: none;
+	text-transform: uppercase;
+	color: #000;
+}

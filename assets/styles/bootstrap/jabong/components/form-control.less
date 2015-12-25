@@ -1,0 +1,356 @@
+@import './input.less';
+
+.wrapper{
+	width:70%;
+	margin:0 auto;
+}
+/*-----shop the look button css start here------*/
+/*
+.btn-sbl {
+  background-color: #f37142;
+  color: #FFF;
+  display: inline-block;
+  padding: 10px 15px 5px 15px;
+  font-size: 14px;
+  text-align:center;
+  line-height:1.1;
+
+  &:hover{
+  	text-decoration: none;
+	background:#db6034;
+	color:#FFF;
+  }
+  span{
+  	display:block;
+  	font-size:10px
+  }
+}*/
+
+
+/*---action button play movie css star here----*/
+
+.action-btn{
+	background:none;
+	border:0;
+	outline:none;
+	font-size:14px;
+	color:#b6b6b6;
+
+	&:hover{
+		color:#4c4c4c;
+	}
+
+	span{
+		width:26px;
+		height:26px;
+		display:block;
+		margin:0 auto 3px;
+
+	}
+}
+.play-video{
+	span{
+		background-position:-105px -56px;
+	}
+	&:hover{
+		span{
+			background-position:-78px -56px;
+		}
+	}
+}
+.view-360{
+	span{
+		background-position:-43px -82px;
+	}
+	&:hover{
+		span{
+			background-position:-17px -82px;
+		}
+	}
+}
+
+/*---save for later button css star here----*/
+
+.sfl-btn{
+	background:none;
+	border:0;
+	outline:none;
+	font-size:11px;
+	color:#000;
+	line-height:1.5;
+
+	span{
+		width:15px;
+		height:13px;
+		display:inline-block;
+		margin-right:9px;
+		float:left;
+		background-position:-136px -16px;
+
+	}
+	&:hover{
+		span{
+			background-position:-136px -31px;
+		}
+	}
+
+}
+
+/*---gray button css star here----*/
+
+.gray-bg-btn{
+	background:#e5e5e5!important;
+	border-color:#e5e5e5!important;
+	color:#6f6f6f!important;
+	padding:7px 20px;
+
+}
+.gray-bg-btn:hover{
+	background:#d7d7d7!important;
+	border-color:#d7d7d7!important;
+}
+
+/*---gray button css star here----*/
+
+.orange-bg-btn{
+	background:#f47143!important;
+	border-color:#f47143!important;
+	color:#fff!important;
+	padding:7px 20px;
+
+}
+.orange-bg-btn:hover{
+	background:#da653a!important;
+	border-color:#da653a!important;
+}
+
+/*---search input box css star here----*/
+
+.search-input{
+	height:28px;
+	font-size:11px!important;
+	padding-left:30px;
+	background-color: #fff;
+	background-position:-177px -40px;
+}
+
+.top-search-input{
+	position:relative;
+
+	.form-control{
+		border:1px solid #222;
+		padding-right:40px!important;
+		-webkit-appearance: none;
+		text-transform: capitalize;
+	}
+	.top-search-icon{
+		width:23px;
+		height:18px;
+		position:absolute;
+		right:10px;
+		top:1px;
+		background-position:-5px -62px;
+	}
+
+
+}
+
+
+/*---input box change pincode css star here----*/
+
+.change-Pincode{
+	cursor:pointer;
+	background:#e5e5e5;
+}
+
+/*---custom select box css star here----*/
+.select-box {
+	background: url(../images/select-box-arrow.jpg) no-repeat scroll 93% #fff;
+	border:1px solid #ccc;
+  height: 34px;
+  width: 100%;
+  overflow: hidden;
+	select {
+	  background: transparent;
+		width: 100%;
+		font-size: 14px;
+		text-transform: uppercase;
+		border:0;
+		overflow: hidden;
+		background: transparent;
+		-webkit-appearance: none;
+   }
+   select option {
+	 	padding: 2px 0 2px 14px;
+   }
+}
+
+/*custom dropdown*/
+.jabong-dropdown{
+	position: relative;
+	height: 50px;
+	margin-bottom:30px;
+	&.error{
+		overflow: inherit;
+	}
+	select{
+		width: 100%;
+		height: 50px;
+		opacity: 0;
+		filter: alpha(opacity=0);
+		cursor: pointer;
+	}
+	&.small{
+		height: 36px;
+		select{
+			width: 100%;
+			height: 36px;
+			opacity: 1;
+			filter: alpha(opacity=100);
+		}
+		.custom-select-boxs{
+			display: none;
+		}
+	}
+}
+
+ .select-box{
+ 	width: 100%;
+ 	overflow: hidden;
+ 	border:1px solid #4d4d4d;
+ 	position: relative;
+ 	.down-arrow{
+ 		background-position:-75px 0;
+ 	    height: 6px;
+ 	    position: absolute;
+ 	    right:13px;
+ 	    top: 50%;
+ 	    width: 8px;
+ 	    margin-top:-3px;
+ 	}
+
+ 	select{
+ 		width: 100%;
+ 		font-size: 14px;
+ 		border:0;
+ 		overflow: hidden;
+ 		background: transparent;
+ 		-webkit-appearance: none;
+ 		text-align: left;
+ 		 /* text-align:center;
+ 		 text-align:-moz-center;
+ 		       	text-align:-webkit-center; */
+ 	}
+ 	select option {
+ 		padding: 2px 0 2px 13px;
+ 	}
+ }
+
+/*---custom select with gray background box css star here----*/
+
+.select-box.large{
+	height:52px;
+	background:#f7f7f9;
+	border:0;
+	.form-control{
+		font-size:14px;
+		height:52px;
+
+	}
+}
+
+.large-btn-arrow {
+	background: #fff;
+	padding:23px 22px 22px 22px;
+
+	span {
+		width:9px;
+		height:5px;
+		display:block;
+		background-position:-143px -7px;
+	}
+
+	&:hover {
+		background: #000;
+
+		span {
+			background-position:-143px -1px;
+		}
+	}
+}
+/** Form error handling */
+.form-group, .jabong-dropdown{
+	p.error{
+		display: none;
+	}
+        p.error-invalid-input{
+                position: absolute;
+                top: 55px;
+                width: 79%;
+                text-align: center;
+                background-color: #434343;
+                color: #fff;
+                left: 20px;
+                padding: 5px 5px 3px;
+                z-index: 10;
+                &:before {
+                        display: block;
+                        content: " ";
+                        position: absolute;
+                        width: 10px;
+                        height: 15px;
+                        top: -5px;
+                        left: 44px;
+                        background: url('../images/common-sprite.png') no-repeat -85px -62px;
+                }
+        }
+	&.error{
+		color: #e74c3c;
+		p.error{
+			position: absolute;
+			display: block;
+			top: 55px;
+			width: 79%;
+			text-align: center;
+			background-color: #000;
+			color: #fff;
+			left: 20px;
+			padding: 5px 5px 3px;
+			z-index: 10;
+			&:before {
+				display: block;
+				content: " ";
+				position: absolute;
+				width: 10px;
+				height: 15px;
+				top: -5px;
+				left: 44px;
+				background: url('../images/common-sprite.png') no-repeat -85px -62px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px)  {
+	.btn-lg{
+		padding:18px 32px 13px 32px;
+	}
+}
+
+
+/*--- Change Select Value */
+
+.custom-select-boxs{
+	position: absolute;
+	left: 15px;
+	top: 5px;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: @gray;
+	.change-value{
+		display:  block;
+		font-size: 14px;
+		color: @gray-base;
+		text-transform: capitalize;
+	}
+}

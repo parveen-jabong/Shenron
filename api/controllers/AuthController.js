@@ -26,27 +26,43 @@ var AuthController = BaseController.extend({
         AuthService.findByEmail(requestBody.email, function(err, user){
             var responseObject = new Response();
             if (err || !user) {
-                responseObject.message = err ? err.message : "User Doesn't Exist";
+                responseObject.message.push(err ? err.message : "User Doesn't Exist");
             } else {
                 AuthService.verifyPassword(user, requestBody.password, function(err, user){
                     if (err) {
                         responseObject.message.push(err.message);
                     } else {
-                        responseObject.message.push('OK');
-                        responseObject.success = true;
-                        req.session.authenticated = true;
+                        if (user.checkLoggedInStatus()) {
+                            responseObject.message.push("Already Logged In");
+                        } else {
+                            responseObject.message.push('OK');
+                            responseObject.success = true;
+                            req.session.authenticated = true;
+                        }
                     }
                 });
             }
             res.json(responseObject);
         });
     },
-    getLoginPage : function(req, res){
-        res.render('login');
-    },
     logout : function(req, res){
-        req.session = null;
-        delete req.session;
+        var requestBody = req.body;
+        AuthService.findByEmail(requestBody.email, function(err, user){
+            var responseObject = new Response();
+            if (err || !user) {
+                responseObject.message.push(err ? err.message : "Something Went Wrong");
+            } else {
+                user.setLoggedInStatus(false);
+                responseObject.message.push('OK');
+                responseObject.success = true;
+                req.session = null;
+                delete req.session;
+            }
+            res.json(responseObject);
+        })
+    },
+    getLoginView : function(req, res){
+        res.view('login', { layout: 'layout' } )
     }
 });
 

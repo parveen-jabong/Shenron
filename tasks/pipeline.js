@@ -12,11 +12,8 @@
 var tmpPath = '.tmp/public/';
 
 // CSS files to inject in order
-//
-// (if you're using LESS with the built-in default config, you'll want
-//  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+  'styles/main/*.css'
 ];
 
 
@@ -25,15 +22,12 @@ var cssFilesToInject = [
 var jsFilesToInject = [
 
   // Load sails.io before everything else
-  'image-upload/dependencies/sails.io.js',
+  'js/dependencies/sails.io.js',
 
   // Dependencies like jQuery, or Angular are brought in here
-  'image-upload/dependencies/**/*.js',
+  'js/dependencies/**/*.js',
 
-  // All of the rest of your client-side image-upload files
-  // will be injected here in no particular order.
-  'image-upload/**/*.js',
-
+  'js/vendor/**/*.js',
   // Use the "exclude" operator to ignore files
   // '!image-upload/ignore/these/files/*.image-upload'
 ];

@@ -1,0 +1,148 @@
+.jabong-fashion-week {
+	margin-bottom: 60px;
+	height: 475px;
+	overflow: hidden;
+	.segment-main-slider {
+		overflow: hidden;
+		height: 460px;
+	}
+	.carousel-responsive .slick-slide {
+		padding: 0 10px;
+	}
+	.slick-slider {
+		margin: 0!important;
+	}
+	
+}
+.designer-collection {
+	background-color: #f8f8f8;
+	overflow: hidden;
+	img {
+		width: 100%;
+	}
+	.designer-row {
+		border: 2px @gray-lighter2 solid;
+		position: relative;
+		background-color: @no-gray;
+		min-height: 55px;
+		padding: 30px 0 10px;
+		text-align: center;
+		strong {
+			display: block;
+			font-size: @font-size-medium;
+			color: @gray-base;
+		}
+		span {
+			display: block;
+			font-size: @font-size-base;
+			color: @gray-dark;
+		}
+	}
+	.designer-img {
+		width: 63px;
+		height: 63px;
+		position: absolute;
+		top: -35px;
+		left: 50%;
+		margin-left: -31px;
+		z-index: 2;
+		background-color: #f8f8f8;
+		border-radius: 50%;
+		img {			
+			border: 2px #fff solid;
+			border-radius: 63px;
+			width: 63px;
+			height: 63px;
+		}
+	}
+}
+.jabong-online-fashion-week, .newin-slider {
+	.slick-prev, .slick-next, .slick-prev.slick-disabled, .slick-next.slick-disabled {
+		background-color: @no-gray;
+		top: 40%;
+	}
+}
+.jabong-online-fashion-week {
+	.slick-prev {
+		left: 10px;
+	}
+	.slick-next {
+		right: 8px;
+	}
+}
+
+@media (max-width: 767px) {
+	.top-designers-block {
+		margin: 30px 0 30px!important;
+		padding: 0;
+	}
+	.jabong-slider-block{
+		padding: 0 7px;
+	}
+	.jabong-fashion-week {
+		height: 330px;
+		margin-bottom: 40px;
+		padding: 0;
+		h2 {
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+		.segment-main-slider {
+			height: 288px;
+		}
+		.designer-row {
+			span {
+				display: none;
+			}
+		}
+		.carousel-responsive .slick-slide {
+			padding: 0 7px;
+		}
+		.slick-prev, .slick-next {
+			top: 25%!important;
+		}
+	}
+	.designer-row {
+		strong {
+			font-size: @font-size-base;
+		}
+		span {
+			font-size: @font-size-small; 
+		}
+	}
+	.designer-collection {
+		.designer-img {
+			width: 50px;
+			height: 50px;
+			margin-left: -25px;
+			img {
+				width: 50px;
+				height: 50px;
+			}
+		}	
+		
+	}
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+	.jabong-fashion-week {
+		margin-bottom: 30px;
+		height: 447px;
+		padding: 0;
+		.segment-main-slider {
+			height: 432px;
+		}
+	}
+	.trending-jabong-block {
+		margin: 0 0 30px!important;
+	}	
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+.jabong-fashion-week {
+		margin-bottom: 30px;
+		height: 392px;
+		padding: 0;
+		.segment-main-slider {
+			height: 392px;
+		}
+	}
+}

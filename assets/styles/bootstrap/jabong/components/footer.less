@@ -1,0 +1,571 @@
+@import "../../less/variables.less";
+
+.footer-wrapper{
+	position: relative;
+	clear: both;
+}
+.about-jabong-wrapper {
+	background-color: #fcfcfc;
+}
+.about-jabong{
+	border-top: 1px solid @gray-lighter;
+	padding: 20px 0 10px;
+	max-width: 1170px;
+	margin: 0 auto;
+	h1 , h2{
+		font-size: 14px;
+		font-family: dinnextproregular;
+	}
+
+	h3{
+		font-size: 24px;
+		font-family: dinnextprobold;
+		color:@gray-base;
+		margin:0 0 24px;
+		text-transform: uppercase;
+	}
+	p{
+		color: #9a9a9a;
+		font-size: 14px;
+		line-height: 25px;
+	}
+	a {
+		text-transform: none;
+	}
+}
+.footer-links{
+	background-color: #fcfcfc;
+	border-top: 1px solid #f2f2f2;
+	overflow: hidden;
+
+	form#footer-subscription {
+		position: relative;
+	}
+	.footer-signup {
+		background: #f1f1f1 url("//static1.jabong.com/live/images/select-box-arrow.jpg") no-repeat scroll 87% center;
+		border: 0;
+		width: 104px;
+		margin: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding-left: 20px;
+	}
+	.footer-signup .custom-select-boxs {
+		top: 8px;
+		border-left: 2px solid #ccc;
+		padding: 7px 0px 7px 10px;
+	}
+	.global-footer-headings{
+	  font-size: 16px;
+  	  color: #434343;
+  	  font-family: dinnextprobold;
+      text-transform: uppercase;
+      margin: 0 0 21px;
+      font-weight: 500;
+      line-height: 1.1;
+
+    }
+}
+.links-wrapper{
+	max-width: 1170px;
+	margin: 0 auto;
+	padding-top: 60px;
+
+	> section{
+		float: left;
+	}
+}
+.download-app{
+	width: 23.07%;
+	border-right: 1px solid #f2f2f2;
+	margin-right:8.11%;
+
+	> a{
+		clear: both;
+	    float: left;
+	    margin-bottom: 16px;
+
+		> span {
+	    clear: both;
+	    float: left;
+	    height: 40px;
+	    width: 130px;
+	}
+	} 
+	.app-store-icon{
+		background-position: -10px -495px;
+	}
+	.g-play-icon{
+		background-position:-10px -537px;
+	}
+	.window-icon{
+		background-position:-10px -579px;
+	}
+	.brnd-style{
+		color: 	@gray-dark;
+		font-size: 24px;
+		text-transform: uppercase;
+		margin-top: 7px;
+		float: left;
+	}
+}
+.jabongs{
+	width: 16.23%;
+}
+.policies{
+	width: 20.94%;
+
+	.authantic-icon{
+		width: 96px;
+		height: 96px;
+		margin-top: 20px;
+		display: block;
+		clear: both;
+	}
+}
+.jabongs a, .policies a{
+	font-size: 14px;
+	color: #999;
+	text-transform: inherit;
+	padding-bottom: 10px;
+	display:block;
+
+	&:hover{
+		color:@gray-base;
+	}
+}
+
+.signups{
+	width: 31.62%;
+
+	.form-control{
+		height: 50px;
+		float: left;
+		background-color: #efefef;
+		border-color: #efefef;
+
+		&:focus{
+			background-color:#fff;
+			border-color: @gray-lighter;
+		}
+	}
+	.signup-subscription{
+		margin: 20px 0;
+		float: left;
+		width: 100%;
+
+		>span{
+			margin: 0 10px;
+		}
+	}
+	.btn{
+		padding: 0;
+		width: 35.13%;
+		height: 50px;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+	p{
+		margin-top: 10px;
+		margin-bottom: 17px;
+		font-size: 14px;
+		color: @gray-dark;
+		&.footer-default-msg {
+			margin-bottom: 20px;
+			clear: both;
+			position: relative;
+			top: 10px;
+		}
+	}
+	a{
+		height: 29px;
+		float: left;
+		margin-left: 30px;
+		margin-top: 12px;
+
+		&.facebook-s-icon{
+			background-position:-177px -245px;
+			width: 12px;
+			margin-left: 0;
+			&:hover{
+				background-position:-177px -216px;
+			}
+		}
+		&.twitter-s-icon{
+			background-position:-193px -243px;
+			width:28px;
+			&:hover{
+				background-position:-193px -214px;
+			}
+		}
+		&.google-s-icon{
+			background-position:-223px -242px;
+			width:25px;
+			&:hover{
+				background-position:-223px -213px;
+			}
+		}
+		&.youtube-s-icon{
+			background-position:-250px -243px;
+			width:30px;
+			&:hover{
+				background-position:-250px -214px;
+			}
+		}
+		&.instagram-s-icon{
+			background-position:-281px -242px;
+			width: 26px;
+			&:hover{
+				background-position:-281px -213px;
+			}
+		}
+		&.pinterest-s-icon{
+			background-position:-308px -242px;
+			width: 27px;
+			&:hover{
+				background-position:-308px -214px;
+			}
+		}
+	}
+	.signup-subscription {
+		clear: both;
+		padding: 10px 0 0;
+	}
+	.error-footer {
+		margin: 0;
+		color: @jabong-red;
+		clear: both;
+		width: 76.9%;
+	}
+	.success-footer {
+		margin: 0;
+		color: @jabong-green;
+		clear: both;
+		width: 76.9%;
+	}
+}
+.delivery-return-ship, .top-brands, .copy{
+	border-top: 1px solid #f2f2f2;
+	width: 100%;
+	margin-top: 38px;
+	padding-top: 38px;
+}
+
+.delivery-return-ship{
+	font-size: 18px;
+	font-family: dinnextprobold;
+	text-transform: uppercase;
+	color: @gray-dark;
+	text-align: center;
+	padding: 38px 0 0!important;
+
+	> div{
+		display: inline-block;
+		margin: 0 65px;
+	}
+	a{
+		color: @gray-dark;
+
+		&:hover{
+			color:@gray-base;
+
+			span{
+				opacity:1;
+				filter:alpha(opacity=100);
+			}
+		}
+	}
+	span{
+		height: 42px;
+		display: inline-block;
+		margin-right: 15px;
+		vertical-align: middle;
+		opacity:0.5;
+		filter:alpha(opacity=50);
+	}
+	.cash-icon{
+		width:34px;
+	}
+	.return-icon{
+		width:44px;
+	}
+	.shipping-icon{
+		width: 60px;
+	}
+}
+
+.top-brands{
+		padding: 35px 0 9px !important;
+
+	.links{
+		overflow: hidden;
+		margin-bottom: 14px;
+		&:first-child{
+			margin-bottom:29px;
+		}
+
+		h5{
+			margin: 0;
+			float: left;
+			width: 13.67%;
+		}
+		div{
+			float: right;
+			width: 86.32%;
+		}
+		a{
+			font-size: 14px;
+			color: #9a9a9a;
+			text-transform: inherit;
+			padding-bottom: 10px;
+			margin-right: 3px;
+			display: inline-block;
+
+			&:hover{
+				color: @gray-base;
+			}
+		}
+	}
+}
+.foot-last{
+	border-top: 1px solid #f2f2f2;
+	width: 100%;
+	padding: 35px 0!important;
+	h5{
+		margin-bottom: 10px;
+		color: @gray-base;
+	}
+}
+.nortan-rapid{
+	float: left;
+
+	span{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.nortan{
+		height:44px;
+		width:107px;
+	}
+	.rapid-ssl{
+		height:44px;
+		width:80px;
+		margin-right: 10px;
+	}
+	.pci{
+		width:81px;
+		height: 38px;
+		display: inline-block;
+		margin-left: 8px;
+	}
+}
+.payment-mode{
+	width: 485px;
+	margin: 0 auto;
+
+	span{
+		height: 38px;
+		display: inline-block;
+		margin-right: 8px;
+		vertical-align: middle;
+		float: left;
+	}
+}
+
+.page-loaded {
+  .payment-mode {
+	.maestro {
+	  width: 56px;
+	  background-position: -178px -4px;
+	}
+	.amex {
+	  width: 56px;
+	  background-position: -4px -4px;
+	}
+	.visa {
+	  width: 56px;
+	  background-position: -62px -4px;
+	}
+	.master {
+	  width: 57px;
+	  background-position: -119px -4px;
+	}
+	.cod {
+	  width: 93px;
+	  background-position: -235px -4px;
+	}
+	.net-bank {
+	  width: 93px;
+	  background-position: -331px -4px;
+	}
+  }
+  .nortan-rapid{
+	.nortan{
+	  background-position: -320px -77px;
+	}
+	.rapid-ssl{
+	  background-position: -237px -76px;
+	}
+	.pci{
+	  background-position: -4px -75px;
+	}
+  }
+  .delivery-return-ship{
+    .cash-icon{
+      background-position:-94px -78px;
+    }
+    .return-icon{
+      background-position:-133px -74px;
+    }
+    .shipping-icon{
+      background-position:-177px -75px;
+    }
+  }
+  .policies .authantic-icon{
+    background-position:-5px -123px;
+  }
+}
+.ship-partner{
+    color: @gray-base;
+    float: right;
+    text-transform: uppercase;
+    span{
+        display: block;
+        padding-top: 10px;
+        color: @gray-dark;
+    }
+}
+.copy{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 0;
+    padding: 23px 0!important;
+    color: #9a9a9a;
+    font-family: dinnextprolight;
+}
+.hasPlaceholderText{
+	color: #bdbdbd;
+}
+
+@media (min-width: 1024px) and (max-width: 1170px) {
+	.payment-mode {
+		float: left;
+		margin: 0 0 0 10px;
+		width: 435px;
+		span {
+			margin-right: 3px;
+		}
+	}
+}
+
+@media (max-width: 1023px){
+  .footer-links{
+      border-top: 0;
+      background-color: @gray-lighter2;
+  }
+  .links-wrapper{
+      width: 100%;
+      padding-top: 0;
+  }
+  .hide-sm, .policies .hide-sm{
+      display: none;
+  }
+  .jabongs{
+      width: 100%;
+      padding:0 0 60px 0!important;
+
+      a{
+          display: none;
+          border: 1px solid @legend-border-color;
+          border-right: 0;
+          line-height: 51px;
+          height: 51px;
+          width: 33.3%;
+          color: @gray-base;
+          text-align: center;
+          float: left;
+
+          &:active{
+              background:#eee;
+          }
+
+          &.show-all, &.show-sm{
+              display: block;
+          }
+      }
+  }
+  .policies{
+      width: 100%;
+      text-align: center;
+      padding: 30px 0 20px;
+
+      a{
+          display: inline-block;
+          font-size: 12px;
+          color: @jabong-blue;
+          padding-bottom: 0;
+
+          span{
+              margin: 0 10px;
+              color: #9a9a9a;
+          }
+      }
+  }
+  .foot-last{
+      text-align: center;
+      padding: 0!important;
+      border:0;
+      h5 {
+          color: @gray-base!important;
+      }
+      .nortan-rapid{
+          float: none;
+      }
+  }
+  .copy{
+      border-color: @legend-border-color;
+  }
+  .nortan-rapid {
+      float: none;
+      left: 0;
+      margin: 0 auto;
+      right: 0;
+      text-align: center;
+      top: 75px;
+  }
+}
+@media (min-width: 1024px){
+    .footer-links .show-sm{
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .footer-links{
+        padding: 0 40px;
+    }
+    .about-jabong {
+        margin: 0 40px;
+    }
+    .download-app{
+        margin-right: 5.11%;
+    }
+    .signups{
+        width: 34.62%;
+        p {
+            color: @gray-dark;
+        }
+    }
+    .delivery-return-ship > div{
+        margin: 0 50px;
+    }
+    .top-brands .links{
+        h5{
+            width: 160px;
+        }
+        div{
+            width: 82.32%;
+        }
+    }
+}

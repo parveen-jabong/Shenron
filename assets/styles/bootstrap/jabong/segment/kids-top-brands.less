@@ -1,0 +1,202 @@
+.kids-brands-section {
+	margin: 30px 0 60px!important;
+	padding: 0;
+}
+.kids-brand-block,
+.kids-content-right,
+.kids-block {
+	padding: 0;
+}
+.kids-brand-block {	
+	position: relative;
+	img {
+		width: 100%;
+	}
+	figure {
+		display: block;
+		figcaption {
+			width: 136px;
+			height: 36px;
+			background: @body-bg;
+			text-align: center;
+			font-size: font-size-medium;
+			color: @gray-base;
+			text-transform: uppercase;
+			line-height: 36px;
+			position: absolute;
+			bottom: 30px;
+			left: 50%;
+			margin-left: -68px;
+			font-family: dinnextprobold;
+			z-index: 1;
+			&:hover {
+				background: @gray-base;
+				color: @no-gray;
+			}
+		}
+	}	
+	a {
+		color: @gray-base;
+		&:hover {
+			background: @gray-base;
+			color: @no-gray;
+		}
+	}
+}
+
+.kids-block-content {
+	text-align: center;
+	color: @no-gray;
+	position: relative;
+	z-index: 1;
+	.kids-inner-block {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  bottom: 0;
+		  right: 0;
+		  width: 100%;
+		  .kids-content {
+		  	  display: table;
+			  width: 100%;
+			  height: 100%;
+			  text-align: left;
+			  >div {
+			  	display: table-cell;
+				  vertical-align: middle;
+				  position: relative;
+				  padding:0 20px 0 30px;
+			  }
+		  }		
+	}
+	h3 {
+		font-size: font-size-medium;
+		text-transform: uppercase;
+		color: @body-bg;
+		font-size: @font-size-large;
+		margin: 0 0 17px;
+	}
+	p {
+		font-size: @font-size-base;
+		padding-bottom: 10px;
+	}
+	&:after {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(148, 148, 239, 0);
+		border-top-color: #9494ef;
+		border-width: 10px;
+		margin-left: -10px;
+	}
+}
+
+.kids-shop-now {
+	width: 136px;
+	height: 36px;
+	background: @body-bg;
+	text-align: center;
+	font-size: font-size-medium;
+	color: @gray-base;
+	text-transform: uppercase;
+	line-height: 36px;
+	font-family: dinnextprobold;
+	display: inline-block;
+}
+.kids-img-box {
+	width: 100%;
+	img {
+		width: 100%;
+	}
+}
+.kids-block-content.bottom-right {
+	width: 50%;
+
+}
+
+.kids-content-right {
+	margin: 0;
+	.kids-content {
+		text-align: left!important;
+		>div {
+			padding: 0 20px;
+		}	
+	}
+	&:after {
+		left: 100%;
+		top: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(250, 196, 248, 0);
+		border-left-color: #fac4f8;
+		border-width: 10px;
+		margin-top: -10px;
+		margin-left: 0;
+	}
+}
+.kids-img-box figcaption {
+	left: inherit !important;
+	right: 45px !important;
+	margin: 0 !important;
+}
+.kids-brand-heading {
+	padding-bottom: 20px;
+	h2 {
+		margin-bottom: 5px;
+	}
+	p {
+		text-align: center;
+		padding:0 10%;
+		margin: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.kids-brands-section {
+		margin: 0 0 15px!important;
+		padding: 0;
+	}
+	.kids-brand-block {
+		figcaption {
+			width: 125px !important;
+			margin-left: -62px !important;
+		}
+	}
+	.kids-shop-now {
+		width: 125px;
+	}
+	.kids-content-right {
+		&:after {
+			top: 100%;
+			left: 50%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-color: rgba(250, 196, 248, 0);
+			border-top-color: #fac4f8;
+			border-width: 12px;
+			margin-left: -12px;
+			margin-top: 0;
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+	.kids-brands-section {
+		padding: 0;
+	}
+	.kids-video-block {
+		margin-top: 20px;
+	} 
+}

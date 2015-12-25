@@ -1,0 +1,117 @@
+.saved-card-detail{
+	margin-bottom: 30px;
+	&.last{
+	border-bottom:none;
+	margin-bottom: 0;
+	}
+	.card-info{
+		.card-image{
+			display: inline-block;
+			float: left;
+			height: 40px;
+			width: 58px;
+			background: url(/images/common-sprite.png) -9px -304px no-repeat;
+		}
+		>div{
+			float: left;
+			color:@gray-base;
+			font-size: @font-size-base;
+			text-transform: uppercase;
+			margin-left: 10px;
+			.card-number{
+				display: block;
+				font-size: @font-size-large;
+				font-family: dinnextprobold;
+			}
+			.card-validity{
+				color: #999;
+			}
+			.separator{
+				margin: 0 10px;
+			}
+			.card-validity{
+				color:@gray-dark;
+			}
+		}
+	}
+	.card-option{
+		text-align: right;
+		margin-top: 13px;
+		.card-option-wrapper {
+			color: @gray-darker;
+			display: inline-block;
+			text-align: left;
+		}
+		a{
+			color: @gray-dark;
+			vertical-align: top;
+			font-size: @font-size-medium;
+			span{
+				display: inline-block;
+				height: 18px;
+				width: 14px;
+				margin-right: 10px;
+				.myaccount-sprite(0 0);
+			}
+			&.card-edit{
+				margin-right: 30px;
+				span{
+					background-position: -261px -86px;
+				}
+				&:hover{
+					color:@gray-base;
+					span{
+						background-position: -274px -86px
+					}
+				}
+			}
+			&.card-remove{
+				span{
+					background-position: -259px -104px;
+				}
+				&:hover{
+					color:@gray-base;
+					span{
+						background-position: -274px -104px;
+					}
+				}
+			}
+			&.blank-elm {
+				display: inline-block;
+				width: 90px;
+			}
+		}
+	}
+}
+.double-input{
+	.select-box{
+		margin-bottom: 30px;
+	}
+}
+@media screen and (max-width: 1023px){
+	.saved-card-detail{
+		margin-bottom: 20px;
+    	padding-bottom: 20px;
+		.card-info{
+			>div{
+				span{
+					display: block;
+					&.separator{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 767px){
+	.saved-card-detail{	
+		.card-image	{
+			margin-left: -15px;
+		}
+		.card-option{
+			margin: 15px 0 0 45px;
+    		text-align: left;
+		}
+	}
+}

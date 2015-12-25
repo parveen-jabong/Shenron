@@ -1,0 +1,253 @@
+/*.shop-look-popup{
+	position: absolute;
+	z-index: -2;
+	background: #dee3ed;
+	top: 0;
+	opacity: 0;
+	width: 100%;
+	transition: opacity 0.5s;
+	&.show-sbl{
+		opacity: 1;
+		z-index: 5;
+	}
+	.shop-look-carousel{
+		img{
+			margin:0 auto;
+			height: 100%;
+		}
+		&.slick-slider {
+			margin-bottom: 0;
+		}
+	}
+	.shoplook-info{
+		padding-top: 30px;
+		position: relative;
+
+		.stl-action{
+			float: left;
+
+			img {
+				margin-left: 7px;
+			}
+			.icheckbox_minimal {
+				vertical-align: top;
+				background-color: #fff;
+			}
+
+			input[type="checkbox"]{
+				margin:0;
+			}
+		}
+
+		&.full-width{
+			margin-top: 0!important;
+		}
+
+		form {
+			position: relative;
+			margin-left: 10px;
+		}
+		ul{
+			list-style: none;
+			padding-left: 0;
+			margin-bottom: 0;
+
+				li{				
+					display: inline-block;
+					margin-bottom: 50px;
+					text-transform: uppercase;	
+
+					>div {
+
+						&:after {
+							display: block;
+							content: ' ';
+							clear: both;
+						}	
+					}		
+				}
+		}		
+				
+		.details{
+			margin-left: 10px;
+			float: left;
+
+			h3{
+				font-size: 13px;
+				margin: 0 0 5px;
+				color: #303030;
+			}
+
+			p{
+				font-size: 11px;
+				margin-bottom: 7px;
+			}
+			.price{
+				font-weight: normal;
+				margin-bottom: 20px;
+
+				.standard-price:before, .actual-price:before{
+					content: " R ";
+				    font-family: "rupee";
+				    padding: 0;
+				}
+				.actual-price{
+					font-size: 14px;
+					margin-left: 10px;
+				}
+				.standard-price {
+					font-size: 12px;
+				}
+			}
+			.select-box{
+				width: 126px;
+				background: #fff;	
+				
+				.down-arrow{
+					.common-sprite(-75px 0);
+				}
+
+				select{
+					font-size: 14px;
+					text-align: center;
+					text-align: -moz-center;
+			    	text-align: -webkit-center;
+					text-transform: uppercase;
+					border: 0;
+					width: 126px;
+					padding: 5px 12px;
+					-webkit-appearance: none;
+					color: #4d4d4d;
+				}
+			}
+		}
+		.total-amount{
+			position: absolute;
+			text-transform: uppercase;
+			bottom: 0;
+			right: 20px;
+
+			.addcart {
+			width: 190px;
+			margin-left: 18%;
+			float: left;
+
+		}
+
+			.bold{
+				font-weight: bold;
+				margin-bottom: 24px;
+			}
+			.btn-black{
+				text-transform: uppercase;
+				width: 100%;
+				padding: 0;
+				line-height: 51px;
+				height: 51px;
+				background: #000;
+				color: #fff;
+			}
+			.save-item {
+				margin-bottom: 5px;
+			}
+			.actual-price{
+				margin-left: 5px;
+			}
+		}
+	}
+	.close-shop-look{
+		position: absolute;
+		bottom: 42px;
+		left: 42px;
+		font-size: 14px;
+		line-height: 41px;
+		color: #000;
+		text-transform: uppercase;
+		z-index: 1;
+		border: 1px solid #000;
+		padding: 0 24px;
+
+		span.close-icn{
+			.common-sprite(-12px -135px);
+			width: 15px;
+			height: 15px;
+			display: inline-block;
+			margin-right: 15px;
+			vertical-align: middle;
+			cursor: pointer;
+		}
+	}
+
+	.similar-look{
+		span{
+			.common-sprite(-84px 0);
+			width: 4px;
+			height: 10px;
+			margin-left: 5px;
+			display: inline-block;
+		}
+	}
+}
+.shop-the-collection {
+	.stl-action img {
+		display: none;
+	}
+	.shoplook-info {
+		.details {
+			margin-left: 30px;			
+		}				
+		.total-amount .addcart {
+			margin-left: 4px;
+		}
+	}
+}
+
+
+@media screen and (max-width: 1023px) and (min-width: 480px) { 
+	.shop-look-popup .shoplook-info  {
+		padding-left: 0;
+		padding-right: 0;
+		form{
+			width: 461px;
+			margin: auto;
+		}
+	}
+}
+@media screen and (max-width: 479px) and (min-width: 0) { 
+	.shop-look-popup .shoplook-info {
+		form {
+			width: inherit;
+			margin-left: 0;
+		}
+		ul li {
+			display: inherit;
+			& > div {
+				width: 217px;
+				margin: auto;
+			}
+		}
+		.total-amount {
+			left: 0;
+			right: 0;
+			position: inherit;
+			margin-bottom: 20px;
+			.addcart {
+				width: inherit;
+				margin-left: 0;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 480px){
+	.shop-look-popup {
+		padding-top: 35px;
+		.close-shop-look {
+			left: 0;
+			text-align: center;
+			right: 0;
+			top: 0;
+			background-color: #fff;
+		}
+	}
+}
+*/

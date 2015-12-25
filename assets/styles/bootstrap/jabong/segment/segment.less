@@ -1,0 +1,1114 @@
+@import url("import.less");
+@import "../../less/variables.less";
+::selection {
+    background: #f68d24;
+}
+.main-segment-container {
+    margin-top: 0;
+    padding-bottom: 30px;
+}
+.women-segment-slider {
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+.best-new-in-block {
+    margin: 30px 0 0;
+    padding: 0;
+    .newin-heading {
+        padding: 0 0 20px;
+        margin: 0;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .newin-subheading {
+        padding: 15px 0 0;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    .newin-text {
+        padding: 5px 0 0;
+        margin:0;
+    }
+    .slick-prev {
+        left: 15px;
+    }
+    .slick-next {
+        right: 15px;
+    }
+    .slick-slide {
+        padding: 0;
+    }
+}
+.segment-main-slider{
+	overflow:hidden;
+    .slick-slider {
+        margin-bottom: 0!important;
+    }
+}
+.main-slider-wrapper.sports-page-slider, 
+.main-slider-wrapper.sale-page-slider {
+    height: 449px;
+    min-height: 449px;
+    max-height: 449px;
+}
+figure{
+    position:relative;
+}
+
+.style-edit-wrapper{
+    a.img-wrapper{
+        float:left;
+        width:25%;
+        position:relative;
+        background: @navbar-default-bg;
+        overflow: hidden;
+    }
+    img{
+        width:100%;
+    }
+    .sub-heading{
+        margin-bottom: 18px;
+        font-family: "dinnextprolight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        line-height: 18px;
+        width:50%;
+        margin:0 auto;
+    }
+}
+
+.feature-wrapper{
+    .feature-heading {
+        margin-top: 15px;
+    }
+    .heading-border{
+        border-bottom:2px solid black;
+        height:25px;
+        display:inline-block;
+    }
+}
+.jabong-accodion{
+    .panel{
+        border-radius:0!important;
+        border: none;
+    }
+    .panel + .panel{
+        margin-top:0!important;
+    }
+    .panel-title{
+        font-size:14px!important;
+        font-weight:bold;
+        a{
+            display:block;
+            line-height:3;
+            padding-left: 10px;
+        }
+    }
+    .panel-heading{
+        background:#fff!important;
+        position:relative;
+        padding:0!important;
+        width:100%;
+        display:inline-block;
+        border-radius:0;
+    }
+
+    .list-group-item{
+        background:#f5f5f5!important;
+        padding: 0;
+        a {
+            color:#6c6c6c;
+            padding: 10px 15px;
+            display: block;
+            text-transform:capitalize!important;
+        }
+    }
+    .expand-icon{
+            position:absolute;
+            right:12px;
+            top:16px;
+    }
+    .shrink{
+        background-position:-63px -13px !important;
+    }
+}
+.mobile-style-edit{
+    margin-top:13px;
+}
+.trending-now-wrapper {
+    width:83%;
+    margin:60px auto 30px;
+    position:relative;
+    .trending-block {
+        margin-bottom: 30px;
+        overflow: hidden;
+        position: relative;
+        a {
+            display: block;
+        }
+        figcaption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: @body-bg;
+            height: 36px;
+            margin: -18px 0 0 -62px;
+            z-index: 2;
+            line-height: 40px;
+            width: 124px;
+            display: none;
+            color: #434343;
+            padding: 0;
+            text-align: center;
+            font-size: 14px;
+            &:hover {
+                background: #434343;
+                color: #ffffff;
+            }
+        }
+        a:hover figcaption{
+            display: block;
+        }
+    }
+    .trending-subhead {
+        text-transform: uppercase;
+    }
+    .trending-wrapper {
+        border:1px solid #e5e5e5;
+    }
+    .trending-left {
+        width: 73%;
+        float: left;
+    }
+    .trending-right {
+        width: 27%;
+        float: right;
+    }
+    .trending-second-m {
+        width: 37%;
+    }
+    .trending-first-m {
+        width: 55.05%;
+        margin-right: 4%;
+    }
+    >div {
+        padding: 0;
+    }
+    img{
+        width:100%;
+    }
+    .img-caption{
+        text-align: left;
+        padding: 9px 20px 4px;
+        border:1px solid #e5e5e5;
+        h3 {
+            text-align: left!important;
+        }
+        &.none {
+            border: none;
+        }
+    }
+    
+    .row{
+        margin:0!important;
+    }
+    .trending-slider-block {
+        min-height: 698px;
+        height: auto!important;
+        padding-bottom: 25px;
+        overflow: hidden;
+    }
+    .trending-now{
+        overflow: hidden;
+        .trending-title{
+            margin-top:30px!important;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .gray-btn{
+            margin-top:8px;
+            height: 35px;
+            line-height: 35px;
+        }
+        .slider-dis{
+            font-size:14px!important;
+            text-transform:lowercase!important;
+        }
+        .slick-prev, .slick-next{
+            top: 10px!important;
+            width: 9px;
+            height: 14px;
+            z-index: 2;
+        }
+        .slick-prev{
+            left:40%!important;
+            .common-sprite(-139px -79px);
+        }
+        .slick-next{
+            right:40%!important;
+            .common-sprite(-149px -79px);
+        }
+        .slick-dots{
+            top: 64px;
+            height: 20px;
+            bottom: inherit;
+            right: 0;
+            li {
+                z-index: 1;
+            }
+            span {
+                display: inline;
+            }
+        }
+        
+
+    }
+    .slick-slider {
+        position: relative;
+        z-index: 1;
+        padding: 30px 0 0;
+        margin: 0!important;
+    }
+    .trending-first-m, .trending-third-m {
+        float: right;
+    }
+    .trending-second-m {
+        float: left;
+    }
+}
+.premium-block-section {
+    padding: 0;
+    margin-top: 40px;
+}
+.premuim-brand{
+    font-size: @font-size-h4;
+    font-family: dinnextprobold;
+    text-transform: uppercase;
+    .premium-title {
+        padding: 0 0 30px;
+        margin: 0;
+        text-align: center;
+    }
+    .sub-heading {
+        padding: 0 0 30px;
+        margin: 0!important;
+        width: 100%!important;
+        text-transform: none!important;
+        text-align: center;
+    }
+    figcaption {
+        width: 100%;
+        text-align: center;
+        color: @no-gray;        
+        z-index: 1;
+    }
+    .style-edit-block {
+        background: @legend-border-color;
+        a {
+            color: @no-gray;
+            display: block;            
+            &:hover {
+                color: @gray-base;
+            }
+        }
+
+
+    }
+    .style-edit-links {
+        width: 25%;
+        float: right;
+        text-align: left;
+        a {
+            padding: 0 10px;
+            margin-top: 28px;
+            text-align: center;
+            line-height: normal;
+        }
+    }
+}
+.best-new{
+    width:82.2%;
+    margin:0 auto;
+    
+    .newin-heading{
+     margin-bottom:33px;
+    }
+    .caption{
+     padding: 0;
+        .newin-subheading {
+            padding: 18px 0 0;
+            margin: 0;
+        }
+        .newin-text {
+            padding: 5px 0 0;
+            margin: 0;
+        }
+    }
+    .thumbnail{
+        figure{
+            min-height: 298px;
+            background:#f8f8f8;
+        }
+    }
+
+}
+
+.vedio-wrapper{
+    margin:60px auto 30px;
+    background:#f7f7f9;
+    .video {
+        display: none;
+    }
+    iframe {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        float: left;
+    }
+    .vedio-block{
+        padding-left:0;
+        #video {
+            display: none;
+        }
+    }
+    img{
+        width:100%;
+    }
+    .vedio-content-block{
+        padding-right: 30px;
+        .video-title{
+            margin-top: 30px;
+            line-height: 30px;
+        }
+
+        .display-bottom-line{
+            border-bottom:2px solid @gray-base;
+            width: 50px;
+            height: 3px;
+            display: block;
+            margin: 10px 0 30px;            
+        }
+    }
+    
+}
+.newin-slider {
+    img {
+        width: 100%;
+    }
+    height: 420px;
+    .slick-slider {
+        margin: 0!important;
+    }
+}
+.fasition-news-wrapper{
+    background:#f7f7f9;
+    margin:40px 0 30px;
+    overflow:hidden;
+    
+    .fasition-img-blk{
+        height:720px;
+        width:41.4%;
+        position:relative;
+        overflow:hidden;
+        margin-bottom: -9999px;
+  		padding-bottom: 9999px;
+        .related-image{
+            position:absolute;
+            right:0;
+        }
+        
+    }
+    .fasition-content-blk{
+        width:47.6%;
+        float:right;
+        margin:5px 5.5% 0;
+        position:relative;
+        padding-bottom: 30px;
+        .gray-btn:first-child{
+            position:absolute;
+            right:0;
+            top:13px;
+        }
+        .gray-btn{
+            height: 35px;
+            &:hover{
+                background:#020202;
+                color:#ffffff;
+            }
+        }
+        .img-block-4{
+            border-bottom:1px solid #e5e5e5;
+            .thumbnail{
+                margin-bottom:0!important;
+            }
+        }
+
+        .fashion-title{
+            margin-bottom:25px!important;
+            
+        }
+        .caption{
+            background:#f7f7f9!important;
+            padding-top:17px;
+            p{
+                text-transform: none!important;
+            }
+            h5 {
+                text-transform: uppercase;
+            }
+        }
+        .media{
+            margin-top:25px;
+
+        }
+        .media-body{
+            .gray-btn{
+                position:absolute;
+                bottom:0;
+            }
+
+        }
+        
+        .media-left{
+            width:29%;
+            padding-right:6%!important;
+            float:left;
+        }
+    }
+}
+
+.img-txt-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    .img-txt-item {
+        display: table;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        figcaption {
+            display: table-cell;
+            vertical-align: middle;
+            position: relative;
+        }
+    }    
+}
+.magzine-book {
+    width: 25%;
+    float: left;
+    padding-right: 20px;
+    img {
+        width: 100%;
+    }
+}
+.img-block-4 {
+    margin-bottom: 20px; 
+}
+.fasition-content-blk {
+    .media-body {
+        width: 75%;
+        float: left;
+        .gray-btn {
+            position: relative!important;
+            margin-top: 20px;
+        }
+    }
+}
+
+.video-container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.kids-discover-block {
+    padding: 0;    
+}
+.kids-discover-block img,
+.homefashion-discover img {
+        width: 100%;
+    }
+.kids-discover-block h3,
+.homefashion-discover h3 {
+        padding-bottom: 20px;
+    }
+.kids-discover-block .thumbnail,
+.homefashion-discover .thumbnail {
+        padding: 0;
+        border: none;
+    }
+.kids-discover-block h4,
+.homefashion-discover h4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.kids-discover-block .caption,
+.homefashion-discover .caption {
+        padding: 10px 15px;
+        border: 1px #e5e5e5 solid;
+    }
+.homefashion-discover .discover-block {
+    padding: 0;
+}
+
+
+.left-first-img, .left-second-img, .right-first-img, .right-second-img, .right-third-img,
+.middle-third-img, .left-third-img, .women-videoblock, .exp-store-block, .exp-store-block-right, .men-shop-block figure, .brand-box figure,
+.men-private-block, .label-block, .exp-block, .men-discover1, .men-discover2, .men-discover3, .men-discover4{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    .imageCalc(296px, 398px);
+    img, .left-second-img img, .left-third-img img, .right-first-img img,
+    .right-second-img img, .right-third-img img, .middle-third-img img, .women-videoblock img,
+    .exp-store-block img, .exp-store-block-right img, .men-shop-block img, .brand-box img, .men-private-label img,
+    .label-block img, .exp-block img, .men-discover1 img, .men-discover2 img, .men-discover3 img, .men-discover4 img {
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f8f8f8;
+    }
+}
+.left-second-img, .left-third-img {
+    .imageCalc(296px, 351px);
+}
+.right-first-img {
+    .imageCalc(296px, 336px);
+}
+.right-third-img {
+    .imageCalc(296px, 311px);
+}
+
+.middle-third-img {
+    .imageCalc(440px, 511px);
+}
+.women-videoblock {
+    .imageCalc(802px, 452px);
+}
+.exp-store-block {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    .imageCalc(289px, 266px);
+    img {
+         max-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f8f8f8;
+    }
+}
+.kids-brands1, .kids-brands2, .kids-brands3,
+.homefashion-first, .homefashion-second, .quick-sale-box figure, .slider-img-area figure,
+.designers-block figure, .sportsblock1, .sportsblock2, .sportsblock3,
+.quick-shop figure, .sale-img1, .sale-img2, .sale-img3, .running-img1, .running-img2, .shoes-block figure,
+.category-column figure, .runnin-evnt-1, .runnin-evnt-2, .cta-block figure, .kids-videoblock, .catalog-banner, .shoptrend-block,
+.shopcat-block, .shopcat-block1, .kids-charactor-right, .kids-charactor-left, .home-fashionvideo, .kids-cat-first {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    .imageCalc(202px, 303px);
+    img, .kids-brands1 img, .kids-brands2 img, .kids-brands3 img,
+    .homefashion-first img, .homefashion-second img, .quick-sale-box img, .slider-img-area img,
+    .designers-block img, .sportsblock1 img,
+    .sportsblock2 img, .sportsblock3 img, .quick-shop figure img, .sale-img1 img, .sale-img2 img,
+    .sale-img3 img, .running-img1 img, .running-img2 img, .shoes-block figure img, .category-column figure img,
+    .runnin-evnt-1 img, .runnin-evnt-2 img, .cta-block img, .kids-videoblock img, .catalog-banner img, .shoptrend-block img,
+    .shopcat-block img, .shopcat-block1 img, .kids-charactor-right img, .kids-charactor-left img,
+    .home-fashionvideo img, .kids-cat-first img {
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #f8f8f8;
+    }
+}
+.exp-store-block-right {
+    .imageCalc(430px, 564px);
+}
+
+.men-shop-block figure {
+    .imageCalc(336px, 191px);
+}
+
+.brand-box figure {
+    .imageCalc(262px, 128px);
+}
+.men-private-block {
+    .imageCalc(533px, 411px);
+}
+.label-block {
+    .imageCalc(336px, 403px);
+}
+.exp-block {
+    .imageCalc(243px, 331px)!important;
+}
+.men-discover1 {
+    .imageCalc(517px, 354px);
+}
+.men-discover2 {
+    .imageCalc(335px, 520px);
+}
+.men-discover3 {
+    .imageCalc(335px, 245px);
+}
+.men-discover4 {
+    .imageCalc(517px, 354px);
+}
+
+.kids-charactor-right {
+    .imageCalc(446px, 618px);
+}
+
+.kids-charactor-left {
+    .imageCalc(202px, 303px);
+}
+
+.home-fashionvideo {
+    .imageCalc(698px, 393px);
+}
+
+.kids-brands1 {
+    .imageCalc(275px, 550px);
+}
+
+.kids-brands2 {
+    .imageCalc(275px, 275px);
+}
+.kids-brands3 {
+    .imageCalc(550px, 275px);
+}
+.homefashion-first {
+    .imageCalc(336px, 460px);
+}
+.homefashion-second {
+    .imageCalc(336px, 216px);
+}
+
+.quick-sale-box figure {
+    .imageCalc(341px, 392px);
+}
+
+.slider-img-area figure {
+    .imageCalc(322px, 228px);
+}
+
+.designers-block figure {
+    .imageCalc(255px, 347px);
+}
+.sportsblock1 {
+    .imageCalc(683px, 269px);
+}
+
+.sportsblock2 {
+    .imageCalc(326px, 268px);
+}
+.sportsblock3 {
+    .imageCalc(326px, 568px);
+}
+.quick-shop figure {
+    .imageCalc(326px, 159px);
+}
+.sale-img1 {
+    .imageCalc(796px, 796px);
+}
+.sale-img2 {
+    .imageCalc(796px, 398px);
+}
+.sale-img3 {
+    .imageCalc(398px, 398px);
+}
+.running-img1 {
+    .imageCalc(336px, 363px);
+}
+.running-img2 {
+    .imageCalc(336px, 238px);
+}
+.shoes-block figure {
+    .imageCalc(325px, 252px);
+}
+.category-column figure {
+    .imageCalc(336px, 320px);
+}
+.runnin-evnt-1 {
+    .imageCalc(520px, 248px);
+}
+.runnin-evnt-2 {
+    .imageCalc(520px, 341px);
+}
+.cta-block figure {
+    .imageCalc(336px, 394px);
+}
+.kids-videoblock {
+    .imageCalc(809px, 457px);
+}
+.catalog-banner {
+    .imageCalc(1349px, 270px);
+}
+.shoptrend-block {
+    .imageCalc(306px, 380px);
+}
+.shopcat-block {
+    .imageCalc(306px, 380px);
+}
+
+.shopcat-block1 {
+    .imageCalc(306px, 288px);
+}
+.kids-brands-section .overlay {
+    opacity: 0;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+	.carousel[data-full-screen] .slide img {
+	  height: auto;
+	}
+    .mobile-style-edit{
+        margin-top:62px;
+    }
+    .fasition-news-wrapper .fasition-content-blk{
+        width:59.5%;
+        margin:9px 5% 25px;
+    }
+    .fasition-news-wrapper .fasition-img-blk{
+        width:30.5%;
+    }
+    .style-edit-wrapper a.img-wrapper{
+        min-height:199px;
+    }
+    .best-new .thumbnail figure{
+        min-height: 231px;
+    }
+    .trending-now {
+        h5 {
+            margin-bottom: 30px;
+        }
+    }
+    .main-slider-wrapper {
+        margin-bottom: 0;
+    }
+     .style-edit-links {
+        min-height: 100px;
+        a {
+            margin-top: 13px!important;
+            line-height: normal!important;
+            width: auto!important;
+        }
+    }
+    .newin-slider {
+        height: auto;
+    }
+    .best-new-in-block {
+        margin-bottom: 60px!important;
+    }
+    .widget-type-col-5 {
+        padding: 0 15px;
+    }
+    .trending-now-wrapper {
+        .trending-slider-block {
+            min-height: 610px;
+            height: 610px;
+            height: auto;
+        }
+    }
+    .slider-img-area figure {
+        .imageCalc(490px, 264px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.carousel[data-full-screen] .slide img {
+	  height: auto;
+	}
+    .style-edit-wrapper a{
+        width:50%;
+    }
+    .mobile-style-edit{
+        margin-top:16px;
+    }
+    .style-edit-wrapper {
+        padding: 0;
+    }
+    .trending-now-wrapper {
+        width: 100%;
+        .trending-slider-block {
+            min-height: 550px;
+            height: 550px;
+        }
+    }
+    .video-content {
+        margin: 0;
+        padding: 0;
+        .vedio-wrapper {
+            margin: 30px 0;
+            width: 100%;
+        }
+        .vedio-content-block {
+            .video-title {
+                margin-top: 20px;
+            }
+            .display-bottom-line {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .best-new{
+        width:81.5%;
+    }
+    .fasition-news-wrapper .fasition-content-blk{
+        width:64%;
+        margin:9px 2% 0 4%;
+    }
+    .fasition-news-wrapper .fasition-img-blk{
+        width:30%;
+    }
+    .style-edit-links {
+        min-height: 100px;
+        a {
+            margin-top: 13px!important;
+            line-height: normal!important;
+            width: auto!important;
+        }
+    }
+    .newin-slider {
+        height: auto;
+    }
+    .best-new-in-block {
+        margin-bottom: 60px!important;
+    }
+    .slider-img-area figure {
+        .imageCalc(362px, 195px);
+    }
+    .kids-discover-fashion {
+        margin: 0 0 30px;
+        padding: 0; 
+    }  
+}
+
+@media (max-width: 767px) {
+    .jabong-accodion .panel {
+        border: 1px solid #f1f1f1;
+        border-bottom: 0;
+    }
+     .kids-discover-block {
+        margin-top: 20px;
+     }
+    .trending-now-wrapper {
+        width: auto;
+        margin: 0 0 15px;
+        .trending-slider-block {
+            min-height: 555px;
+            height: 555px;
+            height: auto!important;
+        }
+        .trending-block {
+            margin-bottom: 15px;
+            a:hover figcaption {
+                display: none;
+            }
+        }
+    }
+    .trending-left , .trending-right{
+        width: 100%!important;
+        padding: 0!important;
+    }
+    .trending-first-m {
+        float: left;
+        width: 100%!important;
+        margin-right: 0!important;
+    }
+    .trending-second-m {
+        float: right;
+        width: 100%!important;
+    }
+    .style-edit-wrapper a{
+        width:50%!important;
+    }    
+    .style-edit-m {
+        display: none;
+    }
+    .best-new{
+        .col-xxs-6{
+            padding-left:7.5px;
+            padding-right:7.5px;
+        }
+        .row{
+            margin-left:-7.5px;
+            margin-right:-7.5px;
+        }
+    }
+    .video-content, .premuim-brand, .widget-type-col-5 {
+        padding: 0;
+    }
+    .vedio-wrapper{
+        margin-top: 40px;
+        .vedio-block {
+            padding: 0;
+        }
+        .display-bottom-line {
+            margin: 10px 0 15px!important;
+        }
+        h3 {
+            margin-top: 15px!important;
+        }
+    }
+    .fasition-news-wrapper{
+        display:none!important;
+    }
+    .style-edit-wrapper a.img-wrapper{
+        min-height:145px;
+    }
+    .best-new .thumbnail figure{
+        min-height: 172px;
+    }
+    .best-newin-block {
+        padding: 0 7px;
+        .newin-block {
+            padding: 0 7px;
+        }
+        .slick-next {
+            right: 7px;
+        }
+        .slick-prev {
+            left: 7px;
+        }
+    }
+    .slider-img-area figure {
+        .imageCalc(353px, 190px);
+    }
+    .men-discover4 {
+        padding-bottom: 52%
+    }
+    .kids-discover-fashion {
+        margin: 0!important;
+        padding: 0;
+        .discover {
+            display: block!important;
+        }
+    }
+    .homefashion-discover {
+        .discover-block {
+            padding: 0;
+            display: block;
+            .discover >div {
+                padding: 0;
+            }
+         }
+    }
+    .sports-weekly-offer {
+        padding: 0;
+        .weekly-offer {
+            padding: 0;
+            a:first-child {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .trending-jabong-block {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 1600px){ 
+.trending-now-wrapper .trending-slider-block {
+    height: 840px;
+}
+.newin-slider {
+    height: 470px;
+}
+}
+
+.featured-block {
+    display: table;
+    border-top: 1px #e5e5e5 solid;
+    padding: 20px 0;    
+    font-family: dinnextprolight;
+    width: 100%;
+    &.first{
+        border-top:none;
+    }
+    a {
+        text-transform: none;
+    }
+    .featured-img {
+        width: 87px;
+        display: table-cell;
+        margin-right: 15px;
+    }
+    &.second{
+       .featured-img {
+        float: right;
+       }
+       .featured-content {
+        padding-top: 10px;
+       }
+    }
+    .featured-content {
+        width: 90%;
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 15px;
+        &.left {
+            padding-left: 0;
+            padding-right: 15px;
+        }
+    }
+    .featured-txt {
+        display: block;
+        color: #6e6e6e;        
+        font-size: 14px;
+    }
+    .featured-title {
+        display: block;
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .featured-subhead {
+        display: block;
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .featured-shopnow {
+        font-size: 14px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+}
+@media screen and (min-width : 768px) and (max-width : 1279px) {
+.featured-block {
+    border: none;
+    width: 30%;
+    float: left;
+    margin-right: 3%;
+    &:last-child{
+        margin: 0;        
+    }
+    &.second {
+        .featured-img {
+            float: none;
+        }
+    }
+
+}
+.trending-block {
+    a:hover figcaption {
+        display: none;
+    }
+}
+}

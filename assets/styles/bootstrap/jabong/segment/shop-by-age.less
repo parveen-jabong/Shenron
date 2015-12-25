@@ -1,0 +1,152 @@
+.kids-shop-by-age {
+	margin: 60px 0;
+	padding: 0;
+	h3 {
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 30px;
+	}
+}
+
+.shop-by-age-block {
+	border: 1px @gray-lighter solid;
+}
+.shop-by-age-img-block {
+	padding: 0;
+	border-right: 1px @gray-lighter solid;
+	height: 300px;
+	text-align: center;
+	background: @gray-lighter2;
+	position: relative;
+	figcaption {
+		width: 136px;
+		height: 36px;
+		background: @body-bg;
+		text-align: center;
+		font-size: font-size-medium;
+		color: @gray-base;
+		text-transform: uppercase;
+		line-height: 37px;
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		margin-left: -68px;
+		font-family: dinnextprobold;
+	}
+}
+.kids-girl-block {
+	padding-left: 0;
+}
+.kids-boy-block {
+	padding-right: 0;
+}
+.shop-by-age {	
+	padding: 0;
+	height: 300px;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			color: @gray-base;
+			font-size: font-size-medium;		
+			border-bottom: 1px @gray-lighter solid;
+			&:last-child {
+				border: none;
+			}
+			&.last {
+				border-bottom: 1px @gray-lighter solid;
+			}
+		}
+	}
+	span {
+		font-size: 10px;
+		padding-left: 15px;
+		display: none;
+		color: #999;
+		text-transform: uppercase;
+	}
+	small {
+		.common-sprite(-126px -79px);
+		width: 9px;
+		height: 14px;
+		float: right;
+		margin-top: 2px;
+	}	
+	a {
+		text-transform: none;
+		display: block;
+		padding: 20px 15px;
+		height: 59px;
+		color: @gray-base;
+		line-height: 22px;
+		&:hover {
+			background: @gray-lighter2;
+			span {
+				display: inline-block;
+			}
+			small {
+				.common-sprite(-149px -79px);
+			}
+		}
+	}
+	
+}
+
+.shop-by-age-title {
+	font-size: font-size-medium;
+	text-transform: uppercase;
+	padding-left: 15px;
+	font-family: dinnextprobold;
+	height: 61px;
+	padding-top: 20px;
+}
+
+@media (max-width: 767px) {
+	.kids-shop-by-age {
+		margin-top: 0;
+	}
+	.shop-by-age {
+		span {
+			display: inline-block;
+			padding-left: 3px;
+		}
+		a {
+			padding: 20px 5px;
+		}
+		.shop-by-age-title {
+			padding-left: 7px;
+		}
+	}
+	.shop-by-age-img-block {
+		figcaption {
+			width: 113px;
+			margin-left: -56px;
+		}
+	}
+	.kids-girl-block, .kids-boy-block {
+		padding: 0;
+	}
+	.kids-girl-block {
+		margin-bottom: 15px;
+	}
+	.kids-boy-block {
+		.shop-by-age-img-block {
+			float: right;
+			border-right: none;
+			border-left: 1px @gray-lighter solid;
+		}
+	}
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+	.shop-by-age {
+		span {
+			display: inline-block;
+		}
+	}
+	.kids-shop-by-age {
+		margin: 40px 0 60px!important;
+		padding: 0;
+	}
+}

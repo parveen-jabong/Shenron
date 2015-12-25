@@ -1,0 +1,221 @@
+.credit-availability{
+	color:@gray-base;
+	padding: 30px; 
+	margin: 10px 0 30px;
+	border:1px solid @gray-lighter;
+	div{
+		border-left: 1px solid @gray-lighter;
+		h2{
+			margin: 0 0 25px 0;
+			line-height: 26px;
+			font-family: dinnextproregular;
+		}
+		p{
+			font-size: @font-size-medium;
+			line-height: 14px;
+			margin-bottom: 5px;
+			text-transform: capitalize;			
+			font-family: dinnextproregular;
+		}
+		span{
+			color:@gray-dark;
+			line-height: 18px;
+			font-size: @font-size-medium;
+			font-family: dinnextprolight;
+		}
+		&.total-credits{
+			padding: 0;
+			border-left: none;
+			h2{				
+				font-family: dinnextprobold;
+			}
+			p{
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+.expired-coupan-box {
+	.expired-coupan-detail {
+		&.credit-history{
+		padding:0 30px;
+			> div{
+				padding: 20px 0;
+				>div{
+					padding: 0 15px;
+				}
+			}
+			>p {
+				margin: 10px 0;
+  				text-align: center;
+			}
+		}
+	}
+}
+.gift-credit-box{
+	>div{
+		padding-right: 0;
+		text-align: right;
+	}
+	h4{
+		padding-left: 0;
+	}
+}
+.credits-history{
+	.credit-trans-mobile{
+		margin: -15px -15px 0;
+		padding: 10px 15px;
+		text-align: left;
+		text-transform: uppercase;
+		font-size: 14px;
+		border-bottom: 1px solid #e5e5e5;		
+		display: none;
+		>div{
+			padding: 0;
+			&.credit-counts{
+				text-align: right;
+			}
+		}
+	}
+	.expired-coupan-detail{
+		font-size: @font-size-medium;
+		text-transform: capitalize;
+		.show-more{
+			text-align: center;
+			.btn-filled{
+				width: 238px;
+			}
+		}
+	}
+}
+#add-gift-credits {
+	.modal-dialog {
+		width: 550px !important;
+	}
+	.gift-credit-popup {
+		margin-top: -30px;
+		margin-bottom: 10px;
+	}
+}
+.giftcard-new-screen {
+	margin:34px 0;
+}
+.gift-credit-popup{
+	>p {
+		font-size: 15px;
+	  	margin: 15px auto 0;
+	  	text-align: center;
+	}
+	.input-group {
+	  width: 70%;
+	  margin: 0 auto;
+	  margin-top: 10px;
+	> label {
+		z-index: 9999;
+	}
+	.coupon-input {
+		  height: 50px;
+		}
+	}
+	.input-group-addon {
+	  width: 35% !important;
+	  background: #333333;
+	  color: #fff;
+	  cursor: pointer;
+	  font-family: dinnextprobold;
+	  font-size: 16px;
+	}
+}
+
+.msgbox {
+	color: @jabong-red;
+	text-align: center;
+    margin-top: 5px
+}
+
+/* media queries start here */
+@media screen and (max-width: 1023px) {
+	.credit-availability{
+		div{
+			border-left: none;
+			padding: 30px 0 0 ;
+			border-top:1px solid @gray-lighter;
+			&.total-credits{
+				border-top: none;
+			}
+		}
+	}
+	.credits-history{
+		.expired-coupan-head{
+			display: none;
+		}
+		.credit-trans-mobile{
+			display: block;
+		}
+		.credit-counts{
+			span{
+				text-align: right;
+			}
+		}
+	}
+	.expired-coupan-box {
+		.expired-coupan-detail{
+			&.credit-history{
+				padding: 0 15px;
+				.right-amount{
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 767px) and (max-width: 1023px){
+	.credit-availability{
+		div{
+			width: 45%;			
+			border: none;
+			margin-top: 30px;
+    		padding: 0;
+			&.total-credits{
+				width: 100%;
+				border-bottom: 1px solid @gray-lighter;
+			    margin-top: 0;
+			    padding-bottom: 30px;
+			}
+			&.with-border{
+				margin-right: 30px;
+				border-right:1px solid @gray-lighter;
+			}
+		}
+	}
+}
+@media screen and (max-width: 767px){
+	.credit-availability{
+		div{
+			&.total-credits,
+			&.with-border{
+				padding-bottom: 30px;
+			}			
+		}
+	}
+	.gift-credit-box{
+		.btn-secondary{
+			margin-bottom:15px
+		}
+	}
+}
+@media screen and (max-width: 479px){	
+	.credits-history {
+		.credit-trans-mobile{
+			margin-top: 0;
+		}
+		.expired-coupan-detail{
+			.show-more{
+				a{
+					width:228px;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,63 @@
+@import "../../less/variables.less";
+
+.tabs-wrapper {
+  .nav {
+    li {
+      margin-right: 6%;
+    }
+  }
+	.tab-content {
+		padding: 19px 10px;
+	}
+  .dropdown-toggle {
+    display: inline-block;
+  }
+  .dropdown {
+    width: 186px;
+  }
+}
+
+.nav-tabs > li > a{
+  border-bottom: 2px solid transparent;
+}
+
+.dropdown-menu > li {
+    &.selected
+    > a {
+      &::after {
+        .common-sprite(-185px -187px);
+        content:'';
+        padding: 0;
+        margin: 2px 13px 0;
+        height: 12px;/*height of image*/
+        width: 14px;/*width of image*/
+        position: absolute;
+      }
+    }
+}
+
+.tooltip-arrow-top {
+  .common-sprite(-115px -5px);
+  width: 22px;
+  height: 12px;
+  margin: -19px 0 0 109px; 
+  float: left;
+  position: relative;
+}
+
+.similar-tabs .tooltip-arrow-top{
+  margin: -14px 0 0 103px; 
+}
+
+.similar-tabs .dropdown-menu {
+  left: -9px !important;
+}
+
+// Media query classes starts from here
+@media (min-width: 100px) and (max-width: 480px) {
+  .nav {
+  	li {
+		margin-right: 0 !important;
+  	}
+  }
+}

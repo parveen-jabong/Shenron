@@ -1,0 +1,230 @@
+@import "../../less/variables.less";
+
+/* Cart Footer Start */
+.cart-footer{
+	clear:both;
+	text-align: center;
+	background: #fcfcfc;	
+	border-top: 1px solid #f2f2f2;
+
+	.cart-links{
+		overflow: hidden;
+		display: none;
+
+		a{
+			width: 50%;
+   			color: @gray-dark;
+			border: 1px solid @gray-lighter;
+			border-right: 0;
+			background-color:#f7f7f9;
+			height: 51px;
+   			line-height: 51px;
+   			float: left;
+   			text-transform: none;
+   			cursor: pointer;
+		}
+	}
+
+	h5 {
+		color: @gray-dark;
+		font-size: 16px;
+		margin: 0 0 10px;
+		text-transform: uppercase;
+	}
+	.nortan-rapid{
+		float: left;
+
+		span{
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.nortan{
+			height:44px;
+			width:107px;
+	//		background-position:-208px -380px;
+		}
+		.rapid-ssl{
+			height:44px;
+			width:80px;
+			margin-right: 10px;
+		//	background-position:-110px -380px;
+		}
+		.pci{
+			width:81px;
+			height: 38px;
+			display: inline-block;
+			margin-left: 8px;
+		//	background: url('../images/common-sprite.png') no-repeat -10px -766px;
+		}
+	}
+	.payment-mode{
+		width: 485px;
+		margin: 0 auto;
+
+		span{
+			height: 38px;
+			display: inline-block;
+			margin-right: 8px;
+			vertical-align: middle;
+			width:56px;
+		}
+	}
+	.ship-partners{
+		color: @gray-base;
+		float: right;
+		text-transform: uppercase;
+		span{
+			display: block;
+			padding-top: 10px;
+		}
+	}
+
+	.cart-footer-last{
+		text-align: left;
+		padding:35px 0;
+	}
+	.cart-copy{
+		border-top: 1px solid #f2f2f2;
+		padding:23px 0;
+		color: #9a9a9a;
+	}
+	.cart-footer-last, .cart-copy{
+		max-width: 1170px;
+		margin: 0 auto;
+		width: 92%;
+	}
+  	.seo-text {
+	  text-align: left;
+	}
+}
+@media (min-width: 1024px) and (max-width: 1170px) {
+	.cart-footer .cart-footer-last, 
+	.cart-footer .cart-copy {
+		width: 95%;
+		clear: both;
+	}
+	.cart-footer .payment-mode{
+		float: left;
+		margin: 0 0 0 10px;
+		width: 435px;
+		span {
+			margin-right: 3px;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.cart-footer{
+		.cart-footer-last{
+			position: relative;
+			overflow: inherit;
+			height: 180px;
+		}
+		.payment-mode, .nortan-rapid{
+			width: 95%;
+			float: none;
+			text-align: center;
+			margin: 0 auto;
+		}
+		div.payment-mode{
+			border-bottom: 1px solid #f2f2f2;
+			padding-bottom: 23px;
+			margin-right: 8px;
+		}
+		.nortan-rapid{
+			top: 110px;
+		    margin-left: -101px;
+		    position: absolute;
+		    text-align: center;
+		}
+	}
+}
+@media (max-width: 1023px) {
+	.cart-footer{
+		.cart-links{
+			display: block;
+				
+			a:active{
+				background:#eee;
+			}
+		}
+		.ship-partners, h5{
+			display: none;
+		}
+		.cart-footer-last{
+			padding: 23px 0;
+		}
+		.cart-footer-last, .cart-copy{
+			width: 100%;
+			overflow: hidden;
+			font-size: 12px;
+		}
+		.nortan-rapid{
+			margin-left: 15px;
+		}
+		.payment-mode{
+			float: right;
+			margin-right: 15px;
+			margin-top: 5px;
+		
+			span{
+				height: 32px !important;
+				margin: 0 0 0 8px;
+				width: 43px;
+			  	float: none;
+			}
+
+		}
+
+	}
+  .page-loaded{
+	.cart-footer .payment-mode{
+	  span{
+		width: 43px;
+	  }
+	  .maestro{
+		background-position: -139px -42px;
+		margin-right: 8px;
+	  }
+	  .amex{
+		background-position: -4px -43px;
+		margin-left: 0;
+	  }
+	  .visa{
+		background-position:-49px -42px;
+	  }
+	  .master{
+		background-position:-94px -42px;
+	  }
+	  .cod{
+		background-position:-186px -42px;
+		width:71px;
+	  }
+	  .net-bank{
+		background-position:-256px -42px;
+		width:71px;
+	  }
+	}
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.cart-footer {
+		.payment-mode {
+			width: auto;
+		}
+	}
+	.payment-mode{
+		text-align: right;
+	}
+}
+@media (min-width: 320px) and (max-width: 400px) {
+	.cart-footer {
+		.payment-mode {
+			margin: 0 !important;
+			width: 100% !important;
+			span {
+				margin: 0 3px 10px 0 !important;
+			}
+		}
+	}
+}

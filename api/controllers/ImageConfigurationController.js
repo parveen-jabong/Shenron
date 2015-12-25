@@ -43,6 +43,8 @@ var ImageConfigurationController = BaseController.extend({
         });
     },
     create : function(req, res){
+        res.render('upload', data);
+/*
         ImageConfigurationService.add('', '', '', null, function(err, config){
             if (err) {
 
@@ -54,6 +56,7 @@ var ImageConfigurationController = BaseController.extend({
                 res.render('upload', data);
             }
         });
+*/
     },
     get : function(req, res){
         var imageConfigId = req.params.id;

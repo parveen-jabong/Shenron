@@ -1,0 +1,41 @@
+//** IE8 styles
+@import "../../less/variables.less";
+
+.ie8{
+	.drop-icon{
+		display: none;
+		span{
+			margin-bottom: -1px;
+		}
+	}
+	.nav.navbar-nav{
+        li{
+            &:hover{
+                &.active-li .drop-icon{
+                    display:block;
+                }
+            }
+        }
+    }
+    .dropdown-container{
+        img{
+            width: 100%;
+        }
+        .nav-image-bg {
+           position: relative;
+           height: 0;
+           overflow: hidden;
+           background-color: #f8f8f8;
+           .imageCalc(420px, 189px) !important;
+            img {
+                max-width: none;
+                width: 100%;
+                height: auto;
+                background-color: #f8f8f8;
+            }
+            &.nav-logo-bg {
+                .imageCalc(140px, 170px) !important;
+            }
+        }
+    }
+}
