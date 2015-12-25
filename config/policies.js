@@ -53,9 +53,7 @@ module.exports.policies = {
         logout : 'sessionAuth'
     },
     ImageConfigurationController : {
-        index : 'sessionAuth',
-        get : 'sessionAuth',
-        delete : 'sessionAuth'
+        '*' : 'sessionAuth'
     },
     IndexController : {
         index : 'sessionAuth'
