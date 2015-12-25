@@ -62,7 +62,7 @@ var ImageConfigurationController = BaseController.extend({
         var imageConfigId = req.params.id;
         ImageConfigurationService.get(imageConfigId, function(err, imageConfig, imageList){
             if (err) {
-
+                res.render('upload');
             } else {
                 var files = [];
                 _.each(imageList, function(image){

@@ -11,6 +11,9 @@ module.exports = {
         icn : {
             type: 'string',
             defaultsTo: ''
+        },
+        cms_key : {
+            model: 'CMS'
         }
     },
     afterDestroy: function(destroyedRecords, cb) {

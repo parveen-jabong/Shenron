@@ -1,6 +1,4 @@
-<script src="/js/vendor/jquery.js"></script>
 <link rel="stylesheet" href="/styles/account.css">
-<link rel="stylesheet" href="/styles/main/bootstrap.css">
 <link rel="stylesheet" href="/styles/cart.css">
 <link rel="stylesheet" href="/styles/catalog.css">
 <link rel="stylesheet" href="/styles/checkout.css">
@@ -19,6 +17,7 @@
 <section class="main-content editableCMSSection">
     <%- pageHtml %>
 </section>
+<input type="hidden" id="data-cms-count" value=<%= count %> >
 
 <script>
     var JABONG = window.JABONG || {};
@@ -28,13 +27,22 @@
     JABONG.ResponsiveImgActivated = true;
     JABONG.adblocker = true;
     $(document).ready(function(){
-        var counter = 1;
-        $("[data-cms-editable=true]").each(function(){
-            $(this).attr('data-cms-editable-id', counter++);
-        }).wrap("<div class='editableCMSDiv'></div>").after("<button class='editableCMSButton'>Edit</button>");
+        var counter = $("#data-cms-count").val();
+        if (!counter) {
+            counter = 0;
+        }
         var editableCMSSection = $(".editableCMSSection");
+        $("[data-cms-editable=true]").each(function(){
+            if (!$(this).attr('data-cms-editable-id')){
+                $(this).attr('data-cms-editable-id', counter++);
+            }
+        }).wrap("<div class='editableCMSDiv'></div>").after("<button class='editableCMSButton'>Edit</button>");
         $(document).on('click', '.editableCMSButton', function(){
-
+            var cmsEditableId = $(this).prev().attr('data-cms-editable-id');
+            var url = '/upload/' + cmsEditableId;
+            var win = window.open(url, '_blank');
+            win.editableContent = editableCMSSection;
+            win.cmsEditableId = cmsEditableId;
         });
     });
 </script>

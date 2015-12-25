@@ -1,3 +1,7 @@
+/**
+ * Created by Parveen Arora on 25/12/15.
+ */
+
 'use strict';
 
 var BaseController = require('./BaseController');
@@ -38,6 +42,7 @@ var AuthController = BaseController.extend({
                             responseObject.message.push('OK');
                             responseObject.success = true;
                             req.session.authenticated = true;
+                            req.session.userToken = user.id;
                         }
                     }
                 });
@@ -62,7 +67,7 @@ var AuthController = BaseController.extend({
         })
     },
     getLoginView : function(req, res){
-        res.view('login', { layout: 'layout' } )
+        res.view('login');
     }
 });
 

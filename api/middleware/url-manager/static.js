@@ -5,34 +5,35 @@ function getUrl(key){
     return 'newdesign_' + key;
 }
 
-function _execute(req, output, requestPage){
+function _execute(req, output, requestPage, cmsKey){
     req.routeResolved = true;
     req.url = '/static/page/';
     req.staticPage = output;
     // setting variable required for GA
     req.PageTypePV = 'Campaign|' + requestPage;
     req.reqPage = requestPage;
+    req.cmsKey = cmsKey;
 }
 
 var routeStaticPage = function(req, resp, next) {
     var request = req.path.split('/');
-    var newDesignPrefix = 'newdesign_';
-    var requestPage = '';
-    var output;
+    var cmsKey = '',
+        requestPage = '',
+        output;
 
     if (!isEmpty(request[1]) && isEmpty(request[2])) {
-        requestPage = request[1];
+        cmsKey = request[1];
     }
 
     //TO-DO:: Temporary fix until dev environment is completely ready
 
-    if (isEmpty(requestPage) || !isEmpty(req.routeResolved) || requestPage === 'images' || requestPage === 'live' || (req.xhr && requestPage !== 'online-sale') || sails.config.pdpregex.test(req.path)) {
+    if (isEmpty(cmsKey) || !isEmpty(req.routeResolved) || cmsKey === 'images' || cmsKey === 'live' || (req.xhr && cmsKey !== 'online-sale') || sails.config.pdpregex.test(req.path)) {
         return next();
     } else {
-        requestPage = getUrl(requestPage);
+        requestPage = getUrl(cmsKey);
         output = sails.SessionStorage.storage[requestPage];
         if(typeof output !== 'undefined'){
-            _execute(req, output, requestPage);
+            _execute(req, output, requestPage, cmsKey);
             return next();
         }
         MemcacheServices.getStaticPageValue(requestPage, function (err, result) {
@@ -45,7 +46,7 @@ var routeStaticPage = function(req, resp, next) {
                 if(CONST_CMS_ONLINE_SALE === requestPage){
                     sails.SessionStorage.write(requestPage, result);
                 }
-                _execute(req, result, requestPage);
+                _execute(req, result, requestPage, cmsKey);
                 return next();
             } else {
                 next();
