@@ -25,7 +25,6 @@
 
 <script type="text/javascript">
     $("#login-form").submit(function(e){
-        console.log("in login form")
         e.preventDefault();
         var url = $("#login-form #lg_cmskey").val();
         window.location.href = "/" + url;

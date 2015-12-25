@@ -137,7 +137,6 @@
     }
 
     function submitForm($form, url, msgSuccess, msgError, redirectionUrl){
-        console.log('Submit Form');
         if($form.valid()) {
             form_loading($form);
             $.ajax({
@@ -145,7 +144,6 @@
                 url: url,
                 data: $form.serialize(),
                 success: function(response){
-                    console.log(response);
                     if (response.success !== "false"){
                         form_success($form, msgSuccess);
                         if (redirectionUrl){

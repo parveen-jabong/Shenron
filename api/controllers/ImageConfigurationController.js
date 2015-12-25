@@ -49,7 +49,6 @@ var ImageConfigurationController = BaseController.extend({
             if (err) {
 
             } else {
-                console.log(config.id);
                 var data = {
                     configId : config.id
                 }
