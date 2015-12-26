@@ -1,10 +1,7 @@
-var mysqlAdapter = require('../../lib/mysql-adapter');
-
-var mysqlConnection;
-mysqlAdapter.connect(sails.config.host, sails.config.user, sails.config.password, sails.config.database, function(err, connection){
-    mysqlConnection = connection;
-});
-
+/**
+ * Created by Parveen Arora on 24/12/15.
+ * This Service is specific to mongo db ImageConfig and Image Model
+ */
 module.exports = exports = {
     /**
      *
@@ -14,7 +11,6 @@ module.exports = exports = {
      * @param imgList
      */
     add : function (url, ici, icn, image, cb) {
-        console.log('In Add');
         ImageConfig.create({
             url : url,
             ici : ici,
@@ -108,29 +104,5 @@ module.exports = exports = {
                 });
             }
         });
-    },
-    updateCMSDatabase : function(){
-        if(mysqlConnection) {
-            mysqlConnection.beginTransaction(function(err) {
-                if (err) {
-                    throw err;
-                } else {
-                    mysqlConnection.query("SELECT `cms_folder`.`revision` FROM `cms_folder` WHERE (cms_folder.key = '?') AND (is_active = 1)", key, function(err, result) {
-                        if (err) {
-                            return mysqlConnection.rollback(function() {
-                                throw err;
-                            });
-                        }
-                        mysqlConnection.commit(function(err) {
-                            if (err) {
-                                return mysqlConnection.rollback(function() {
-                                    throw err;
-                                });
-                            }
-                        });
-                    });
-                }
-            });
-        }
     }
 };

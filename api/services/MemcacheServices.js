@@ -1,4 +1,4 @@
-//@TODO: Can be converted to classes and optimized
+//@TODO: Can be optimized
 
 var PHPUnserialize = require('php-unserialize');
 var Memcached = require('memcached-encoding-fork');

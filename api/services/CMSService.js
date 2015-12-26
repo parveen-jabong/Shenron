@@ -1,5 +1,6 @@
 /**
  * Created by Parveen Arora on 25/12/15.
+ * This Service is specific to mongo db CMS Model
  */
 
 module.exports = {
@@ -20,8 +21,8 @@ module.exports = {
             }
         })
     },
-    update : function(criteria, update, cb){
-        CMS.update(criteria, update).exec(function(err, identifier){
+    update : function(key, content, cb){
+        CMS.update({cms_key : key}, {content : content}).exec(function(err, identifier){
             if (err){
                 cb(err);
             } else{

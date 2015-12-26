@@ -57,5 +57,8 @@ module.exports.policies = {
     },
     IndexController : {
         index : 'sessionAuth'
+    },
+    CMSController : {
+        '*' : 'sessionAuth'
     }
 };

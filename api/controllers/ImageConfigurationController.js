@@ -7,9 +7,8 @@ var ImageConfigurationController = BaseController.extend({
     index : function (req, res) {
         var requestBody = req.body;
         req.file('files[]').upload({
-                dirname: require('path').resolve(__dirname, '../../.tmp/public/images'),
+                dirname: require('path').resolve(__dirname, '../../', sails.config.imageDirPath),
                 saveAs : function (newFileStream, cb) {
-                    //console.log('newFlest',newFileStream);
                     var fileNameWithExtArray = newFileStream.filename.split('.');
                     cb(null, fileNameWithExtArray[0] + "_" + (requestBody.type || 'desktop') + "." + fileNameWithExtArray[1]);
                 }
@@ -44,7 +43,7 @@ var ImageConfigurationController = BaseController.extend({
         });
     },
     create : function(req, res){
-        res.render('upload');
+        res.view('upload');
 /*
         ImageConfigurationService.add('', '', '', null, function(err, config){
             if (err) {
