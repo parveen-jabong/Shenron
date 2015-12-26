@@ -9,6 +9,7 @@ var ImageConfigurationController = BaseController.extend({
         req.file('files[]').upload({
                 dirname: require('path').resolve(__dirname, '../../.tmp/public/images'),
                 saveAs : function (newFileStream, cb) {
+                    //console.log('newFlest',newFileStream);
                     var fileNameWithExtArray = newFileStream.filename.split('.');
                     cb(null, fileNameWithExtArray[0] + "_" + (requestBody.type || 'desktop') + "." + fileNameWithExtArray[1]);
                 }
@@ -19,7 +20,7 @@ var ImageConfigurationController = BaseController.extend({
             metadata.imageType = requestBody.type || 'desktop';
             metadata.imageUrl = url;
             if (!requestBody.id) {
-                ImageConfigurationService.add(requestBody.url || 'asd', requestBody.ici || 'asd', requestBody.icn || 'asd', metadata, function(err, config){
+                ImageConfigurationService.add(requestBody.url || 'asd', requestBody.ici || 'asd', requestBody.icn || 'asd', metadata, function(err, config, image){
                     if (err) {
                         //sails.log
                     } else {
@@ -42,12 +43,26 @@ var ImageConfigurationController = BaseController.extend({
             })
         });
     },
+    create : function(req, res){
+        res.render('upload');
+/*
+        ImageConfigurationService.add('', '', '', null, function(err, config){
+            if (err) {
+
+            } else {
+                var data = {
+                    configId : config.id
+                }
+                res.render('upload', data);
+            }
+        });
+*/
+    },
     get : function(req, res){
         var imageConfigId = req.params.id;
         ImageConfigurationService.get(imageConfigId, function(err, imageConfig, imageList){
-            console.log(err, imageConfig, imageList);
             if (err) {
-
+                res.render('upload');
             } else {
                 var files = [];
                 _.each(imageList, function(image){
@@ -57,10 +72,20 @@ var ImageConfigurationController = BaseController.extend({
                         "url": image.imageUrl,
                         "thumbnailUrl": image.imageUrl,
                         "deleteUrl": image.imageUrl,
+                        "updatedAt" : image.updatedAt,
                         "deleteType": "DELETE"
                     })
                 });
-                return res.json({
+                  // @ todo
+                for(var i=0;i<4;i++){
+                    files[i]= files[i] || {};
+                };
+
+                files[0].type = 'desktop';
+                files[1].type = 'tab';
+                files[2].type = 'mweb';
+                files[3].type = 'app';
+                return res.render('upload-new',{
                     "files": files
                 });
             }

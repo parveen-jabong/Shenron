@@ -1,0 +1,126 @@
+.men-private-label{	 
+	margin: 30px 0 0!important;
+	padding-bottom: 30px;
+	>div{
+		padding:0;
+		img{
+			width: 100%;
+		}
+	}
+}
+.private-label-text{
+	text-align: left;
+	background: #fff;
+	position: relative;	
+	top: 88px;
+	.private-label-content {
+		padding: 30px;
+	}
+	button{
+		height: 36px;
+		margin-top: 15px;
+		font-size:14px;
+		line-height:34px;
+	}
+	h2{
+		text-transform: uppercase;
+		text-align: left;
+		margin-top: 0;
+		font-size: @font-size-h3;
+	}
+	p{
+		font-family: dinnextproregular;
+			color: @gray-base;
+			margin-bottom: 0;
+	}
+}
+.private-label-brand{
+	margin-bottom: 0!important;
+	padding: 0;
+	img {
+		width: 100%;
+	}
+	>div{
+		float: left;
+		position: relative;
+	}
+}
+@media screen and (max-width: 1279px){
+	.men-private-label{
+		margin-bottom: 20px;
+	}
+}
+@media (min-width:1024px) and (max-width: 1279px){	
+	.private-label-text{
+		top: 38px;
+		.private-label-content {
+			padding: 20px;
+		}
+		button{
+			height: 36px;
+			margin-top: 15px;
+		}
+	}
+}
+@media (min-width:768px) and (max-width: 1023px){
+	.private-label-block {
+		padding: 0 20px;
+	}
+	.private-label-text{
+		h2 {
+			font-size: 20px;
+		}
+		top: 20px;
+		.private-label-content {
+			padding: 20px;
+		}
+		button{
+			height: 36px;
+			margin-top: 15px;
+		}
+	}
+}
+@media screen and (max-width: 767px){
+	.men-brand-temp {
+		.brand-container {
+			width: 100%;
+		}
+	}
+	.men-private-label{
+		width: 100%;
+		padding: 0;
+		img {
+			width: 100%;
+		}
+	}
+	.private-label-text{
+		padding-left: 0 !important;
+		margin-top: 15px;
+		width: 100%;
+		overflow: hidden;
+		top: 0;
+		.private-label-content {
+			padding: 0 0 10px;
+		}
+		h2{
+			margin: 20px 0 5px;
+			font-size: 22px;
+		}
+		p{
+			margin-bottom: 5px;
+		}
+		button{
+			height: 36px;
+		}
+	}
+	.private-label-brand{
+		margin-top: 15px;
+		>div{
+			margin: 0 0 15px!important;
+			padding: 0;
+			&:first-child, &:last-child {
+				margin:0;
+			}
+		}
+	}
+}

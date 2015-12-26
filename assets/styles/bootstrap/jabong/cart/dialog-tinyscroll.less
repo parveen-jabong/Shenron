@@ -1,0 +1,49 @@
+/**
+ * If this is required in other pages, please extend these styles accordingly
+ */
+.cart{
+	.jabong-scrollbar{
+		.overview{
+			position: relative;
+		}
+		.scrollbar{
+			z-index: 1001;
+			opacity: 0;
+			right: 5px !important;
+		}
+		//.thumb{
+		//	width: 6px;
+		//}
+	}
+	.modal{
+		&.size-guide-modal .modal-content {
+			width: 1000px;
+		}
+		&:hover{
+			.scrollbar{
+				opacity: 1;
+				transition: opacity 1s;
+			}
+		};
+	}
+} 
+.cart, .checkout {
+	.redeem-payback .viewport{
+		height:600px;
+	}
+	.apply-coupon .viewport {
+		height: 395px;
+	}
+}
+
+@media screen and (device-min-height: 900px) and (device-max-height: 900px){
+	.cart .jabong-scrollbar .viewport{
+		height:800px;
+	}
+}
+
+@media screen and (device-min-height: 1024px) and (device-max-height: 1024px){
+	.cart .jabong-scrollbar .viewport{
+		height:1000px;
+	}
+}

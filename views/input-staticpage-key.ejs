@@ -2,20 +2,9 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 <link href='/styles/login.css' rel='stylesheet' type='text/css'>
-<script src="/js/vendor/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<script type="text/javascript">
-    $(".login-form").submit(function(e){
-        e.preventDefault();
-        console.log($(".login-form #lg_cmskey").val());
-        window.open('/', '_blank');
-    });
-    //$(".login-form").validate()
-</script>
 
 <div class="text-center" style="padding:50px 0">
-    <div class="logo">login</div>
+    <div class="logo">CMS Key</div>
     <!-- Main Form -->
     <div class="login-form-1">
         <form id="login-form" class="text-left">
@@ -24,7 +13,7 @@
                 <div class="login-group">
                     <div class="form-group">
                         <label for="cmskey" class="sr-only">CMS Key</label>
-                        <input type="text" class="form-control" id="lg_cmskey" name="cmskey" required placeholder="...Key...">
+                        <input type="text" class="form-control" id="lg_cmskey" name="cmskey" placeholder="Key">
                     </div>
                 </div>
                 <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
@@ -33,3 +22,17 @@
     </div>
     <!-- end:Main Form -->
 </div>
+
+<script type="text/javascript">
+    $("#login-form").submit(function(e){
+        e.preventDefault();
+        var url = $("#login-form #lg_cmskey").val();
+        window.location.href = "/" + url;
+    });
+    $(".login-form").validate({
+        rules: {
+            cmskey: "required",
+        },
+        errorClass: "form-invalid"
+    });
+</script>

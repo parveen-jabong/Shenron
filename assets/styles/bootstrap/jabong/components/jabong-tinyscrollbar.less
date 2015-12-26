@@ -1,0 +1,60 @@
+@scrollbarWidth: 8px !important;
+@scrollbarBg: #b1b1b1;
+
+.jabong-scrollbar {
+	.viewport {
+		position: relative;
+		//height: 214px;
+		overflow: hidden;
+	}
+
+	.overview {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.scrollbar{
+		position: relative;
+		width: @scrollbarWidth;
+		float: right;
+	}
+
+	.track {
+		position: relative;
+		width: @scrollbarWidth;
+		height: 100%;
+		padding: 0 1px;
+	}
+
+	.thumb {
+		position: absolute;
+		width: @scrollbarWidth;
+		height: 20px;
+		background: @scrollbarBg;
+		border-radius: 4px;
+		cursor: pointer;
+		overflow: hidden;
+		top: 0;
+		left: 2px;
+	}
+
+	.end {
+		width: @scrollbarWidth;
+		height: 5px;
+		background: @scrollbarBg;
+		overflow: hidden;			
+	}
+
+	.disable {
+		display: none;
+	}
+
+	.noSelect {
+		user-select: none;
+		-o-user-select: none;
+		-moz-user-select: none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+	}
+}

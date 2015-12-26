@@ -1,0 +1,261 @@
+.personalise-coupon{
+	text-align: center;
+	margin: 10px 0 30px; 
+	.coupon-image{
+		display: inline-block;
+		height: 40px;
+		width: 27px;
+		.common-sprite(-202px -434px);
+	}
+	.no-card {
+		display: inline-block;
+		height: 30px;
+    	width: 44px;
+		.myaccount-sprite(-139px -762px);
+	}
+	h4{
+		color: @gray-base;
+		margin: 20px 0 5px;
+		text-transform: uppercase;
+	}
+	.vertical-bar{
+		border-top: 2px solid @gray-lighter;
+		display: inline-block;
+		height: 1px;
+		width: 100px;
+	}
+	p{
+		font-size: @font-size-medium;
+		max-width: 360px;
+		margin: 25px auto 0;
+		line-height: 22px;
+		color: @gray-base;
+	}
+}
+.active-coupon-list{
+	margin: 30px 0;
+}
+.tab-pane{
+	.active-coupon-list{
+		margin-top: 1px;
+		padding:0 5px;
+		.coupons-wrapper {
+			border: 1px solid #e5e5e5;
+			margin-bottom: 20px
+		}
+	}
+}
+.active-coupon-box{
+	padding: 30px 0 0 30px;
+	border:1px solid @gray-lighter;
+}
+.coupan-heading{
+	text-transform: uppercase;
+	margin-bottom: 17px;
+	line-height: 15px;
+	text-align: left;
+	&.with-space{
+		margin-top: 30px;
+	}
+}
+.coupan-name{
+	margin: 0;
+	padding:20px;
+	background: #ccc;
+	text-align: center;
+	border-bottom: 1px solid @gray-lighter;	
+
+}
+.coupan-name-span{		
+	color:@gray-base;
+	text-transform: uppercase;
+	font-size: @font-size-medium;
+	border: 1px dashed @gray-base;
+	padding: 13px 0 0;
+	display: block;
+	text-align: center;
+	min-height: 42px;
+	background: @body-bg;
+	font-family: dinnextprobold;
+	span{
+		display:block;
+		text-transform: capitalize;
+		margin: 2px 0 8px;
+		font-family:dinnextproregular;
+	}
+}
+.coupon-logo{
+	display: inline-block;
+	margin-bottom: 20px;
+}
+.coupan-detail{	
+	font-size: @font-size-medium;
+	color:@gray-base;
+	margin: 10px 0 10px;
+	font-family: dinnextproregular;	
+}
+.coupan-expiry{	
+	color: @gray-base;
+	font-size: @font-size-base;
+	line-height: 20px;
+	font-family: dinnextprolight;
+	margin-top: 10px;
+	span{
+		display: none;
+	}
+}
+.coupan-box{
+	padding: 0;
+	float: left;
+	margin: 0 30px 30px 0;
+	border:1px solid @gray-lighter;
+	font-size: @font-size-medium;
+	width:230px;
+	height: 255px;
+	position: relative;
+	.coupan-detail-box{
+		text-align: center;
+		padding: 20px;	
+		.btn-secondary{
+			width: 193px;
+			position: absolute;
+			left: 20px;
+			bottom: 20px;
+		}
+	}
+	&:nth-child(5n+1){
+		.coupan-name{
+			background-color: #cbebd4;
+			.coupan-name-span{
+				background-color: #fbf5f7;
+			}
+		}
+	}
+	&:nth-child(5n+2){
+		.coupan-name{
+			background-color: #d7d7e3;
+			.coupan-name-span{
+				background-color: #fbf5f7;
+			}
+		}
+	}
+	&:nth-child(5n+3){
+		.coupan-name{
+			background-color:#fdcce9;
+			.coupan-name-span{
+				background-color: #fbf5f7;
+			}
+		}
+	}
+	&:nth-child(5n+4){
+		.coupan-name{
+			background-color:  #ebead5;
+			.coupan-name-span{
+				background-color: #fbf5f7;
+			}
+		}
+	}
+	&:nth-child(5n+5){
+		.coupan-name{
+			background-color: #e7ede3;
+			.coupan-name-span{
+				background-color: #fbf5f7;
+			}
+		}
+	}
+}
+.expired-coupan-box{
+	border:1px solid @gray-lighter;
+	padding: 20px 15px 0;
+	margin-bottom: 30px;
+	color: @gray-base;
+	.expired-coupan-head{
+		margin: -15px -15px 0;
+		padding: 10px 15px;
+		text-align: left;
+		text-transform: uppercase;
+		font-size: @font-size-base;
+		border-bottom: 1px solid @gray-lighter;
+	}
+}
+.expired-coupan-detail{
+	margin: 0 -30px;
+	>div{
+		padding: 20px 30px 30px;
+		text-align: left;
+		.coupan-name-span{
+			display: inline-block;
+		    /* width: 142px; */
+		    padding: 10px 8px 0 8px;
+		    font-weight: 400;
+		}
+		.coupan-expiry{
+			font-family: dinnextproregular;
+		}
+	}
+}
+
+/* media queries starts here */
+@media screen and (max-width: 1023px){	
+	.expired-coupan-box{
+		.expired-coupan-head{
+			display: none;
+		}
+		.expired-coupan-detail{
+			>div{
+				.coupan-expiry{			
+					font-family: dinnextprolight;
+					span{
+						display: inline-block;
+					}
+				}
+				.coupan-detail{
+					padding-top: 0;
+					margin-bottom: 4px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 767px){	
+	.expired-coupan-box{
+		padding: 10px 15px 15px;
+		.expired-coupan-detail{
+			>div{
+				padding-bottom: 0;				
+				.coupan-detail{
+					padding-left: 0;
+					margin: 10px 0 5px;
+				}
+				.coupan-expiry{
+					padding-left: 0;
+				}
+			}
+		}
+	}
+	.coupan-heading{
+		&.with-height{
+			line-height:22px;
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px){	
+	.expired-coupan-box {
+		.expired-coupan-detail {
+			> div {
+				.coupan-detail{
+					padding-left: 0;
+				}
+				.coupan-expiry{
+					padding:4px 0 0 0;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 640px){	
+	.tab-pane .active-coupon-list {
+		padding: 0 15px;
+	}
+}
+/* media queries end here */

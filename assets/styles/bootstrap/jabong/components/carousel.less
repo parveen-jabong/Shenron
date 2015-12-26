@@ -1,0 +1,379 @@
+@charset "UTF-8";
+@import "../../less/variables.less";
+
+.carousel{
+	overflow: hidden;
+}
+
+.slick-slider
+{
+	box-sizing: border-box;
+	display: block;
+	khtml-user-select: none;
+	moz-box-sizing: border-box;
+	moz-user-select: none;
+	ms-touch-action: pan-y;
+	ms-user-select: none;
+	position: relative;
+	touch-action: pan-y;
+	user-select: none;
+	webkit-tap-highlight-color: transparent;
+	webkit-touch-callout: none;
+	webkit-user-select: none;
+}
+.slick-list
+{
+	display: block;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+}
+.slick-list:focus
+{
+	outline: none;
+}
+.slick-loading .slick-list
+{
+	background: #fff url("//static1.jabong.com/live/images/progress-primary-white.gif") center center no-repeat;
+}
+.slick-list.dragging
+{
+	cursor: hand;
+	cursor: pointer;
+}
+.slick-slider .slick-track
+{
+	moz-transform: translate3d(0, 0, 0);
+	ms-transform: translate3d(0, 0, 0);
+	o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	webkit-transform: translate3d(0, 0, 0);
+}
+.slick-track
+{
+	display: block;
+	left: 0;
+	position: relative;
+	top: 0;
+}
+.slick-track:before, .slick-track:after
+{
+	content: "";
+	display: table;
+}
+.slick-track:after
+{
+	clear: both;
+}
+.slick-loading .slick-track
+{
+	visibility: hidden;
+}
+
+.carousel .slide{
+	position: relative;
+}
+
+.slick-slide
+{
+	display: none;
+	float: left;
+	height: 100%;
+	min-height: 100px;
+	position: relative;
+}
+[dir="rtl"] .slick-slide
+{
+	float: right;
+}
+.slick-slide img
+{
+	display: block;
+}
+.slick-slide.slick-loading img
+{
+	display: none;
+}
+.slick-slide.dragging img
+{
+	pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+	display: block;
+}
+.slick-loading .slick-slide
+{
+	visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+	border: 1px solid transparent;
+	display: block;
+	height: auto;
+}
+.slick-prev, .slick-next
+{
+	.common-sprite(right 0);
+	border: none;
+	color: transparent;
+	cursor: pointer;
+	display: block;
+	font-size: 0;
+	height: 50px;
+	line-height: 0;
+	margin-top: -10px;
+	outline: none;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	width: 36px;
+}
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus
+{
+	color: transparent;
+	outline: none;
+}
+.slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before
+{
+	opacity: 1;
+}
+.slick-prev.slick-disabled, .slick-next.slick-disabled
+{
+	opacity: 0.25;
+}
+.slick-prev:before, .slick-next:before
+{
+	color: white;
+	font-family: "slick";
+	font-size: 20px;
+	line-height: 1;
+	moz-osx-font-smoothing: grayscale;
+	opacity: 0.75;
+	webkit-font-smoothing: antialiased;
+}
+.slick-prev
+{
+	background-position: -50px -426px;
+	left: 0;
+	&:hover {
+		background-position: -50px -377px;
+	}
+}
+[dir="rtl"] .slick-prev
+{
+	left: auto;
+	right: -25px;
+}
+.slick-prev:before
+{
+	content: " ";
+}
+[dir="rtl"] .slick-prev:before
+{
+	content: " ";
+}
+.slick-next
+{
+	background-position: -87px -426px;
+	right: 0;
+	&:hover {
+		background-position: -87px -377px;
+	}
+}
+[dir="rtl"] .slick-next
+{
+	left: -25px;
+	right: auto;
+}
+.slick-next:before
+{
+	content: " ";
+}
+[dir="rtl"] .slick-next:before
+{
+	content: " ";
+}
+.slick-slider
+{
+	margin-bottom: 30px;
+}
+.slick-dots
+{
+	bottom: 30px	;
+	display: block;
+	list-style: none;
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+.slick-dots li
+{
+	cursor: pointer;
+	display: inline-block;
+	margin: 0 5px;
+	padding: 0;
+	position: relative;
+	border-radius: 50%
+}
+.slick-dots li button
+{
+	border: 1px solid #434343;
+	color: transparent;
+	cursor: pointer;
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	outline: none;
+	width: 8px;
+	height: 8px;
+	opacity: 0.9;
+	padding: 3px;
+	transition: box-shadow 0.3s ease;
+	border-radius: 50%;
+	background-color: transparent;
+}
+
+.slick-dots .slick-active button{
+	box-shadow: inset 0 0 0 8px #434343;
+}
+
+.slick-dots li button:hover, .slick-dots li button:focus
+{
+	outline: none;
+}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before
+{
+	opacity: 1;
+}
+/*
+.slick-dots li button:before
+{
+	color: black;
+	content: "•";
+	font-family: "slick";
+	font-size: 6px;
+	height: 20px;
+	left: 0;
+	line-height: 20px;
+	moz-osx-font-smoothing: grayscale;
+	opacity: 0.25;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	webkit-font-smoothing: antialiased;
+	width: 20px;
+}
+*/
+/*.slick-dots li.slick-active button:before
+{
+	color: black;
+	opacity: 0.75;
+} */
+
+.slick-slide .text
+{
+	position: absolute;
+	bottom: 0;
+	transform: rotate(-90deg);
+	transform-origin: left top;
+	text-align: center;
+	width: 75%;
+	min-height: 30px;
+	background-color: #424540;
+	color: #fff;
+	line-height: 30px;
+	font-size: 20px;
+	margin-bottom: -30px;
+	padding: 10px 0;
+	text-transform: uppercase;
+	p{
+		margin: 0;
+	}
+}
+
+.slick-slide.slick-active
+{
+	position: relative;
+}
+
+/*.slick-slide img
+{
+	max-width: 100%;
+	margin: 0 auto;
+}*/
+.ajax-loader {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: url('../images/progress-primary-white.gif') no-repeat 0 0;
+	top: 50%;
+	left: 50%;
+	margin: -20px 0 0 -20px;
+}
+
+.controls-small{
+	.slick-prev, .slick-next{
+		height: 50px;
+	    background-color: @no-gray;
+	}
+	.slick-next{
+		background-position: -87px -426px;
+		&:hover {
+			background-position: -87px -377px;
+		}
+	}
+	.slick-prev{
+		background-position: -50px -426px;
+		&:hover {
+			background-position: -50px -377px;
+		}
+	}
+}
+
+.content-vertical{
+	.slick-prev{left: 55px;}
+}
+
+.carousel-responsive .slick-slide{
+	padding: 0 3px;
+}
+
+
+
+/* slider arrows with backgroung -- add with-white-arrow class in main container */
+.with-white-arrow {
+	.slick-prev,
+	.slick-next{
+	  	width: 50px;
+	  	height: 50px;
+	  	background-color: #fff;
+	  	opacity: 1;
+	  	border-radius: 100%;
+	  	background-position: 50px 50px;
+	  	z-index: 1;
+	  	&:before{
+			width: 16px;
+			height: 30px;
+			display: block;
+			margin-left: 17px;
+	  	}
+	  	&:hover {
+	  		background-image: none;
+	  	}
+	}
+	.slick-prev{
+		left:10px;
+		&:before{
+			.common-sprite(-126px -386px);
+		}
+	}
+	.slick-next{
+		right:10px;
+			&:before{
+			.common-sprite(-145px -386px);
+		}
+	}
+}

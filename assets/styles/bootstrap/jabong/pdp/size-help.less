@@ -1,0 +1,73 @@
+.col-md-5 img {
+	width: 100%;
+}
+.size-heading {
+	margin-bottom: 20px;
+  	font-weight: normal !important;
+}
+.back-page {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 0;
+  cursor: pointer;
+  text-transform: inherit;
+  color: #8b8a8a;
+
+  span{
+  	width: 8px;
+	height: 14px;
+	display: inline-block;
+	background-position: -10px -9px;
+	margin-bottom: -2px;
+	margin-right: 10px;
+  }
+  &:hover{
+		color: #434343;
+		span {
+			background-position: -30px -9px;
+		}
+	} 
+}
+.size-chart-modal .h4 {
+	font-size: 18px !important;
+}
+ul.sizes {
+	list-style-type: none;
+	padding: 0;
+	&.size-col-2 li span{
+		width: 50%;
+	}
+	&.size-col-3 li span{
+		width: 33.3%;
+	}
+	&.size-col-4 li span{
+		width: 25%;
+	}
+	&.size-col-5 li span{
+		width: 20%;
+	}
+	&.size-col-6 li span{
+		width: 16.5%;
+	}
+	.head-size {
+		font-weight: bold;
+		height: 55px;
+		border-bottom: 2px solid #ddd;
+	}
+	li {
+		text-align: center;
+		span {
+			padding: 10px 0;
+			width: 33.3%;
+			display: block;
+			float: left;
+		}
+	}
+}
+@media (max-width: 479px){
+	.size-chart-modal .modal-body {
+  		margin-top: 15px;
+  		padding: 0;
+	}
+}

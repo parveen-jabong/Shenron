@@ -1,0 +1,137 @@
+@import "../../less/variables.less";
+
+/* variables starts */
+.field-base{
+  border: 1px solid #ccc;
+  &:focus{
+    border: 1px solid @gray-base;
+  }
+}
+
+.label-base{
+  position: absolute;
+  margin-left: 13px;
+  line-height: 50px;
+  text-transform: uppercase;
+  display: block;
+  color: #b2b2b2;
+  left: 0;
+  transition: all .4s;
+  transform-origin: 0 0;
+}
+
+/* variables ends */
+
+.form-group{
+  position: relative;
+  &.input-textarea{
+    label{
+      .label-base;
+    }
+    textarea{
+      padding-top:22px;
+      font-size: 14px;
+      .field-base;
+    }
+  }
+  &.text-input,
+  &.email-input,
+  &.password-input,
+  &.number-input,
+  &.tel-input{
+    input{
+      height: 50px;
+      font-size: 14px;
+      .field-base;
+    }
+    label{
+      .label-base;
+    }
+    .help{
+      .common-sprite(-206px -129px);
+      height: 25px;
+      width: 36px;
+      display: inline-block;
+      text-indent: -10000px;
+      top: 50%;
+      position: absolute;
+      left: 100%;
+      margin: -13px 0 0 -50px;
+    }
+  }
+  &.focused{
+    input{
+      padding-top: 22px;
+    }
+    label{
+      top: -8px;
+      transform: scale(.85);
+       font-size: 13px;
+    }
+    &.input-textarea label{
+      /*background: #fff;
+      width: 110%;*/
+      line-height: 22px;
+      text-align: left;
+      font-size: 13px;
+      margin-top: 10px;
+      padding-top: 6px;
+      max-width: 110%;
+    }
+  }
+  &.error{
+    label{
+      color:#e74c3c;
+    }
+    input{
+      border:1px solid #e74c3c;
+    }
+    textarea{
+      border:1px solid #e74c3c;
+    }
+  }
+  &.success{
+    label{
+      color:@jabong-green;
+    }
+    input{
+      border:1px solid @jabong-green;
+    }
+  }
+}
+.select-box{
+  &.error{
+    border:1px solid #e74c3c;
+    .custom-select-boxs, .change-value{
+      color:#e74c3c;
+    }
+  }
+  &.success{
+      border:1px solid @jabong-green;
+    .custom-select-boxs, .change-value{
+      color:@jabong-green;
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .form-group.focused label{
+    transform: scale(1);
+    font-size: .8em;
+  }
+}
+@media all and (max-width: 1023px) {
+  .form-group{
+    &.focused{
+      &.input-textarea {
+        label{
+          width: 95%;
+          margin-top: 9px;
+        }
+        textarea{
+          padding-top: 25px; 
+        }
+      }
+    }
+  }
+}

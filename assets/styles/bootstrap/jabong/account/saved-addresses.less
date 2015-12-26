@@ -1,0 +1,155 @@
+.saved-addresses{
+	.address-name{
+	text-transform: uppercase;
+	font-size: @font-size-medium;
+	margin:0 0 10px;
+	color:@gray-base;
+	line-height: 16px;
+	}
+	.address-line{
+		line-height: 20px;
+		color:@gray-base;
+		display: block;
+		font-size: @font-size-medium;
+	}
+	.btn-secondary{
+		margin-top: 10px;
+	}
+	.card-option{
+		margin-left: 0;
+	}
+	.pickup-note{
+		font-size: @font-size-small;
+		text-transform: uppercase;
+		color: @jabong-red;
+		padding: 0 30px;
+		margin: 15px -30px -10px;
+
+	}
+}
+.address-form{
+		font-size: @font-size-medium;
+		>div{			
+			width: 540px;
+			&.address-radio label > span {
+				text-transform: uppercase;
+			}
+			#profile-pincode {
+				width: 50%;
+			}
+		}
+		.form-group{
+			margin-bottom: 30px;
+		}
+		.address-citystate{
+			>div{
+				float: left;
+			}
+		}
+		.address-pincode{
+			width: 48%;
+		}
+		.address-address{
+			height: 100px;
+			width: 100%;
+		}
+		.address-city{
+			margin-right: 5px;
+			text-transform: capitalize;
+		}
+		.address-name{
+			text-transform: uppercase;
+			color:@gray-base;
+		}
+		.city-seperator{
+			margin: 0 20px;
+		}
+		.radio-input{
+			display: inline-block;
+			margin: 20px 40px 20px 0;
+			.iradio_minimal{
+				float: left;
+			}
+			label{
+				text-transform: uppercase;
+				color:@gray-base;
+				margin-right: 5px;
+			}
+		}
+		.address-numbers{
+			>div{
+				&.alternate-number{
+					padding-right: 0;
+					label:after{
+						display:inline;
+						content: "(Optional)";
+						text-transform: capitalize;
+					}
+				}
+				&.mobile-number{
+					padding-left: 0;
+				}
+			}			
+		}
+		button{
+			margin-top: 0;
+		}
+	}
+	.bottom-note{
+		border-top: 1px solid @gray-lighter;
+	    color: @gray-base;
+	    margin: 0 -30px;
+	    padding: 20px 0 20px 30px;
+	}
+
+@media screen and (max-width: 767px){
+	.address-form{
+		>div{			
+			width:100%;
+		}
+		.address-numbers{
+			div{
+				padding: 0;
+			}
+		}
+		.form-group,
+		.jabong-dropdown{
+			margin-bottom:15px;
+		}
+	}
+}
+@media screen and (max-width: 479px){
+	.bottom-note{
+		margin: 0 -15px;
+		padding: 15px;
+	}
+	.add-gift-credits{
+		margin: 0 0 10px;
+	}
+	.address-name{
+		span{
+			display: block;
+			margin-top: 5px;
+		}
+	}		
+	.address-form{
+		.address-citystate{
+			>div{
+				float: none;
+				&.city-seperator{
+					display: none;
+				}
+				&:first-child{
+					margin-bottom: 5px;
+				}
+			}
+		}
+		.address-pincode{
+			width: 100%;
+		}
+		.radio-input {
+			margin-right: 10px;
+		}
+	}
+
+}

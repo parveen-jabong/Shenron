@@ -1,0 +1,42 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+
+.breadcrumb {
+  padding: 8px 13px 8px 1px;
+  list-style: none;
+  background-color: @breadcrumb-bg;
+  margin: 0;
+
+  > li {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px 0 12px;
+
+    + li:before {
+      position: absolute;
+      background-position: -20px -9px;
+      width: 8px;
+      height: 13px;
+      content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+      color: @breadcrumb-color;
+      left: -6px;
+      top: 2px;
+    }
+  }
+
+  > li > a {
+    color: @breadcrumb-color;
+    font-size: 14px;
+    text-transform: capitalize;
+
+    &:hover {
+      color: @breadcrumb-active-color;
+    }
+  }
+
+  > .active, > .active > a {
+    color: @breadcrumb-active-color;
+  }
+}

@@ -1,0 +1,218 @@
+.discover-fashion{
+	padding: 40px 0 50px;
+	margin: 10px 0 30px;
+	background: @gray-lighter2;
+	img {
+		width: 100%;
+	}
+	p {
+		padding-top: 10px;
+	}
+	article{
+		margin-bottom: 30px;
+		.column-1-content {
+			position: absolute;
+			top: 0;
+			right: 15px;
+			bottom: 0;
+			background: @no-gray;
+			width: 50%;
+			.with-bg {
+				padding: 30px;
+			}
+		}
+		.column-2-content {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+		}
+		.with-bg {
+			background: @no-gray;
+			overflow: hidden;
+		}
+
+		
+		&.row-1 {
+			>div {
+				&:first-child {
+					margin-left: -15px;
+				}
+				&:last-child {
+					margin-right: -15px;
+				}
+			}
+		}
+
+	}
+	.with-bg{ 
+		background: @body-bg;
+		padding: 20px;
+	}
+	.with-image{
+		padding: 0;
+	}
+	.discover-right-top {
+		position: relative;
+		padding: 0;
+		.discover-top-content {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 0;
+			p {
+				display: -webkit-box;
+			  	line-clamp: 3;
+			  	box-orient: vertical;
+			  -webkit-line-clamp: 3;
+			  -webkit-box-orient: vertical;
+			  -moz-line-clamp: 3;
+			  -moz-box-orient: vertical;
+			  overflow: hidden;
+			}
+		}
+		.with-bg {
+			background: @no-gray;			
+		}
+	}
+	.discover-right-bottom {
+		margin-bottom: 30px;
+		position: relative;
+		padding: 0;
+		&:last-child{
+			margin-bottom:0;
+		}
+		.discover-right-content {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 50%;
+			bottom: 0;
+			padding: 0;
+			background: @no-gray;
+		}
+		.with-bg {
+			overflow: hidden;
+			padding-top: 20px;
+			>div {
+				padding: 0;
+			}
+		}
+	}
+	h4{
+		text-transform: uppercase;
+		padding: 0;
+		margin: 0;
+	}
+	.discover-column {
+		.discover-top-content {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			.with-bg {
+				height: 115px;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+	.discover-fashion {
+		margin-top: 40px;
+		padding-bottom: 20px;
+	}
+	.discover-fashion-block {
+		padding: 0;
+		h4 {
+			font-size: 16px;
+		}
+		p {
+			margin: 0;
+		}
+		button {
+			margin-top: 15px;
+		}
+	}
+	.discover-right-top {
+		padding-left: 0;
+		padding-right: 15px!important;
+		margin-top: 30px;
+		.discover-top-content {
+			padding: 0 15px 0 0!important;
+		}
+	}
+	.discover-right-bottom {
+		padding-right: 0;
+		padding-left: 15px!important;
+		margin-top: 30px;
+	}
+	.discover-lft-m {
+		padding: 0 15px 0 0!important;
+		.discover-right-content {
+			right: 15px!important;
+		}
+	}
+	.discover-rgt-m {
+		padding: 0 0 0 15px!important;
+	}
+}
+@media screen and (max-width: 767px){
+.discover-fashion-block {
+	h2 {
+		margin-bottom:15px;
+	}
+}
+	.discover-fashion {
+		padding: 30px 0;
+		article {
+			margin-bottom: 15px;
+		}
+		.column-1-content, .column-2-content {
+			position: relative!important;
+			width: 100%!important;
+			padding: 0!important;
+			right: 0!important;
+		}
+		.discover-m {
+			margin-bottom: 15px;
+		}
+		.column-1, .column-2, .discover-m {
+			padding: 0;
+		}
+		.discover-right-content p{
+			display: -webkit-box;
+			  	line-clamp: 6;
+			  	box-orient: vertical;
+			  -webkit-line-clamp: 6;
+			  -webkit-box-orient: vertical;
+			  -moz-line-clamp: 6;
+			  -moz-box-orient: vertical;
+			  overflow: hidden;
+			  margin-bottom: 0;
+		}
+	}
+}
+@media (min-width:1024px) and (max-width: 1279px){
+	.discover-right-top {
+		padding-left: 0;
+	}
+	.discover-right-bottom {
+		padding-right: 0;
+		p {
+			display: -webkit-box;
+			  	line-clamp: 5;
+			  	box-orient: vertical;
+			  -webkit-line-clamp: 5;
+			  -webkit-box-orient: vertical;
+			  -moz-line-clamp: 5;
+			  -moz-box-orient: vertical;
+			  overflow: hidden;
+			  height: 110px;
+		}
+	}
+	.discover-fashion {
+		margin-top: 40px; 
+	}
+}

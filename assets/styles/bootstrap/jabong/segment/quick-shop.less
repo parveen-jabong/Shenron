@@ -1,0 +1,78 @@
+.quick-shop{
+	padding-top: 40px;
+	padding-bottom: 20px;
+	margin-top: 30px;
+	background: url('http://static2.jassets.com/cms/new-site/sports-bg.jpg') no-repeat center center #0c0c0c;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	a {
+		color: #6e6e6e;
+	}
+	.widget-heading{
+		color: @no-gray;
+	}
+	img {
+		width: 100%;
+	}
+	figure{
+		figcaption{
+			position: absolute;
+		  	top: 50%;
+		  	left: 50%;
+		  	background: rgba(255, 255, 255, 0.9);
+		  	font-size: @font-size-large;
+		  	text-transform: uppercase;
+		  	padding: 18px 10px 15px;
+		  	width: 180px;
+		  	margin-left: -90px!important;
+		  	text-align: center;
+		  	&.shoe-caption{
+		  		margin: -25px 0 0 -68px;
+		  	}
+		  	&.clothing-caption{
+		  		margin: -25px 0 0 -80px;
+		  	}
+		  	&.accessory-caption{
+				margin: -25px 0 0 -96px;
+		  	}
+		}
+	}
+	.shop-category{
+		min-height: 325px;
+		background: @no-gray;
+		border-top:1px solid @gray-lighter;
+		margin-bottom: 30px;
+		a{
+			display: block;
+		  	color: @gray-dark;
+		  	text-transform: capitalize;
+		  	font-size: 16px;
+		  	line-height: 15px;
+		  	border-bottom: 1px solid @gray-lighter;
+		  	padding: 20px 15px 18px;		
+		  	&:hover{
+		  		background:#f2f2f2;
+		  		color: @gray-base;
+		  	}
+		}
+	}
+}
+
+@media screen and (max-width: 767px){
+	.quick-shop{
+		padding: 30px 0 0;
+		>div{
+			padding:0;
+			margin: 0!important; 
+		}
+	} 
+}
+@media (min-width: 768px) and (max-width: 1023px){ 
+	.quick-shop {
+		>div {
+			padding: 0;
+		}
+	}
+}

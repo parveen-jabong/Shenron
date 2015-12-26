@@ -17,6 +17,10 @@ module.exports = {
             type: 'string',
             unique: true
         },
+        loggedIn : {
+            type: 'boolean',
+            defaultsTo : 'false'
+        },
         verifyPassword: function (password) {
             return bcrypt.compareSync(password, this.password);
         },
@@ -31,6 +35,14 @@ module.exports = {
         toJSON: function() {
             var obj = this.toObject();
             return obj;
+        },
+
+        setLoggedInStatus : function(status){
+            this.loggedIn = status;
+        },
+
+        checkLoggedInStatus : function(){
+            return this.loggedIn;
         }
     },
 

@@ -7,8 +7,10 @@
         'btn-loading': '<i class="fa fa-spinner fa-pulse"></i>',
         'btn-success': '<i class="fa fa-check"></i>',
         'btn-error': '<i class="fa fa-remove"></i>',
-        'msg-success': 'All Good! Redirecting...',
-        'msg-error': 'Wrong login credentials!',
+        'register-msg-success': 'All Good! Please Login',
+        'login-msg-success': 'All Good! Redirecting',
+        'login-msg-error': 'Wrong login credentials!',
+        'register-msg-error': 'User cannot be added! Sorry',
         'useAJAX': true,
     };
 
@@ -17,22 +19,19 @@
     // Validation
     $("#login-form").validate({
         rules: {
-            lg_username: "required",
-            lg_password: "required",
+            email: "required",
+            password: "required",
         },
         errorClass: "form-invalid"
     });
 
     // Form Submission
     $("#login-form").submit(function() {
-        console.log('InLogin');
         remove_loading($(this));
 
         if(options['useAJAX'] == true)
         {
-            // Dummy AJAX request (Replace this with your AJAX code)
-            // If you don't want to use AJAX, remove this
-            dummy_submit_form($(this));
+            submitForm($(this), '/user/login', options['login-msg-success'], options['login-msg-error'], '/cms/key');
 
             // Cancel the normal submission.
             // If you don't want to use AJAX, remove this
@@ -45,19 +44,17 @@
     // Validation
     $("#register-form").validate({
         rules: {
-            reg_username: "required",
-            reg_password: {
+            username: "required",
+            password: {
                 required: true,
                 minlength: 5
             },
-            reg_password_confirm: {
-                required: true,
-                minlength: 5,
-                equalTo: "#register-form [name=reg_password]"
-            },
-            reg_email: {
+            email: {
                 required: true,
                 email: true
+            },
+            name : {
+                required: true,
             },
             reg_agree: "required",
         },
@@ -80,7 +77,7 @@
         {
             // Dummy AJAX request (Replace this with your AJAX code)
             // If you don't want to use AJAX, remove this
-            dummy_submit_form($(this));
+            submitForm($(this), '/user', options['register-msg-success'], options['register-msg-error']);
 
             // Cancel the normal submission.
             // If you don't want to use AJAX, remove this
@@ -127,19 +124,43 @@
         $form.find('[type=submit]').addClass('clicked').html(options['btn-loading']);
     }
 
-    function form_success($form)
+    function form_success($form, msgKeyFromOptions)
     {
         $form.find('[type=submit]').addClass('success').html(options['btn-success']);
-        $form.find('.login-form-main-message').addClass('show success').html(options['msg-success']);
+        $form.find('.login-form-main-message').addClass('show success').html(msgKeyFromOptions);
     }
 
-    function form_failed($form)
+    function form_failed($form, msgKeyFromOptions)
     {
         $form.find('[type=submit]').addClass('error').html(options['btn-error']);
-        $form.find('.login-form-main-message').addClass('show error').html(options['msg-error']);
+        $form.find('.login-form-main-message').addClass('show error').html(msgKeyFromOptions);
     }
 
-    // Dummy Submit Form (Remove this)
+    function submitForm($form, url, msgSuccess, msgError, redirectionUrl){
+        if($form.valid()) {
+            form_loading($form);
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $form.serialize(),
+                success: function(response){
+                    if (response.success !== "false"){
+                        form_success($form, msgSuccess);
+                        if (redirectionUrl){
+                            window.location.href = redirectionUrl;
+                        }
+                    } else {
+                        form_failed($form, _.isArray(response.message) ? response.message[0] : msgError);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.status);
+                    console.log(thrownError);
+                }
+            });
+        }
+    }
+    // Dummy Submit Form (Remove this) for forgot password @TODO
     //----------------------------------------------
     // This is just a dummy form submission. You should use your AJAX function or remove this function if you are not using AJAX.
     function dummy_submit_form($form)
@@ -149,7 +170,7 @@
             form_loading($form);
 
             setTimeout(function() {
-                form_success($form);
+                form_success($form, 'Done');
             }, 2000);
         }
     }

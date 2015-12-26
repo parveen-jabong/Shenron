@@ -1,0 +1,140 @@
+@import "menu-hamburger.less";
+@import "flyout.less";
+@import "emptyrack.less";
+.error-wrapper {
+	height: 577px;
+	> div {
+		margin: 0 auto;
+		text-align: center;
+		h1 {
+			font-size: 135px;
+			color: #fff;
+			font-family:"dinnextproregular";
+		}
+		p {
+			color: #000;
+			font-size: 18px;
+			font-weight: bold;
+			a {
+				text-decoration: underline;
+				color: #fff;
+				text-transform: none;
+				font-family:"dinnextproregular";
+			}
+		}
+		> a {
+		  padding: 14px 30px;
+		}
+	}
+}
+a.five-redirect {
+	left: 0;
+	right:0;
+	height: 100%;
+	position: absolute;
+	cursor: pointer;
+}
+.five-wrapper {
+	background: url("/live/images/500.gif") center 0 no-repeat;
+	background-color: #434343;
+	background-size: 100%;
+	> div {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 50px;
+		> div {
+			color: #fff;
+			a {
+				color: #fff;
+			}
+			
+		}
+	}
+}
+
+/*---track order css start here---*/
+.track-order-outer-wrapper{
+  height: 600px;
+}
+.track-order-wrapper{
+  width:410px;
+  height:auto;
+  margin:0 auto;
+  >h4{
+	font-weight: bold;
+	color:#000;
+	margin-bottom: 20px;
+  }
+  >p{
+	font-size: 16px;
+  }
+  .track-order-block{
+	width:75%;
+	margin:0 auto;
+	input{
+	  margin-bottom:20px;
+	}
+	.track-order-btn{
+	  width: 100%;
+	  height: 50px;
+	  margin-bottom:25px;
+	}
+
+  }
+}
+#track-order-modal {
+	.modal-sm {
+		width: 500px;
+	}
+}
+.modal {
+  .track-order-block, .track-order-wrapper{
+    width: auto;
+  }
+}
+
+.tracking-list-heading{
+  font-size: 16px;
+  color:#000;
+  border-bottom:1px solid #e5e5e5;
+  line-height: 2.5;
+}
+.tracking-list-row{
+  font-size: 16px;
+  color:#000;
+  line-height: 2.5;
+  .cancel{
+	color:#e42c42;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+	.error-wrapper, 
+	.five-wrapper {
+		background-size: contain;
+	}
+	.error-wrapper {
+		div {
+			width: 290px;
+			padding-left: 50px;
+		}
+	}
+}
+@media screen and (max-width: 570px) {
+	.error-wrapper {
+		div {
+			width: 80%;
+			margin-top: 250px;
+			padding: 0;
+		}
+	}
+}
+@media screen and (max-width: 470px) {
+	.error-wrapper {
+		div {
+			margin-top: 200px;
+		}
+	}
+}

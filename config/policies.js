@@ -49,10 +49,13 @@ module.exports.policies = {
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
     AuthController : {
-        logout : 'sessionAuth',
+        getLoginView : 'sessionAuth',
+        logout : 'sessionAuth'
     },
     ImageConfigurationController : {
+        '*' : 'sessionAuth'
     },
     IndexController : {
+        index : 'sessionAuth'
     }
 };

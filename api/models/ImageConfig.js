@@ -2,15 +2,18 @@ module.exports = {
     attributes : {
         url : {
             type: 'string',
-            required: true
+            defaultsTo: ''
         },
         ici : {
             type : 'string',
-            required: true
+            defaultsTo: ''
         },
         icn : {
             type: 'string',
-            required: true
+            defaultsTo: ''
+        },
+        cms_key : {
+            model: 'CMS'
         }
     },
     afterDestroy: function(destroyedRecords, cb) {

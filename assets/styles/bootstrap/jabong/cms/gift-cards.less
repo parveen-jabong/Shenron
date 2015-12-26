@@ -1,0 +1,295 @@
+.gift-cards-wrapper{
+	.gift-cards-header{
+		position: relative;
+		img{
+			width:100%;
+		}
+		
+
+	}
+}
+.card-value-wrapper{
+	width:500px;
+	height: 420px;
+	text-align: center;
+	color:#fff;
+	position: absolute;
+	left: 50%;
+	margin-left: -250px;
+	top: 55px;
+	z-index: 1;
+
+	h3{
+		color:#fff;
+		font-size: 28px;
+		font-family:"dinnextproregular";
+	}
+
+}
+.add-gift-block{
+	width:90%;
+	margin: 29px auto 37px;
+	height: 246px;
+	background: #242424;
+	border-radius: 20px;
+	.jabong-logo{
+		width:150px;
+		height: 30px;
+		background-position:-228px -248px;
+		display:inline-block;
+		margin:60px 0 40px;
+	}
+	.add-gift{
+		width: 74.8%;
+			margin: 0 auto;
+			.add-gift-btn{
+				padding:0 32px;
+				background: #434343;
+				cursor: pointer;
+			}
+			.add-gift-btn:hover{
+				color: @no-gray;
+			}
+			.add-gift-input{
+				width: 246px;
+				height: 49px;
+				border: none;
+				color:#999999;
+  				outline: none;
+			}
+			label {
+				z-index: 9999;
+			}
+	}
+}
+.points-block{
+	list-style-type: none;
+	padding:0;
+	li{
+		float:left;
+		width:33%;
+		text-align: left;
+		.icon{
+			width:22px;
+			height: 22px;
+			display: inline-block;
+			background-position: -354px -188px;
+			float:left;
+			margin-right:15px;
+		}
+		.points{
+			display: inline-block;
+  			margin-top: 3px;
+		}
+	}
+}
+.gifts-wrapper{
+	height: 390px;
+	background: #f7f7f9;
+	text-align: center;
+	padding-top: 50px;
+	h4{
+		margin:17px 0 20px;
+	}
+	.gifts-icon{
+		width:100px;
+		height: 100px;
+		display:inline-block;
+		background: #fff;
+		border-radius: 70px;
+		text-align: center;
+		.display-icon{
+			width:38px;
+			height: 39px;
+			display: inline-block;
+			background-position: -296px -84px;
+			margin-top: 28px;
+
+		}
+	}
+	.gift2{
+		.display-icon{
+			background-position: -296px -128px;
+		}
+	}
+	.gift3{
+		.display-icon{
+			background-position: -296px -172px;
+			width: 40px;
+		}
+	}
+	.gift-desc{
+		width:70%;
+		margin: 0 auto;
+	}
+}
+.gift-cards-footer{
+	width: 84%;
+  	margin: 0 auto;
+  	padding-top: 57px;
+  	padding-bottom: 100px;
+  	h4{
+  		font-size: 22px;
+  		margin-bottom: 17px;
+  	}
+  	.faq-wrapper{
+  		border-right:1px solid #e5e5e5;
+  	}
+  	.ques-block{
+  		list-style-type: none;
+  		padding:0;
+  		font-size: 16px;
+                .standard-price {
+                    border: none !important;
+                }
+  		li{
+  			line-height:2.4;
+  			>span{
+  				cursor: pointer;
+  			}
+  			&.active{
+  				span{
+  					border-bottom: 1px solid;
+					color:@gray-base;
+  				}
+  			}
+  		}
+  		div{
+  			display: none;
+  			padding-left: 20px;;
+  			p{
+  				line-height: normal;
+  			}
+  		}
+  	}
+  	.quick-link-wrapper{
+  		padding-left: 30px;
+  		
+  		.quick-link-block{
+  			a{
+  				color:#999999;
+  			}
+  			
+  		}
+  	}
+}
+
+
+/*----1024px - 1279px for desktop ---*/
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+	.card-value-wrapper{
+		top: 25px;
+	}
+	.gifts-wrapper{
+		height: 350px;
+		.gift-desc{
+			width:100%;
+		}
+	}
+	.gift-cards-footer{
+		width:100%;
+	}
+}
+
+/*----768px - 1023px for tablet ---*/
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+	.card-value-wrapper{
+		top: 20px;
+	}
+	.gifts-wrapper{
+		
+		.gift-desc{
+			width:100%;
+		}
+	}
+	.gift-cards-footer{
+		width:100%;
+	}
+}
+
+/*----480px - 767px for phablet ---*/
+
+@media  (max-width: 767px) {
+
+	.card-value-wrapper{
+		width: 300px;
+		margin-left: -150px;
+		top: 21px;
+		h3{
+			text-align: left;
+		}
+		p{
+			text-align: left;
+		}
+	}
+	.gifts-wrapper{
+		height: auto;
+		padding-bottom: 42px;
+		.gift-desc{
+			width:100%;
+		}
+		.gift2{
+			margin-top: 41px;
+		}
+		.gift3{
+			margin-top: 41px;
+		}
+	}
+	.add-gift-block{
+		width: 100%;
+		height: 185px;
+		margin: 29px auto 25px;
+		.add-gift{
+			width: 83.5%;
+			.add-gift-input{
+				width: 159px;
+			}
+		}
+		.jabong-logo{
+			margin: 33px 0 33px;
+		}
+	}
+	.points-block{
+		li{
+			margin-bottom: 12px;
+			width: 100%;
+		}
+	}
+	.gift-cards-footer{
+		padding-top: 28px;
+		width: 98%;
+		padding-bottom: 35px;
+		h4{
+			margin-bottom: 13px;
+		}
+		.quick-link-wrapper{
+			padding-left: 15px;
+			padding-top: 17px;
+			.quick-link-block{
+				  margin-top: 21px;
+				  a{
+				  	line-height: 2.5;
+				  }
+			}
+		}
+		.faq-wrapper{
+			border-bottom: 1px solid #e5e5e5;
+			border-right:none;
+			padding-bottom: 16px;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+

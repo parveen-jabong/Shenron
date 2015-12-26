@@ -1,0 +1,141 @@
+:focus {
+	outline: none;
+}
+.brands-slider-wrapper {
+	padding: 0;
+}
+.top-designers-block {
+	margin-bottom: 60px;
+	margin-top: 60px;
+	text-align: center;
+	padding: 0;
+	.designer-showmore {
+		width: 112px;
+	}
+}
+.designers-block {
+	margin-bottom: 30px;
+	padding: 0 10px;
+	figure {
+		background-color: #f8f8f8;
+	}
+	img {
+		width: 100%;
+	}
+	figcaption {
+		position: absolute;
+		top: 50%;
+		text-align: center;
+		color: @no-gray;
+		font-size: @font-size-large;
+		font-family: dinnextprobold;
+		letter-spacing: 1px;
+		width: 100%;
+		z-index: 1;
+	}
+	a {
+		display: block;
+		position: relative;
+	}
+}
+.designer-show-more {
+	width: 170px;
+	height: 60px;
+	line-height: 60px;
+	color: @gray-base;
+	background: @gray-lighter;
+	font-size: @font-size-medium;
+	display: inline-block;
+	text-align: center;
+}
+
+.designers-section {
+	width: 100%;
+	padding-bottom: 30px;
+	display: none;
+	a {
+		display: block;
+		color: @gray-dark;
+		font-size: @font-size-base;
+		margin-top: 10px;
+		display: -webkit-box;
+	  	line-clamp: 1;
+	  	box-orient: vertical;
+	  -webkit-line-clamp: 1;
+	  -webkit-box-orient: vertical;
+	  -moz-line-clamp: 1;
+	  overflow: hidden;
+	  -moz-box-orient: vertical;
+		&:hover {
+			color: @gray-base;
+		}
+	}
+}
+
+.designers-link {
+	text-align: left;
+}
+.home-page-slider {
+	.carousel[data-full-screen] .slide img {
+		width: auto!important;
+	}
+	.slick-list {
+		background: #000;
+	}
+}
+
+@media (max-width: 767px) {
+	.top-designer-container {
+		padding: 0;
+		margin-bottom: 10px;
+	}
+	.widget-heading {
+		font-size: @font-size-h3;
+	}
+	.designers-section {
+		padding-bottom: 20px;
+	}
+	.designers-block {
+		padding: 0;
+		figure {
+			background-color: #f8f8f8;
+		}
+		&:nth-child(even) {
+			padding-left: 15px;
+			padding-right: 7px;
+		}
+		&:nth-child(odd) {
+			padding-right: 15px;
+			padding-left: 7px;
+		}
+		margin-bottom: 15px;
+		figcaption {
+			font-size: @font-size-medium;
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+	.designers-block {
+		figure {
+			background-color: #f8f8f8;
+		}
+	}
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+.designers-block {
+		figure {
+			background-color: #f8f8f8;
+		}
+	}
+}
+@media only screen and (min-width : 320px) and (max-width : 1279px) { 
+.designers-block figcaption {
+	top:inherit;
+	bottom:0;
+	background: @no-gray;
+	color: #434343;
+	padding: 10px;
+	opacity:0.8;
+	font-size: 12px;
+}
+}
