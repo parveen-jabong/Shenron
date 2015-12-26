@@ -9,18 +9,20 @@
 var BaseController = require('./BaseController');
 var CMSController = BaseController.extend({
     save: function (req, res) {
+        console.log("in save");
         var requestBody = req.body;
-        CMSService.update(key, content, function(err, update){
+        CMSService.update(requestBody.key, requestBody.content, function(err, update){
             if (err) {
                 sails.log.error('Not able to update CMS of MongoDB', err);
             }
+            console.log('eerr',err,update);
         });
         // This is related to BOB Database use judiciously. #IMP
-        CMSDatabaseService.updateCMSDatabase(requestBody.key, requestBody.content, function(err, success){
+        /*CMSDatabaseService.updateCMSDatabase(requestBody.key, requestBody.content, function(err, success){
             if (err) {
                 sails.log.error('Not able to update CMSDatabase(BOB)', err);
             }
-        });
+        });*/
     }
 });
 

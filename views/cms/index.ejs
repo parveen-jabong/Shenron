@@ -111,7 +111,7 @@
         $("#modal-dialog").dialog({
             autoOpen:false,
             maxheight: 600,
-            width : 900,
+            width : 1100,
             title: "Upload Images"
         });
         var counter = $("#data-cms-count").val();
@@ -125,6 +125,7 @@
                 $(this).attr('data-cms-editable-id', ++counter);
             }
         }).wrap("<div class='editableCMSDiv'></div>").after("<button class='editableCMSButton'>Edit</button>");
+
         $(document).on('click', '.editableCMSButton', function(){
             var $this = $(this);
             var cmsEditableId = $this.prev().attr('data-cms-editable-id');
@@ -143,7 +144,29 @@
             function preview(){
 //                alert('preview code');
             };
+            function saveAndPush(e){
+                e.preventDefault();
+                e.stopPropagation();
+                $content = $(".editableCMSSection").html();
+                $content = '<section class="main-content editableCMSSection">' + $content + '</section>';
 
+//                return ;
+                console.log('content',$content);
+                $.ajax({
+                    url: '/cms/data',
+                    method: 'post',
+                    data:{
+                        content : $content,
+                        key : window.location.href
+                    }
+                })
+                .done(function( data ) {
+                    if ( console && console.log ) {
+                        console.log( "Sample of data:", data.slice( 0, 100 ) );
+                    }
+                });
+
+            }
             $('.fileupload').fileupload({
                 url: '/image',
                 dataType: 'json',
@@ -159,6 +182,7 @@
                     });
                 }
             });
+            $('#upload').on('click',saveAndPush);
             $('#preview-d').on('click', preview)
         }
 
