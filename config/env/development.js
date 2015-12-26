@@ -39,6 +39,8 @@ module.exports = {
   memcacheKeyPrefix: 'jabong',
   pdpregex: /.html$/i,
   staticBaseUrl: 'static1.jabong.com',
+  //Path should be from base directory -- Shenron folder
+  imageDirPath : '.tmp/public/images',
   css : [
 
   ]

@@ -45,5 +45,7 @@ module.exports = {
   },
   memcacheKeyPrefix: 'jabong',
   pdpregex: /.html$/i,
-  staticBaseUrl: process.env.STATIC_BASE_URL
+  staticBaseUrl: process.env.STATIC_BASE_URL,
+  //Path should be from base directory -- Shenron folder
+  imageDirPath : process.env.IMAGE_DIR_PATH,
 };
