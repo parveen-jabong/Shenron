@@ -31,10 +31,11 @@ module.exports = {
     port: 11290
   },
   mysql : {
-    host     : 'localhost',
-    user     : 'user',
-    password : 'password',
-    database : 'database'
+    host     : '43.252.89.34',
+    port : '3306',
+    user     : 'bob_live',
+    password : 'OnG41FV9',
+    database : 'bob_live'
   },
   memcacheKeyPrefix: 'jabong',
   pdpregex: /.html$/i,

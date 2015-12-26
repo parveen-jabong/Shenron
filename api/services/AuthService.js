@@ -1,3 +1,8 @@
+/**
+ * Created by Parveen Arora
+ * This service is specific to User Model
+ * @type {{findById: Function, findByUsername: Function, findByEmail: Function, verifyPassword: Function, add: Function}}
+ */
 module.exports = {
     /**
      * Find user by id

@@ -31,5 +31,6 @@ module.exports.routes = {
     'POST /user' : 'AuthController.add',
     'POST /user/login'  : 'AuthController.login',
     'POST /image' : 'ImageConfigurationController.index',
-    'DELETE /image' : 'ImageConfigurationController.delete'
+    'DELETE /image' : 'ImageConfigurationController.delete',
+    'POST /cms/data' : 'CMSController.save'
 };

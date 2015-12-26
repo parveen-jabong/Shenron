@@ -8,6 +8,7 @@ var BaseController = require('./BaseController');
 var IndexController = BaseController.extend({
     index: function (req, res) {
         var data = {}, userToken = req.session.userToken, count = 0, cmsKey = req.cmsKey;
+
         if (isEmpty(req.staticPage)) {
             res.notFound();
         } else {
