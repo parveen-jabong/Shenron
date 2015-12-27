@@ -56,6 +56,7 @@ var AuthController = BaseController.extend({
             var responseObject = new Response();
             if (err || !user) {
                 responseObject.message.push(err ? err.message : "Something Went Wrong");
+                return res.serverError();
             } else {
                 user.setLoggedInStatus(false);
                 responseObject.message.push('OK');

@@ -12,6 +12,9 @@ module.exports = {
             type: 'string',
             defaultsTo: ''
         },
+        attribute_id : {
+            type: 'integer'
+        },
         cms_key : {
             model: 'CMS'
         }

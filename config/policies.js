@@ -56,7 +56,8 @@ module.exports.policies = {
         '*' : 'sessionAuth'
     },
     IndexController : {
-        index : 'sessionAuth'
+        index : ['flash', 'sessionAuth', 'static-page-url-manager'],
+        getCMSKeyView : ['flash']
     },
     CMSController : {
         '*' : 'sessionAuth'

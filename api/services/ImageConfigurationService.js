@@ -10,7 +10,7 @@ module.exports = exports = {
      * @param icn
      * @param imgList
      */
-    add : function (url, ici, icn, image, cb) {
+    add : function (url, ici, icn, attributeId, image, cb) {
         ImageConfig.create({
             url : url,
             ici : ici,

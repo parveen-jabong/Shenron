@@ -25,7 +25,8 @@ module.exports = function(grunt) {
                 '.tmp/public/styles/{flow}.css': 'assets/styles/bootstrap/jabong/components/flow.less',
                 '.tmp/public/styles/ie.css': 'assets/styles/bootstrap/jabong/ie-legacy/import.less',
                 '.tmp/public/styles/miscellaneous.css': 'assets/styles/bootstrap/jabong/miscellaneous/miscellaneous.less',
-                '.tmp/public/styles/editable-cms.css': 'assets/styles/editable-cms.less'
+                '.tmp/public/styles/editable-cms.css': 'assets/styles/editable-cms.less',
+                '.tmp/public/styles/main/layout.css' : 'assets/styles/layout.less'
             }
         }
     });

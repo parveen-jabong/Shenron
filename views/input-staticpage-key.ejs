@@ -3,8 +3,12 @@
 <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 <link href='/styles/login.css' rel='stylesheet' type='text/css'>
 
+
 <div class="text-center" style="padding:50px 0">
     <div class="logo">CMS Key</div>
+    <%if (error) { %>
+    <div class="flash-message"><%= error %></div>
+    <% } %>
     <!-- Main Form -->
     <div class="login-form-1">
         <form id="login-form" class="text-left">
@@ -27,7 +31,7 @@
     $("#login-form").submit(function(e){
         e.preventDefault();
         var url = $("#login-form #lg_cmskey").val();
-        window.location.href = "/" + url;
+        window.location.href = "/cms/key/" + url;
     });
     $(".login-form").validate({
         rules: {

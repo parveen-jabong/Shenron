@@ -22,14 +22,13 @@
 
 module.exports.routes = {
     '/' : 'AuthController.getLoginView',
-    '/cms/key' : {
-        view : 'input-staticpage-key'
-    },
+    '/cms/key' : 'IndexController.getCMSKeyView',
+    '/cms/key/:key' : 'IndexController.index',
     '/upload': 'ImageConfigurationController.create',
     'GET /upload/:id' : 'ImageConfigurationController.get',
-    '/static/page/' : 'IndexController.index',
     'POST /user' : 'AuthController.add',
     'POST /user/login'  : 'AuthController.login',
+    '/user/logout' : 'AuthController.logout',
     'POST /image' : 'ImageConfigurationController.index',
     'DELETE /image' : 'ImageConfigurationController.delete',
     'POST /cms/data' : 'CMSController.save'

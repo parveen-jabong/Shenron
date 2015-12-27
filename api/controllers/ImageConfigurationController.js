@@ -27,7 +27,7 @@ var ImageConfigurationController = BaseController.extend({
                     }
                 });
             } else {
-                ImageConfigurationService.update(id, requestBody.url, requestBody.ici, requestBody.icn, metadata);
+                ImageConfigurationService.update(requestBody.id, requestBody.url, requestBody.ici, requestBody.icn, metadata);
             }
             return res.json({
                 "files": [
@@ -82,11 +82,17 @@ var ImageConfigurationController = BaseController.extend({
     },
     delete : function(req, res){
         var imageConfigId = req.params.id;
-        ImageConfigurationService.get(imageConfigId, function(err, imageConfig, imageList){
+        ImageConfigurationService.delete(imageConfigId, function(err, imageConfig, imageList){
             if (err) {
-
+                res.json({
+                    success : false,
+                    message : [err.message]
+                });
             } else {
-
+                res.json({
+                    success : true,
+                    message : ['Deleted Successfully']
+                });
             }
         });
     }

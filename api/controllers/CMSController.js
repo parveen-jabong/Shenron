@@ -16,11 +16,20 @@ var CMSController = BaseController.extend({
             }
         });
         // This is related to BOB Database use judiciously. #IMP
-        CMSDatabaseService.updateCMSDatabase(requestBody.key, requestBody.content, function(err, success){
+        /*CMSDatabaseService.updateCMSDatabase(requestBody.key, requestBody.content, function(err, success){
             if (err) {
                 sails.log.error('Not able to update CMSDatabase(BOB)', err);
-            }
-        });
+                res.json({
+                    success : false,
+                    message : [err.message]
+                });
+            } else {
+                 res.json({
+                     success : true,
+                     message : ['CMS Updated']
+                 });
+         }
+         });*/
     }
 });
 

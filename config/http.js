@@ -37,7 +37,6 @@ module.exports.http = {
         'bodyParser',
         'handleBodyParserError',
         'compress',
-        'resolveStaticUrl',
         'myRequestLogger',
         'methodOverride',
         'poweredBy',
@@ -52,8 +51,6 @@ module.exports.http = {
       sails.log.silly(req.method, req.url, new Date);
       return next();
     },
-
-    resolveStaticUrl: require('../api/middleware/url-manager/static'),
     defaultErrorHandler: require('../api/middleware/default-error-handler')
   }
 
