@@ -11,7 +11,6 @@ var IndexController = BaseController.extend({
     index: function (req, res) {
         var data = {}, userToken = req.session.userToken, count = 0, cmsKey = req.cmsKey;
         if (isEmpty(req.staticPage)) {
-            console.log('Hello Trying');
             req.flash('error', 'Sorry, We are not able to find this key!!');
             res.redirect('/cms/key');
         } else {

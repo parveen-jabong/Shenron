@@ -11,7 +11,6 @@ function _execute(req, output, requestPage, cmsKey){
     req.PageTypePV = 'Campaign|' + requestPage;
     req.reqPage = requestPage;
     req.cmsKey = cmsKey;
-    console.log(output, requestPage, cmsKey);
 }
 
 var routeStaticPage = function(req, res, next) {
