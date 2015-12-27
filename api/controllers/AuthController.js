@@ -43,6 +43,7 @@ var AuthController = BaseController.extend({
                             responseObject.success = true;
                             req.session.authenticated = true;
                             req.session.userToken = user.id;
+                            req.session.username = user.username;
                         }
                     }
                 });
@@ -51,20 +52,16 @@ var AuthController = BaseController.extend({
         });
     },
     logout : function(req, res){
-        var requestBody = req.body;
-        AuthService.findByEmail(requestBody.email, function(err, user){
-            var responseObject = new Response();
+        var userId = req.session.userToken;
+        AuthService.findById(userId, function(err, user){
             if (err || !user) {
                 responseObject.message.push(err ? err.message : "Something Went Wrong");
                 return res.serverError();
             } else {
                 user.setLoggedInStatus(false);
-                responseObject.message.push('OK');
-                responseObject.success = true;
-                req.session = null;
-                delete req.session;
+                AuthService.removeSession(req);
+                res.redirect('/');
             }
-            res.json(responseObject);
         })
     },
     getLoginView : function(req, res){

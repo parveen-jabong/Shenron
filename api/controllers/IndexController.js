@@ -39,14 +39,15 @@ var IndexController = BaseController.extend({
                     });
                 }
                 data.count = count;
-
                 res.view('cms/index', data);
             });
         }
     },
     getCMSKeyView : function(req, res){
         var errorMessage = res.locals.flash();
-        res.view('input-staticpage-key', { error : !isEmpty(errorMessage)? errorMessage.error && _.isArray(errorMessage.error) ? errorMessage.error[0] : '' : ''});
+        res.view('input-staticpage-key', {
+            error : !isEmpty(errorMessage)? errorMessage.error && _.isArray(errorMessage.error) ? errorMessage.error[0] : '' : ''
+        });
     }
 });
 

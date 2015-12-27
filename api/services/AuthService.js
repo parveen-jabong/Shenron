@@ -73,6 +73,19 @@ module.exports = {
         }).exec(function(err, user){
             cb(err, user);
         });
+    },
+    /**
+     *
+     * @param req
+     */
+    removeSession : function(req){
+        req.session.authenticated = null;
+        req.session.userToken = null;
+        req.session.username = null;
+
+        delete req.session.authenticated;
+        delete req.session.userToken;
+        delete req.session.username;
     }
 
 };
