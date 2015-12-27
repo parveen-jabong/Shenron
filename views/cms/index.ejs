@@ -13,11 +13,92 @@
 <link rel="stylesheet" href="/styles/segment.css">
 <link rel="stylesheet" href="/styles/thankyou.css">
 <link rel="stylesheet" href="/styles/{flow}.css">
+<style>
+    .wrapper{
+        background-color: #ddd;
+        padding: 20px;
+    }
+    .label{
+        color:#000;
+        font-size: 12px;
+    }
+    .img-desc{
+        height: 25px;
+        margin-left: 20px;
+        border: 1px solid #dddddd;
+    }
+    .input-box{
+        width: 100%;
+        /*background-color: #dddddd;*/
+    }
+    .input-box:active, .input-box:focus{
+        /*background-color: #fff;*/
+    }
+    .row{
+        margin-bottom: 5px;
+    }
+    #upload{
+        margin-left: 15px;
+    }
+    /*todo optimization*/
+    .fileinput-button {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+    }
+    .fileinput-button input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        opacity: 0;
+        -ms-filter: 'alpha(opacity=0)';
+        font-size: 200px;
+        direction: ltr;
+        cursor: pointer;
+    }
+    .fileupload-buttonbar .btn,
+    .fileupload-buttonbar .toggle {
+        margin-bottom: 5px;
+    }
+    .progress-animated .progress-bar,
+    .progress-animated .bar {
+        /*background: url("../img/progressbar.gif") !important;*/
+        filter: none;
+    }
+    .fileupload-process {
+        float: right;
+        display: none;
+    }
+    .fileupload-processing .fileupload-process,
+    .files .processing .preview {
+        display: block;
+        width: 32px;
+        height: 32px;
+        /*background: url("../img/loading.gif") center no-repeat;*/
+        background-size: contain;
+    }
+    .files audio,
+    .files video {
+        max-width: 300px;
+    }
+</style>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="/styles/login.css">
+<link rel="stylesheet" href="/styles/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/js/image-upload/vendor/jquery.ui.widget.js"></script>
+<script src="/js/image-upload/jquery.iframe-transport.js"></script>
+<script src="/js/image-upload/jquery.fileupload.js"></script>
 
 <section class="main-content editableCMSSection">
     <%- pageHtml %>
 </section>
 <input type="hidden" id="data-cms-count" value=<%= count %> >
+<div id="modal-dialog" class="cms-modal" style="display: none">
+</div>
+<script src="/js/image-upload/jquery-ui.js"></script>
+<!--<script src="/js/vendor/jquery.js"></script>-->
 
 <script>
     var JABONG = window.JABONG || {};
@@ -27,22 +108,103 @@
     JABONG.ResponsiveImgActivated = true;
     JABONG.adblocker = true;
     $(document).ready(function(){
+        $("#modal-dialog").dialog({
+            autoOpen:false,
+            maxheight: 600,
+            width : 1100,
+            title: "Upload Images"
+        });
         var counter = $("#data-cms-count").val();
         if (!counter) {
             counter = 0;
         }
-        var editableCMSSection = $(".editableCMSSection");
+        var editableCMSSection = $(".editableCMSSection").clone();
+
         $("[data-cms-editable=true]").each(function(){
             if (!$(this).attr('data-cms-editable-id')){
-                $(this).attr('data-cms-editable-id', counter++);
+                $(this).attr('data-cms-editable-id', ++counter);
             }
         }).wrap("<div class='editableCMSDiv'></div>").after("<button class='editableCMSButton'>Edit</button>");
+
         $(document).on('click', '.editableCMSButton', function(){
-            var cmsEditableId = $(this).prev().attr('data-cms-editable-id');
+            var $this = $(this);
+            var cmsEditableId = $this.prev().attr('data-cms-editable-id');
             var url = '/upload/' + cmsEditableId;
-            var win = window.open(url, '_blank');
-            win.editableContent = editableCMSSection;
-            win.cmsEditableId = cmsEditableId;
+            $.ajax({
+                url: url,
+                method: 'get',
+                success: function(response){
+                    $("#modal-dialog").append(response);
+                    $("#modal-dialog").dialog('open');
+                    $("#modal-dialog").dialog({
+                        dialogClass : 'upload-dialog class-'+cmsEditableId
+                    });
+                    scriptForModalDialog();
+                }
+            })
         });
-    });
+        function scriptForModalDialog() {
+            function preview(){
+//                alert('preview code');
+            };
+            function updateDomToBeSaved(selectedClass, imgUrl){
+                //@todo optimisation
+                var $selectedDom = $(".editableCMSSection").clone(),
+                    $imgArray = $selectedDom.find('img'),
+                    id = selectedClass.substr(selectedClass.indexOf('-')+1);
+                $imgArray.each(function(index, img){
+                    var cmsId = $(img).attr('data-cms-editable-id');
+                    if(cmsId === id){
+                        $(img).attr('src',imgUrl);
+                    }
+                });
+                return $selectedDom;
+
+            };
+            function saveAndPush(e){
+                e.preventDefault();
+                e.stopPropagation();
+                $content = $(".editableCMSSection").html();
+                $content = '<section class="main-content editableCMSSection">' + $content + '</section>';
+                var selectedClass = $(this).closest('.upload-dialog').get(0).classList;
+                selectedClass = selectedClass[selectedClass.length -1];
+                var desktopImgUrl = $(this).closest('form').find('#img-name-d').html(); //@todo mob and app pending
+                $content = updateDomToBeSaved(selectedClass, desktopImgUrl);
+//                return ;
+                console.log('content',$content);
+                $.ajax({
+                    url: '/cms/data',
+                    method: 'post',
+                    data:{
+                        content : $content,
+                        key : window.location.href
+                    }
+                })
+                .done(function( data ) {
+                    if ( console && console.log ) {
+                        console.log( "Sample of data:", data.slice( 0, 100 ) );
+                    }
+                });
+
+            }
+            $('.fileupload').fileupload({
+                url: '/image',
+                dataType: 'json',
+                done: function (e, data) {
+                    var $self = $(this);
+                    $.each(data.result.files, function (index, file) {
+//                    $('<p/>').text(file.name).appendTo(document.body);
+                        $self.closest('.row').find('#img-name-d').text(file.name);
+                        $self.closest('.row').find('#img-size-d').text(file.size);
+                        $self.closest('.row').find('#img-last-updated-d').text(new Date());
+                        $self.closest('.row').find('#img-size-d').text(file.size);
+
+                    });
+                }
+            });
+            $('#upload').on('click',saveAndPush);
+            $('#preview-d').on('click', preview)
+        }
+
+});
 </script>

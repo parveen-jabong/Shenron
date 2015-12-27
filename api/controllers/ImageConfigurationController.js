@@ -71,10 +71,20 @@ var ImageConfigurationController = BaseController.extend({
                         "url": image.imageUrl,
                         "thumbnailUrl": image.imageUrl,
                         "deleteUrl": image.imageUrl,
+                        "updatedAt" : image.updatedAt,
                         "deleteType": "DELETE"
                     })
                 });
-                return res.json({
+                  // @ todo
+                for(var i=0;i<4;i++){
+                    files[i]= files[i] || {};
+                };
+
+                files[0].type = 'desktop';
+                files[1].type = 'tab';
+                files[2].type = 'mweb';
+                files[3].type = 'app';
+                return res.render('upload-new',{
                     "files": files
                 });
             }
