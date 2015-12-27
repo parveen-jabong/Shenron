@@ -136,6 +136,9 @@
                 success: function(response){
                     $("#modal-dialog").append(response);
                     $("#modal-dialog").dialog('open');
+                    $("#modal-dialog").dialog({
+                        dialogClass : 'upload-dialog class-'+cmsEditableId
+                    });
                     scriptForModalDialog();
                 }
             })
@@ -144,12 +147,29 @@
             function preview(){
 //                alert('preview code');
             };
+            function updateDomToBeSaved(selectedClass, imgUrl){
+                //@todo optimisation
+                var $selectedDom = $(".editableCMSSection").clone(),
+                    $imgArray = $selectedDom.find('img'),
+                    id = selectedClass.substr(selectedClass.indexOf('-')+1);
+                $imgArray.each(function(index, img){
+                    var cmsId = $(img).attr('data-cms-editable-id');
+                    if(cmsId === id){
+                        $(img).attr('src',imgUrl);
+                    }
+                });
+                return $selectedDom;
+
+            };
             function saveAndPush(e){
                 e.preventDefault();
                 e.stopPropagation();
                 $content = $(".editableCMSSection").html();
                 $content = '<section class="main-content editableCMSSection">' + $content + '</section>';
-
+                var selectedClass = $(this).closest('.upload-dialog').get(0).classList;
+                selectedClass = selectedClass[selectedClass.length -1];
+                var desktopImgUrl = $(this).closest('form').find('#img-name-d').html(); //@todo mob and app pending
+                $content = updateDomToBeSaved(selectedClass, desktopImgUrl);
 //                return ;
                 console.log('content',$content);
                 $.ajax({
