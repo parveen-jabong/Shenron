@@ -10,7 +10,6 @@ var BaseController = require('./BaseController');
 var CMSController = BaseController.extend({
     save: function (req, res) {
         var requestBody = req.body;
-        console.log(requestBody);
         CMSService.update(requestBody.key, requestBody.content, function(err, update){
             if (err) {
                 sails.log.error('Not able to update CMS of MongoDB', err);
