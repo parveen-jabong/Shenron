@@ -144,7 +144,8 @@
                     });
                     scriptForModalDialog(cmsEditableId);
                 }
-            })
+            });
+            return false;
         });
         function scriptForModalDialog(cmsEditableId) {
             function preview(){
@@ -158,7 +159,7 @@
                 $imgArray.each(function(index, img){
                     var cmsId = $(img).attr('data-cms-editable-id');
                     if(cmsId === id){
-                        $(img).attr('src',imgUrl);
+                        //$(img).attr('src',imgUrl);
                     }
                 });
                 return $selectedDom;

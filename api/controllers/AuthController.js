@@ -41,6 +41,7 @@ var AuthController = BaseController.extend({
                         } else {
                             responseObject.message.push('OK');
                             responseObject.success = true;
+                            user.setLoggedInStatus(true);
                             req.session.authenticated = true;
                             req.session.userToken = user.id;
                             req.session.username = user.username;

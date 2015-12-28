@@ -150,7 +150,7 @@
                             window.location.href = redirectionUrl;
                         }
                     } else {
-                        form_failed($form, _.isArray(response.message) ? response.message[0] : msgError);
+                        form_failed($form, response.message ? response.message[0] : msgError);
                     }
                 },
                 error: function (xhr, ajaxOptions, thrownError) {

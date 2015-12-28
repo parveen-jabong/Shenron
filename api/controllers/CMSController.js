@@ -16,9 +16,8 @@ var CMSController = BaseController.extend({
                 sails.log.error('Not able to update CMS of MongoDB', err);
             }
         });
-        res.ok('OK');
         // This is related to BOB Database use judiciously. #IMP
-        /*CMSDatabaseService.updateCMSDatabase(requestBody.key, requestBody.content, function(err, success){
+        CMSDatabaseService.updateCMSDatabase(requestBody.key, requestBody.content, function(err, success){
             if (err) {
                 sails.log.error('Not able to update CMSDatabase(BOB)', err);
                 res.json({
@@ -30,8 +29,8 @@ var CMSController = BaseController.extend({
                      success : true,
                      message : ['CMS Updated']
                  });
-         }
-         });*/
+             }
+         });
     }
 });
 

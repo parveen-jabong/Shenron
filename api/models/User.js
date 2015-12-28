@@ -39,6 +39,11 @@ module.exports = {
 
         setLoggedInStatus : function(status){
             this.loggedIn = status;
+            this.save(function(err, u) {
+                if(err) {
+                    sails.log.error('User->setloggedInStatus Not able to set logged in status');
+                }
+            });
         },
 
         checkLoggedInStatus : function(){
