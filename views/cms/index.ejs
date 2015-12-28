@@ -121,13 +121,15 @@
         if (!counter) {
             counter = 0;
         }
-        var editableCMSSection = $(".editableCMSSection").clone();
+
         var cmsKey = $('#data-cms-key').val();
         $("[data-cms-editable=true]").each(function(){
             if (!$(this).attr('data-cms-editable-id')){
                 $(this).attr('data-cms-editable-id', ++counter);
             }
-        }).wrap("<div class='editableCMSDiv'></div>").after("<button class='editableCMSButton'>Edit</button>");
+        });
+        var editableCMSSection = $(".editableCMSSection").clone();
+        $("[data-cms-editable=true]").wrap("<div class='editableCMSDiv'></div>").after("<button class='editableCMSButton'>Edit</button>");
 
         $(document).on('click', '.editableCMSButton', function(){
             var $this = $(this);
@@ -142,43 +144,62 @@
                     $("#modal-dialog").dialog({
                         dialogClass : 'upload-dialog class-'+cmsEditableId
                     });
-                    scriptForModalDialog(cmsEditableId);
+                    scriptForModalDialog(cmsEditableId,editableCMSSection);
                 }
             })
         });
-        function scriptForModalDialog(cmsEditableId) {
+        function scriptForModalDialog(cmsEditableId, editableCMSSection) {
             function preview(){
 //                alert('preview code');
             };
-            function updateDomToBeSaved(selectedClass, imgUrl){
+
+            function updateDomToBeSaved(selectedClass, imgUrl,updatedUrl){
                 //@todo optimisation
-                var $selectedDom = $(".editableCMSSection").clone(),
-                    $imgArray = $selectedDom.find('img'),
-                    id = selectedClass.substr(selectedClass.indexOf('-')+1);
-                $imgArray.each(function(index, img){
-                    var cmsId = $(img).attr('data-cms-editable-id');
-                    if(cmsId === id){
-                        $(img).attr('src',imgUrl);
-                    }
-                });
+                var $selectedDom = editableCMSSection || $(".editableCMSSection").clone(),  //@todo remove clone
+                //@todo condition check has to be implemented for valid img src
+                $imgSet = $('.img-set'),
+                desktopImgSrc = $imgSet.find('#desktop #img-name-0').html(),
+                tabImgSrc = $imgSet.find('#tab #img-name-1').html() || desktopImgSrc,
+                mwebImgSrc = $imgSet.find('#mweb #img-name-2').html() || desktopImgSrc,
+                appImgSrc = $imgSet.find('#app #img-name-3').html() || mwebImgSrc,
+
+                $selectedImg = $selectedDom.find('[data-cms-editable-id= '+cmsEditableId+']');
+
+                if($selectedImg.siblings('a').length === 0){
+                    //create anchor
+                    //@todo this can create some UI issues as we are creating anchor tag without class and other property
+                    $selectedImg.wrap('<a href='  +   updatedUrl + '></a>');
+                }
+                else{
+                    //update anchor
+                    $selectedImg.siblings('a').attr('href',updatedUrl);
+                }
+                $selectedImg.attr('data-src-320',mwebImgSrc)
+                            .attr('data-src-500',mwebImgSrc)
+                            .attr('data-src-768',tabImgSrc)
+                            .attr('data-src-1024',desktopImgSrc)
+                            .attr('data-src-1280',desktopImgSrc)
                 return $selectedDom;
 
             };
+
             function saveAndPush(e){
                 e.preventDefault();
                 e.stopPropagation();
-                $content = $(".editableCMSSection").html();
-                $content = '<section class="main-content editableCMSSection">' + $content + '</section>';
-                var selectedClass = $(this).closest('.upload-dialog').get(0).classList;
+                var $selectedForm = $(this).closest('form'),
+                    updatedUrl = $selectedForm.find('#url').val(),
+                    selectedClass = $(this).closest('.upload-dialog').get(0).classList;
                 selectedClass = selectedClass[selectedClass.length -1];
-                var desktopImgUrl = $(this).closest('form').find('#img-name-d').html(); //@todo mob and app pending
-                $content = updateDomToBeSaved(selectedClass, desktopImgUrl);
+
+                var desktopImgUrl = $selectedForm.find('#img-name-d').html(); //@todo mob and app pending
+                $content = updateDomToBeSaved(selectedClass, desktopImgUrl,updatedUrl);
                 $.ajax({
                     url: '/cms/data',
                     method: 'post',
                     data: {
                         content : $content.html(),
-                        key : cmsKey
+                        key : cmsKey,
+                        url : updatedUrl
                     }
                 })
                 .done(function( data ) {
@@ -194,16 +215,16 @@
                 done: function (e, data) {
                     var $self = $(this);
                     $.each(data.result.files, function (index, file) {
-                        $self.closest('.row').find('#img-name-d').text(file.name);
-                        $self.closest('.row').find('#img-size-d').text(file.size);
-                        $self.closest('.row').find('#img-last-updated-d').text(new Date());
-                        $self.closest('.row').find('#img-size-d').text(file.size);
+                        $self.closest('.row').find('.img-name').text(file.name);
+                        $self.closest('.row').find('.img-size').text(file.size);
+                        $self.closest('.row').find('.img-last-updated').text(new Date());
+                        $self.closest('.row').find('.img-size').text(file.size);
 
                     });
                 }
             });
             $('.fileupload').bind('fileuploadsubmit', function (e, data) {
-                var imageType = $(this).closest('.row').find('#img-type').text();
+                var imageType = $(this).closest('.row').find('.img-type').text();
                 data.formData = {
                     attributeId : cmsEditableId,
                     cmsKey : cmsKey,

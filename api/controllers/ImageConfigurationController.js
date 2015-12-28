@@ -84,8 +84,12 @@ var ImageConfigurationController = BaseController.extend({
                     type : types[i]
                 })
             }
+            console.log('imageConfig',imageConfig   );
             return res.render('upload-new',{
-                "files": files
+                files: files,
+                url : imageConfig.url,
+                ici : imageConfig.ici,
+                icn : imageConfig.icn
             });
         });
     },
