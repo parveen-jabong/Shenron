@@ -95,10 +95,10 @@
     <%- pageHtml %>
 </section>
 <input type="hidden" id="data-cms-count" value=<%= count %> >
+<input type="hidden" id="data-cms-key" value=<%= cmsKey %> >
 <div id="modal-dialog" class="cms-modal" style="display: none">
 </div>
 <script src="/js/image-upload/jquery-ui.js"></script>
-<!--<script src="/js/vendor/jquery.js"></script>-->
 
 <script>
     var JABONG = window.JABONG || {};
@@ -112,14 +112,17 @@
             autoOpen:false,
             maxheight: 600,
             width : 1100,
-            title: "Upload Images"
+            title: "Upload Images",
+            close: function( event, ui ) {
+                $(this).html('');
+            }
         });
         var counter = $("#data-cms-count").val();
         if (!counter) {
             counter = 0;
         }
         var editableCMSSection = $(".editableCMSSection").clone();
-
+        var cmsKey = $('#data-cms-key').val();
         $("[data-cms-editable=true]").each(function(){
             if (!$(this).attr('data-cms-editable-id')){
                 $(this).attr('data-cms-editable-id', ++counter);
@@ -129,7 +132,7 @@
         $(document).on('click', '.editableCMSButton', function(){
             var $this = $(this);
             var cmsEditableId = $this.prev().attr('data-cms-editable-id');
-            var url = '/upload/' + cmsEditableId;
+            var url = '/upload/' + cmsEditableId + '/' + cmsKey;
             $.ajax({
                 url: url,
                 method: 'get',
@@ -139,11 +142,11 @@
                     $("#modal-dialog").dialog({
                         dialogClass : 'upload-dialog class-'+cmsEditableId
                     });
-                    scriptForModalDialog();
+                    scriptForModalDialog(cmsEditableId);
                 }
             })
         });
-        function scriptForModalDialog() {
+        function scriptForModalDialog(cmsEditableId) {
             function preview(){
 //                alert('preview code');
             };
@@ -170,14 +173,12 @@
                 selectedClass = selectedClass[selectedClass.length -1];
                 var desktopImgUrl = $(this).closest('form').find('#img-name-d').html(); //@todo mob and app pending
                 $content = updateDomToBeSaved(selectedClass, desktopImgUrl);
-//                return ;
-                console.log('content',$content);
                 $.ajax({
                     url: '/cms/data',
                     method: 'post',
-                    data:{
-                        content : $content,
-                        key : window.location.href
+                    data: {
+                        content : $content.html(),
+                        key : cmsKey
                     }
                 })
                 .done(function( data ) {
@@ -193,7 +194,6 @@
                 done: function (e, data) {
                     var $self = $(this);
                     $.each(data.result.files, function (index, file) {
-//                    $('<p/>').text(file.name).appendTo(document.body);
                         $self.closest('.row').find('#img-name-d').text(file.name);
                         $self.closest('.row').find('#img-size-d').text(file.size);
                         $self.closest('.row').find('#img-last-updated-d').text(new Date());
@@ -201,6 +201,14 @@
 
                     });
                 }
+            });
+            $('.fileupload').bind('fileuploadsubmit', function (e, data) {
+                var imageType = $(this).closest('.row').find('#img-type').text();
+                data.formData = {
+                    attributeId : cmsEditableId,
+                    cmsKey : cmsKey,
+                    type : imageType
+                };
             });
             $('#upload').on('click',saveAndPush);
             $('#preview-d').on('click', preview)

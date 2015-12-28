@@ -19,7 +19,8 @@ var IndexController = BaseController.extend({
                 baseUrlCSS : '//' + sails.config.staticBaseUrl + '/live/css',
                 pageHtml : req.staticPage.text,
                 endBlock : req.staticPage.body_end_block,
-                count : count
+                count : count,
+                cmsKey : cmsKey
             };
             UniqueIdentifierService.getByCmsKey(cmsKey, function(err, identifier){
                 if (!err && identifier){

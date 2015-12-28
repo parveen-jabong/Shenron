@@ -6,6 +6,7 @@ var ImageConfigurationController = BaseController.extend({
 
     index : function (req, res) {
         var requestBody = req.body;
+        console.log(requestBody);
         req.file('files[]').upload({
                 dirname: require('path').resolve(__dirname, '../../', sails.config.imageDirPath),
                 saveAs : function (newFileStream, cb) {
@@ -18,17 +19,26 @@ var ImageConfigurationController = BaseController.extend({
                 url = req.baseUrl + '/images' + (metadata.fd).substr((metadata.fd).lastIndexOf('/'));
             metadata.imageType = requestBody.type || 'desktop';
             metadata.imageUrl = url;
-            if (!requestBody.id) {
-                ImageConfigurationService.add(requestBody.url || 'asd', requestBody.ici || 'asd', requestBody.icn || 'asd', metadata, function(err, config, image){
-                    if (err) {
-                        //sails.log
+            ImageConfigurationService.getByAttributeIdAndCMSKey(requestBody.attributeId, requestBody.cmsKey, function(err, imageConfig, imageList){
+                if (err){
+                    sails.log.error('ImageConfigurationService->index Error while getting imageconfig by attributeid and cmskey', err);
+                } else {
+                    if (!imageConfig) {
+                        ImageConfigurationService.add(requestBody.url, requestBody.ici, requestBody.icn, requestBody.attributeId, requestBody.cmsKey, metadata, function(err, imagconfig){
+                            if (err) {
+                                sails.log.error('ImageConfigurationService->index Error while adding imageconfig', err);
+                            }
+                        });
                     } else {
-
+                        ImageConfigurationService.update(imageConfig, requestBody.url, requestBody.ici, requestBody.icn, metadata, function(err, imageConfig){
+                            if (err) {
+                                sails.log.error('ImageConfigurationService->index Error while updating imageconfig by attributeid and cmskey', err);
+                            }
+                        });
                     }
-                });
-            } else {
-                ImageConfigurationService.update(requestBody.id, requestBody.url, requestBody.ici, requestBody.icn, metadata);
-            }
+                }
+            });
+
             return res.json({
                 "files": [
                     {
@@ -42,52 +52,41 @@ var ImageConfigurationController = BaseController.extend({
             })
         });
     },
-    create : function(req, res){
-        res.view('upload');
-/*
-        ImageConfigurationService.add('', '', '', null, function(err, config){
-            if (err) {
-
-            } else {
-                var data = {
-                    configId : config.id
-                }
-                res.render('upload', data);
-            }
-        });
-*/
-    },
     get : function(req, res){
-        var imageConfigId = req.params.id;
-        ImageConfigurationService.get(imageConfigId, function(err, imageConfig, imageList){
+        var attributeId = req.params.id;
+        var cmsKey = req.params.key;
+        ImageConfigurationService.getByAttributeIdAndCMSKey(attributeId, cmsKey, function(err, imageConfig, imageList){
             if (err) {
-                res.render('upload');
-            } else {
-                var files = [];
-                _.each(imageList, function(image){
-                    files.push({
-                        "name": image.name,
-                        "size": image.size,
-                        "url": image.imageUrl,
-                        "thumbnailUrl": image.imageUrl,
-                        "deleteUrl": image.imageUrl,
-                        "updatedAt" : image.updatedAt,
-                        "deleteType": "DELETE"
-                    })
-                });
-                  // @ todo
-                for(var i=0;i<4;i++){
-                    files[i]= files[i] || {};
-                };
-
-                files[0].type = 'desktop';
-                files[1].type = 'tab';
-                files[2].type = 'mweb';
-                files[3].type = 'app';
-                return res.render('upload-new',{
-                    "files": files
-                });
+                sails.log.error('ImageConfigurationController->get While getting Imageconfiguration by id and cmskey',attributeId, cmsKey, err);
             }
+            var files = [];
+            var types = [
+                "desktop",
+                "tab",
+                "mweb",
+                "app"
+            ];
+            _.each(imageList, function(image){
+                types.splice(types.indexOf(image.type), 1);
+                files.push({
+                    "name": image.name,
+                    "size": image.size,
+                    "url": image.imageUrl,
+                    "thumbnailUrl": image.imageUrl,
+                    "deleteUrl": image.imageUrl,
+                    "updatedAt" : image.updatedAt,
+                    "deleteType": "DELETE",
+                    "type" : image.type
+                });
+            });
+            for(var i=0; i<types.length; i++) {
+                files.push({
+                    type : types[i]
+                })
+            }
+            return res.render('upload-new',{
+                "files": files
+            });
         });
     },
     delete : function(req, res){
