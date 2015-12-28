@@ -153,15 +153,15 @@
 //                alert('preview code');
             };
 
-            function updateDomToBeSaved(selectedClass, imgUrl,updatedUrl){
+            function updateDomToBeSaved(selectedClass, imgUrl, updatedUrl){
                 //@todo optimisation
                 var $selectedDom = editableCMSSection || $(".editableCMSSection").clone(),  //@todo remove clone
                 //@todo condition check has to be implemented for valid img src
                 $imgSet = $('.img-set'),
-                desktopImgSrc = $imgSet.find('#desktop #img-name-0').html(),
-                tabImgSrc = $imgSet.find('#tab #img-name-1').html() || desktopImgSrc,
-                mwebImgSrc = $imgSet.find('#mweb #img-name-2').html() || desktopImgSrc,
-                appImgSrc = $imgSet.find('#app #img-name-3').html() || mwebImgSrc,
+                desktopImgSrc = $imgSet.find('#desktop').attr('imageurl'),
+                tabImgSrc = $imgSet.find('#tab').attr('imageurl') || desktopImgSrc,
+                mwebImgSrc = $imgSet.find('#mweb').attr('imageurl') || desktopImgSrc,
+                appImgSrc = $imgSet.find('#app').attr('imageurl') || mwebImgSrc,
 
                 $selectedImg = $selectedDom.find('[data-cms-editable-id= '+cmsEditableId+']');
 
@@ -198,14 +198,19 @@
                     method: 'post',
                     data: {
                         content : $content.html(),
-                        key : cmsKey,
-                        url : updatedUrl
+                        cmsKey : cmsKey,
+                        url : updatedUrl,
+                        attributeId : cmsEditableId,
+                        //We are not supporting ici and icn. Once can get those fields and update
+                        ici : '',
+                        icn : ''
                     }
                 })
                 .done(function( data ) {
                     if ( console && console.log ) {
                         console.log( "Sample of data:", data.slice( 0, 100 ) );
                     }
+                    $("#modal-dialog").dialog('close');
                 });
 
             }
@@ -219,6 +224,7 @@
                         $self.closest('.row').find('.img-size').text(file.size);
                         $self.closest('.row').find('.img-last-updated').text(new Date());
                         $self.closest('.row').find('.img-size').text(file.size);
+                        $self.closest('.row').attr('imageurl', file.url);
 
                     });
                 }
