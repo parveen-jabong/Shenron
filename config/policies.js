@@ -60,6 +60,6 @@ module.exports.policies = {
         getCMSKeyView : ['flash', 'sessionAuth']
     },
     CMSController : {
-        '*' : 'sessionAuth'
+        'save' : 'sessionAuth'
     }
 };

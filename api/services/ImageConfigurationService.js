@@ -125,7 +125,6 @@ module.exports = exports = {
             if (err || !imageConfig) {
                 cb(err)
             } else {
-                console.log(err, imageConfig);
                 Image.find().where({ owner: imageConfig.id }).exec(function(err, images){
                     if (err){
                         cb(err, imageConfig);

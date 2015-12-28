@@ -6,7 +6,6 @@ var ImageConfigurationController = BaseController.extend({
 
     index : function (req, res) {
         var requestBody = req.body;
-        console.log(requestBody);
         req.file('files[]').upload({
                 dirname: require('path').resolve(__dirname, '../../', sails.config.imageDirPath),
                 saveAs : function (newFileStream, cb) {
